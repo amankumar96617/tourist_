@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel website</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<style>
+    *{
+        margin: 0%;
+        padding: 0%;
+    }
+    @font-face{
+        font-family: "Dongle-light";
+        src:url("Dongle/dongle-light.ttf");
+    }
+    @font-face{
+        font-family: "Dongle-regular";
+        src:url("Dongle/dongle-regular.ttf");
+    }
+    @font-face{
+        font-family: "Dongle-Bold";
+        src:url("Dongle/dongle-Bold.ttf");
+    }
+header{
+    display: flex;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1 );
+    align-items: center;
+
+}
+.logo img{
+    max-width: 15%;
+
+}
+.nav-menu ul{
+    display: flex;
+}
+.nav-menu li{
+    list-style: none;
+    margin-right: 20px;
+}
+.nav-menu li:last-child{
+    margin-right: 0%;
+}
+.nav-menu a{
+    text-decoration: none;
+   font-family:"Dongle-Bold";
+   font-size: 1.6rem;
+   color: #333;
+   transition: 0.3s;
+
+}
+.nav-menu a:hover{
+    color: #ff7fff ;
+}
+.contact{
+    padding: 80px;
+    text-align: center;
+    background-color: #f7f7f7;
+
+}
+.contact h3{
+    font-family: "dongle-bold";
+    font-size: 3rem;
+}
+.contact-info p{
+    font-size: 1.4rem;
+    font-family: "dongle-regular";
+    margin-bottom: 20px;
+
+
+}
+.contact-info ul{
+    list-style: none;
+    border: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 40px;
+
+
+}
+.contact-info li{
+    margin: 0 20px;
+    font-family: "dongle-bold";
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+}
+.contact-info li a{
+    text-decoration: none;
+    font-family: "dongle-regular";
+    color: black;
+}
+.contact-info i{
+    font-size: 24px;
+    margin-right: 10px;
+}
+.form{
+    width: 100%;
+
+}
+input,textarea{
+    width: 70%;
+    padding: 10px 0;
+    margin: 20px 0;
+    border: none;
+    box-shadow: 0 0 5PX rgba(0,0,0,0.1);
+    border-radius: 5PX;
+    font-size: 1.1rem;
+    font-family: "dongle-regular";
+}
+textarea{
+height: 200px;
+}
+.form button{
+    display: inline-block;
+    text-decoration: none;
+    color: #fff;
+    background-color: #ff7f50;
+    padding: 12px 30px;
+    border-radius: 50px;
+    font-size: 1.6rem;
+    transition: 0.3s;
+    border: none;
+}
+.form-button:hover{
+    background-color: #333;
+
+}
+footer{
+    background-color: #333;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    align-items: center;
+
+}
+.social-icon a{
+    color: white;
+    font-size: 24px;
+    margin-right: 20px;
+
+
+}
+footer p{
+    font-family: "dongle-regular";
+    font-size: 1.4rem;
+
+}
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .logo img {
+        max-width: 50%;
+    }
+
+    .nav-menu ul {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .nav-menu li {
+        margin: 10px 0;
+    }
+
+    .contact {
+        padding: 40px 20px;
+    }
+
+    .contact-info ul {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .contact-info li {
+        margin: 10px 0;
+    }
+
+    input, textarea {
+        width: 100%;
+    }
+
+    footer {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .social-icon {
+        margin-bottom: 10px;
+    }
+}
+
+</style>
+<body>
+    <header>
+        <header>
+            <div class="logo">
+                <a href="#"> <img src="/touristguied/image/WhatsApp Image 2025-08-01 at 22.11.51_ec7bae9e.jpg" alt="logo"></a>
+            </div>
+            <nav class="nav-menu">
+                <ul>
+                    <li><a href="#"  onclick="document.getElementById('Home').style.display='block'">Home</a></li>
+                    <li><a href="#"  onclick="document.getElementById('aboutsection').style.display='block'">About</a></li>
+                    <li><a href="/touristguied/src/html/contactus.html"  onclick="document.getElementById('contactsection').style.display='block'">Contact</a></li>
+                    <li><a href="/touristguied/src/html/userlogin.html"  onclick="document.getElementById('loginform').style.display='block'">User</a></li>
+                    <li><a href="/touristguied/src/html/admin.html"  onclick="document.getElementById('adminform').style.display='block'">Admin</a></li>
+                    <li><a href="/touristguied/src/html/register.html"  onclick="document.getElementById('Register').style.display='block'">Register</a></li>
+                </ul>
+            </nav>
+        </header>
+    </header>
+    <main>
+        <section class="hero">
+            <div class="hero-image"><img src="/touristguied/image/WhatsApp Image 2025-08-01 at 22.50.42_3f0db30c.jpg" alt="hero-image" width="100%"></div>
+           </section>
+           <section class="contact">
+            <h3>Contact Us</h3>
+            <div class="contact-info">
+            <p>If you have any question please fill out the form below or 
+                contact us using the information provided</p>
+            <ul>
+                <li><i class="fas fa-map-marker-alt"></i>123 Main St,Anytown Patna</li>
+                <li><i class="fa-solid fa-envelope"></i>aman123@gmail.com</li>
+                <li><i class="fa-solid fa-phone"></i>966-176-1533</li>
+            </ul>
+            </div>
+            <form action="" class="form">
+                <div class="form-group">
+                    <input type="name" name="name" id="name" placeholder="Enter your name">
+                    
+                </div>
+                <div class="form-group">
+                    <input type="email" name="email" id="email" placeholder="Enter your email">
+                </div>
+                <div class="form-group">
+                    <textarea name="textarea" id="textarea" rows="10" cols="30" placeholder="Message"></textarea>
+                    
+                </div>
+                <button type="submit">Send Message</button>
+            </form>
+        </section>
+        <footer>
+            <div class="social-icon">
+               <a href="https://m.facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
+               <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+               <a href="https://twitter.com/login" target="_blank"><i class="fab fa-twitter"></i></a>
+            </div>
+            <p>&copy; I am Aman</p>
+
+        </footer>
+   </main>
+   
+</body>
+</html>
