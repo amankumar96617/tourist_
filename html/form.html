@@ -131,10 +131,9 @@
     <div class="nav-links" id="navLinks">
       <a href="../index.html" onclick="document.getElementById('Home').style.display='block'">Home</a>
       <a href="#">Add Place</a>
-      <a href="./html/view.html" onclick="document.getElementById('Home').style.display='block'">View Places</a>
-      <a href="./html/user-view.html" onclick="document.getElementById('Home').style.display='block'">View Users</a>
-      <a href="#" onclick="document.getElementById('Home').style.display='block'">User Feedback</a>
-      <a href="#">Logout</a>
+      <a href="./view.html" onclick="document.getElementById('Home').style.display='block'">View Places</a>
+      <a href="./user-view.html" onclick="document.getElementById('Home').style.display='block'">View Users</a>
+      <a href="logout" onclick="document.getElementById('Logout').style.display='block'">Logout</a>
     </div>
   </div>
 
@@ -172,44 +171,57 @@
       navLinks.classList.toggle("show");
     }
 
-    document.getElementById("placeForm").addEventListener("submit", function (e) {
-      e.preventDefault();
+    
+  document.getElementById("logoutBtn").addEventListener("click", function(e) {
+    e.preventDefault(); // Default anchor behavior ko roke
 
-      const name = document.getElementById("name").value;
-      const address = document.getElementById("address").value;
-      const tags = document.getElementById("tags").value;
-      const description = document.getElementById("description").value;
-      const fileInput = document.getElementById("image");
-      const file = fileInput.files[0];
+    // LocalStorage se login data remove karo
+    localStorage.removeItem("loggedInUser");
 
-      if (!file) {
-        alert("Please select an image.");
-        return;
-      }
+    // Login page par redirect karo
+    window.location.href = "admin.html"; // Apne login page ka naam yahan set karo
+  });
+    </script>
+    
+     <script>
+document.getElementById("placeForm").addEventListener("submit", function (e) {
+  e.preventDefault();
 
-      const reader = new FileReader();
-      reader.onload = function (e) {
-        const imageData = e.target.result;
+  const name = document.getElementById("name").value.trim();
+  const address = document.getElementById("address").value.trim();
+  const tags = document.getElementById("tags").value.trim();
+  const description = document.getElementById("description").value.trim();
+  const imageFile = document.getElementById("image").files[0];
 
-        const place = {
-          id: Date.now(),
-          name,
-          address,
-          tags,
-          description,
-          image: imageData
-        };
+  if (!name || !address || !tags || !description || !imageFile) {
+    alert("Please fill all fields and upload image.");
+    return;
+  }
 
-        const existing = JSON.parse(localStorage.getItem("places") || "[]");
-        existing.push(place);
-        localStorage.setItem("places", JSON.stringify(existing));
+  const reader = new FileReader();
+  reader.onload = function (e) {
+    const imageData = e.target.result;
 
-        window.location.href = "view.html";
-      };
+    const place = {
+      id: Date.now(),
+      name,
+      address,
+      tags,
+      description,
+      image: imageData
+    };
 
-      reader.readAsDataURL(file);
-    });
-  </script>
-  
+    let places = JSON.parse(localStorage.getItem("places")) || [];
+    places.push(place);
+    localStorage.setItem("places", JSON.stringify(places));
+
+    window.location.href = "view.html";
+  };
+
+  reader.readAsDataURL(imageFile);
+});
+</script>
 </body>
 </html>
+    
+  

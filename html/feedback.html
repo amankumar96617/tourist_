@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dropdown Navbar + Feedback</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: url('https://images.unsplash.com/photo-1549921296-3a5c090c4c0e') no-repeat center center/cover;
+      min-height: 100vh;
+    }
+
+    /* ✅ Navbar */
+    nav {
+      background-color: rgba(0, 0, 0, 0.7);
+      color: white;
+      padding: 12px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+    }
+
+    .logo {
+      font-weight: bold;
+      font-size: 18px;
+    }
+
+    .menu-toggle {
+      display: none;
+      font-size: 26px;
+      cursor: pointer;
+    }
+
+    ul.nav-links {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+
+    ul.nav-links li a {
+      color: white;
+      text-decoration: none;
+      padding: 8px 16px;
+      border-radius: 4px;
+      transition: background 0.3s;
+    }
+
+    ul.nav-links li a.active {
+      
+      color: white;
+    }
+
+    /* ✅ Responsive dropdown */
+    @media (max-width: 768px) {
+      .menu-toggle {
+        display: block;
+      }
+
+      ul.nav-links {
+        position: absolute;
+        top: 60px;
+        left: 0;
+        right: 0;
+        background-color: rgba(0, 0, 0, 0.95);
+        flex-direction: column;
+        text-align: center;
+        display: none;
+      }
+
+      ul.nav-links.show {
+        display: flex;
+        animation: dropdown 0.3s ease forwards;
+      }
+
+      @keyframes dropdown {
+        from {
+          opacity: 0;
+          transform: translateY(-10px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+    }
+
+    /* ✅ Form */
+    .form-container {
+      margin: 120px auto 40px auto;
+      max-width: 500px;
+      background: rgba(255, 255, 255, 0.95);
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: bold;
+    }
+
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 16px;
+    }
+
+    .submit-btn {
+      background-color: #2ac3f2;
+      color: white;
+      padding: 10px 24px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: background 0.3s;
+    }
+
+    .submit-btn:hover {
+      background-color: #1a9dc7;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ✅ NAV -->
+  <nav>
+    <div class="logo">SmartTravel</div>
+    <div class="menu-toggle" onclick="toggleDropdown()">☰</div>
+    <ul class="nav-links" id="navbar">
+      <li><a href="#" onclick="document.getElementById('Home').style.display='block'">FEEDBACK</a></li>
+      <li><a href="./planecreate.html" onclick="document.getElementById('Home').style.display='block'">CREATE PLAN</a></li>
+      <li><a href="Logout" onclick="document.getElementById('Home').style.display='block'">LOGOUT</a></li>
+    </ul>
+  </nav>
+
+  <!-- ✅ FORM -->
+  <div class="form-container">
+    <div class="form-group">
+      <label for="userid">UserId</label>
+      <input type="text" id="userid" value="101" />
+    </div>
+    <div class="form-group">
+      <label for="feedback">Feedback</label>
+      <textarea id="feedback" rows="5"></textarea>
+    </div>
+    <button class="submit-btn">Submit</button>
+  </div>
+
+
+  <!-- ✅ JS -->
+
+<script>
+  document.getElementById("logoutBtn").addEventListener("click", function(e) {
+    e.preventDefault(); // Default anchor behavior ko roke
+
+    // LocalStorage se login data remove karo
+    localStorage.removeItem("loggedInUser");
+
+    // Login page par redirect karo
+    window.location.href = "login.html"; // Apne login page ka naam yahan set karo
+  });
+</script>
+
+<script>
+    function toggleDropdown() {
+      const nav = document.getElementById('navbar');
+      nav.classList.toggle('show');
+    }
+  </script>
+
+</body>
+</html>

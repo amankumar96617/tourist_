@@ -125,8 +125,7 @@
       <a href="./src/html/form.html" onclick="document.getElementById('add place').style.display='block'">Add Place</a>
       <a href="./src/html/view.html" onclick="document.getElementById('view place').style.display='block'">View Places</a>
       <a href="./src/html/user-view.html" onclick="document.getElementById('views users').style.display='block'">View Users</a>
-      <a href="#" onclick="document.getElementById('users feedback').style.display='block'">User Feedback</a>
-      <a href="#">Logout</a>
+      <a href="Logout" onclick="document.getElementById('Logout').style.display='block'">Logout</a>
     </div>
   </div>
 
@@ -167,6 +166,17 @@
       const navLinks = document.getElementById("navLinks");
       navLinks.classList.toggle("show");
     }
+   
+  document.getElementById("logoutBtn").addEventListener("click", function(e) {
+    e.preventDefault(); // Default anchor behavior ko roke
+
+    // LocalStorage se login data remove karo
+    localStorage.removeItem("loggedInUser");
+
+    // Login page par redirect karo
+    window.location.href = "admin.html"; // Apne login page ka naam yahan set karo
+  });
+
     </script>
 </body>
 </html>

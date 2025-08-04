@@ -3,38 +3,29 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Responsive Table & Navbar</title>
+  <title>Place Table View</title>
   <style>
-    * {
-      box-sizing: border-box;
-    }
-
     body {
-      margin: 0;
       font-family: Arial, sans-serif;
-      background-color: #f5f7fa;
+      margin: 0;
+      padding: 20px;
+      background-color: #f5f5f5;
     }
 
-    /* Navbar */
     .navbar {
-      background: #2c66b8;
-      color: white;
+      background-color: blue;
+      padding: 15px 20px;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 12px 20px;
+      color: white;
+      flex-wrap: wrap;
       position: relative;
     }
 
     .navbar h1 {
       margin: 0;
       font-size: 22px;
-    }
-
-    .menu-toggle {
-      display: none;
-      font-size: 24px;
-      cursor: pointer;
     }
 
     .nav-links {
@@ -45,112 +36,130 @@
     .nav-links a {
       color: white;
       text-decoration: none;
-      font-size: 16px;
+      font-weight: bold;
+    }
+
+    .menu-toggle {
+      display: none;
+      font-size: 26px;
+      cursor: pointer;
+      position: absolute;
+      right: 20px;
+      top: 15px;
     }
 
     @media (max-width: 768px) {
-      .menu-toggle {
-        display: block;
+      .navbar {
+        flex-direction: column;
+        align-items: flex-start;
       }
 
       .nav-links {
         display: none;
         flex-direction: column;
-        background: #2c66b8;
         width: 100%;
-        position: absolute;
-        top: 60px;
-        left: 0;
+        margin-top: 10px;
       }
 
-      .nav-links.active {
+      .nav-links.show {
         display: flex;
       }
 
-      .nav-links a {
-        padding: 10px;
-        border-top: 1px solid #ffffff33;
+      .menu-toggle {
+        display: block;
+        position: static;
+        align-self: flex-end;
+        margin-top: 10px;
       }
     }
 
-    /* Table */
     .table-container {
-      padding: 20px;
       overflow-x: auto;
+      max-width: 100%;
     }
 
     table {
       width: 100%;
       border-collapse: collapse;
-      background: white;
-      box-shadow: 0 0 10px #ccc;
+      background-color: #fff;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     }
 
     th, td {
       padding: 12px;
-      border-bottom: 1px solid #ddd;
       text-align: left;
-      vertical-align: top;
+      border-bottom: 1px solid #ddd;
     }
 
     th {
-      background-color: #2c66b8;
+      background-color: #007bff;
       color: white;
     }
 
-    img {
-      width: 100px;
-      height: 70px;
-      object-fit: cover;
-      border-radius: 4px;
+    td img {
+      max-width: 100px;
+      height: auto;
     }
 
-    button {
-      padding: 6px 12px;
+    .action-btn {
+      padding: 5px 10px;
+      margin-right: 5px;
       border: none;
+      border-radius: 5px;
       cursor: pointer;
-      margin: 3px 0;
-      border-radius: 4px;
-      color: white;
     }
 
     .edit-btn {
-      background-color: #00bcd4;
+      background-color: #00BCD4;
+      color: white;
     }
 
     .delete-btn {
       background-color: #f44336;
+      color: white;
     }
 
-    input, textarea {
-      width: 100%;
-      padding: 6px;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-      font-family: inherit;
-      font-size: 14px;
+    .edit-btn:hover, .delete-btn:hover {
+      opacity: 0.8;
+    }
+
+    .editable {
+      background-color: #f9f9f9;
+    }
+
+    @media (max-width: 600px) {
+      th, td {
+        padding: 8px;
+        font-size: 14px;
+      }
+
+      td img {
+        max-width: 80px;
+      }
+
+      .table-container {
+        padding: 0;
+      }
     }
   </style>
 </head>
 <body>
 
-  <!-- Navbar -->
+  <!-- ✅ Navbar -->
   <div class="navbar">
-    <h1>SmaertTravel</h1>
+    <h1>SmartTravel</h1>
     <div class="menu-toggle" onclick="toggleMenu()">☰</div>
     <div class="nav-links" id="navLinks">
-      <a href="../index.html" onclick="document.getElementById('Home').style.display='block'">Home</a>
-      <a href="./html/form.html" onclick="document.getElementById('add place').style.display='block'">Add Place</a>
-      <a href="./html/view.html" onclick="document.getElementById('view place').style.display='block'">View Places</a>
-      <a href="./html/user-view.html" onclick="document.getElementById('views users').style.display='block'">View Users</a>
-      <a href="#" onclick="document.getElementById('users feedback').style.display='block'">User Feedback</a>
-      <a href="#">Logout</a>
+      <a href="../index.html">Home</a>
+      <a href="./form.html">Add Place</a>
+      <a href="./view.html">View Places</a>
+      <a href="./user-view.html">View Users</a>
+      <a href="admin.html" id="logoutBtn">Logout</a>
     </div>
   </div>
 
-  <!-- Table -->
   <div class="table-container">
-    <table id="dataTable">
+    <table>
       <thead>
         <tr>
           <th>Image</th>
@@ -158,81 +167,100 @@
           <th>Name</th>
           <th>Tags</th>
           <th>Description</th>
-          <th>Actions</th>
+          <th>Edit</th>
+          <th>Delete</th>
         </tr>
       </thead>
-      <tbody>
-        <tr>
-          <td><img src="/image/beach1.jpg" /></td>
-          <td>101</td>
-          <td>Phyang Gompa</td>
-          <td>Beach</td>
-          <td>Historically, the region included the Baltiyul valleys...</td>
-          <td>
-            <button class="edit-btn" onclick="editRow(this)">Edit</button>
-            <button class="delete-btn" onclick="deleteRow(this)">Delete</button>
-          </td>
-        </tr>
-        <tr>
-          <td><img src="/image/beach2.jpg" /></td>
-          <td>102</td>
-          <td>Nubra Valley</td>
-          <td>Beach</td>
-          <td>Historically, the region included the Baltiyul valleys...</td>
-          <td>
-            <button class="edit-btn" onclick="editRow(this)">Edit</button>
-            <button class="delete-btn" onclick="deleteRow(this)">Delete</button>
-          </td>
-        </tr>
-        <tr>
-          <td><img src="/image/beach3.jpg" /></td>
-          <td>103</td>
-          <td>Kerala Beach</td>
-          <td>Beach</td>
-          <td>Kerala is an Indian state located in its Malabar Coast...</td>
-          <td>
-            <button class="edit-btn" onclick="editRow(this)">Edit</button>
-            <button class="delete-btn" onclick="deleteRow(this)">Delete</button>
-          </td>
-        </tr>
+      <tbody id="data-table">
+        <!-- Dynamic rows from JS -->
       </tbody>
     </table>
   </div>
 
+  <!-- ✅ Script Section -->
   <script>
     function toggleMenu() {
-      const nav = document.getElementById("navLinks");
-      nav.classList.toggle("active");
+      const navLinks = document.getElementById("navLinks");
+      navLinks.classList.toggle("show");
     }
 
-    function editRow(btn) {
-      const row = btn.closest("tr");
-      const cells = row.querySelectorAll("td");
-      if (btn.textContent === "Edit") {
-        for (let i = 1; i <= 4; i++) {
-          const value = cells[i].innerText;
-          if (i === 4) {
-            cells[i].innerHTML = <textarea>${value}</textarea>;
-          } else {
-            cells[i].innerHTML = <input type="text" value="${value}"/>;
-          }
-        }
-        btn.textContent = "Save";
-      } else {
-        for (let i = 1; i <= 4; i++) {
-          const input = cells[i].querySelector("input, textarea");
-          cells[i].innerText = input.value;
-        }
-        btn.textContent = "Edit";
+    // ✅ Logout
+    document.getElementById("logoutBtn").addEventListener("click", function(e) {
+      e.preventDefault();
+      localStorage.removeItem("loggedInUser");
+      window.location.href = "admin.html";
+    });
+
+    // ✅ On page load, display data
+    window.addEventListener("DOMContentLoaded", function () {
+      const tableBody = document.getElementById("data-table");
+      const data = JSON.parse(localStorage.getItem("places")) || [];
+
+      tableBody.innerHTML = '';
+
+      data.forEach((place, index) => {
+        const row = document.createElement("tr");
+        row.innerHTML = `
+          <td><img src="${place.image}" width="100" /></td>
+          <td>${place.id}</td>
+          <td class="editable" contenteditable="false">${place.name}</td>
+          <td class="editable" contenteditable="false">${place.tags}</td>
+          <td class="editable" contenteditable="false">${place.description}</td>
+          <td><button class="action-btn edit-btn" onclick="toggleEdit(this)">Edit</button></td>
+          <td><button class="action-btn delete-btn" onclick="deleteRow(${index})">Delete</button></td>
+        `;
+        tableBody.appendChild(row);
+      });
+    });
+
+    // ✅ Delete Function
+    function deleteRow(index) {
+      if (confirm("Are you sure you want to delete this entry?")) {
+        let places = JSON.parse(localStorage.getItem("places")) || [];
+        places.splice(index, 1);
+        localStorage.setItem("places", JSON.stringify(places));
+        location.reload();
       }
     }
 
-   function toggleDropdown() {
-      const nav = document.getElementById('navbar');
-      nav.classList.toggle('show');
+    // ✅ Edit/Save Function
+    function toggleEdit(button) {
+      const row = button.closest("tr");
+      const editableCells = row.querySelectorAll(".editable");
+      const isEditing = button.textContent === "Save";
+
+      if (isEditing) {
+        button.textContent = "Edit";
+        editableCells.forEach(cell => {
+          cell.contentEditable = "false";
+          cell.style.backgroundColor = "#f9f9f9";
+        });
+
+        const id = row.children[1].textContent;
+        const name = row.children[2].textContent;
+        const tags = row.children[3].textContent;
+        const description = row.children[4].textContent;
+
+        let places = JSON.parse(localStorage.getItem("places")) || [];
+        const index = places.findIndex(p => p.id == id);
+
+        if (index !== -1) {
+          places[index].name = name;
+          places[index].tags = tags;
+          places[index].description = description;
+          localStorage.setItem("places", JSON.stringify(places));
+        }
+
+        alert("Changes saved!");
+      } else {
+        button.textContent = "Save";
+        editableCells.forEach(cell => {
+          cell.contentEditable = "true";
+          cell.style.backgroundColor = "#fff";
+          cell.focus();
+        });
+      }
     }
   </script>
-   
-
 </body>
 </html>

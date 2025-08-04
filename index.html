@@ -11,6 +11,45 @@
         margin: 0%;
         padding: 0%;
     }
+    .menu-toggle {
+      display: none;
+      font-size: 26px;
+      cursor: pointer;
+      position: absolute;
+      right: 10px;
+      top: 10px;
+
+    }
+    .togglebtn{
+        position: relative;
+        width: 100%;
+        
+    }
+    /* Toggle Button Styling 
+    .toggle {
+  font-size: 1.8rem;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  display: none;
+  transition: transform 0.3s ease;
+   }
+
+  /* Toggle icon rotation (optional effect)
+  .toggle.active {
+  transform: rotate(90deg);
+   }
+*/
+  
+   @media (max-width: 768px) {
+  .menu-toggle {
+        display: block;
+        position: static;
+        align-self: flex-end;
+        margin-top: 10px;
+      }
+   }
     @font-face{
         font-family: "Dongle-light";
         src:url("Dongle/dongle-light.ttf");
@@ -207,6 +246,9 @@ footer p{
                 <a href="#"> <img src="./image/logo.jpg" alt="logo"></a>
             </div>
             <nav class="nav-menu">
+                <div class="togglebtn">
+                    <button class="menu-toggle" onclick="toggleMenu">☰</button>
+                </div>
                 <ul>
                     <li><a href="#"  onclick="document.getElementById('Home').style.display='block'">Home</a></li>
                     <li><a href="#"  onclick="document.getElementById('aboutsection').style.display='block'">About</a></li>
@@ -258,6 +300,14 @@ footer p{
 
         </footer>
    </main>
+<script>
+      //toogle button ke liye
+      function toggleMenu() {
+      const navLinks = document.getElementById("navLinks");
+      navLinks.classList.toggle("show");
+    }
+
+</script>
    
 </body>
 </html>

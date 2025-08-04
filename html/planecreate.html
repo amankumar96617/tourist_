@@ -3,29 +3,24 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Dropdown Navbar + Feedback</title>
+  <title>Multiple Location Map</title>
   <style>
-    * {
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f5f7fa;
       margin: 0;
       padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: Arial, sans-serif;
-      background: url('https://images.unsplash.com/photo-1549921296-3a5c090c4c0e') no-repeat center center/cover;
-      min-height: 100vh;
     }
 
     /* ✅ Navbar */
     nav {
-      background-color: rgba(0, 0, 0, 0.7);
+      background-color: blue;
       color: white;
       padding: 12px 24px;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      position: fixed;
+      
       width: 100%;
       top: 0;
       z-index: 1000;
@@ -58,7 +53,7 @@
     }
 
     ul.nav-links li a.active {
-      background-color: #2ac3f2;
+      
       color: white;
     }
 
@@ -95,85 +90,178 @@
         }
       }
     }
-
-    /* ✅ Form */
-    .form-container {
-      margin: 120px auto 40px auto;
-      max-width: 500px;
-      background: rgba(255, 255, 255, 0.95);
-      padding: 30px;
-      border-radius: 10px;
-      box-shadow: 0 0 15px rgba(0,0,0,0.2);
-    }
-
-    .form-group {
-      margin-bottom: 20px;
-    }
-
-    .form-group label {
-      display: block;
-      margin-bottom: 8px;
-      font-weight: bold;
-    }
-
-    .form-group input,
-    .form-group textarea {
+    .container {
+      max-width: 960px;
+      margin: auto;
+      
+      margin-top: 100px;
+      text-align: center;
+      top: 0%;
       width: 100%;
       padding: 10px;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-      font-size: 16px;
+      left: 20%;
     }
 
-    .submit-btn {
-      background-color: #2ac3f2;
-      color: white;
-      padding: 10px 24px;
-      border: none;
-      border-radius: 4px;
+    h2 {
+      text-align: center;
+      color: #333;
+    }
+
+    .checkboxes {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      justify-content: center;
+      margin: 20px 0;
+    }
+
+    .checkboxes label {
+      background: #fff;
+      padding: 8px 16px;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
       cursor: pointer;
-      font-size: 16px;
-      transition: background 0.3s;
+      transition: background 0.2s ease;
     }
 
-    .submit-btn:hover {
-      background-color: #1a9dc7;
+    .checkboxes label:hover {
+      background-color: #e0f0ff;
+    }
+
+    button {
+      display: block;
+      margin: 20px auto;
+      padding: 12px 24px;
+      background-color: #1a73e8;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    button:hover {
+      background-color: #0c59c9;
+    }
+
+    #map {
+      height: 500px;
+      width: 100%;
+      margin-top: 30px;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     }
   </style>
 </head>
 <body>
-
-  <!-- ✅ NAV -->
-  <nav>
+<nav>
     <div class="logo">SmartTravel</div>
     <div class="menu-toggle" onclick="toggleDropdown()">☰</div>
     <ul class="nav-links" id="navbar">
-      <li><a href="#">FEEDBACK</a></li>
+      <li><a href="./feedback.html" onclick="document.getElementById('Home').style.display='block'">FEEDBACK</a></li>
       <li><a href="#" class="active">CREATE PLAN</a></li>
-      <li><a href="#">LOGOUT</a></li>
+      <li><a href="Logout" onclick="document.getElementById('Home').style.display='block'">LOGOUT</a></li>
     </ul>
   </nav>
 
-  <!-- ✅ FORM -->
-  <div class="form-container">
-    <div class="form-group">
-      <label for="userid">UserId</label>
-      <input type="text" id="userid" value="101" />
+  <div class="container">
+    <h2>Select Locations to Display on Map</h2>
+
+    <div class="checkboxes">
+      <label><input type="checkbox" value="patna" /> Patna</label>
+      <label><input type="checkbox" value="Mumbai" /> Mumbai</label>
+      <label><input type="checkbox" value="Punjab" />Punjab</label>
+      <label><input type="checkbox" value="Chennai" /> Chennai</label>
+      <label><input type="checkbox" value="Kolkata" /> Kolkata</label>
+      <label><input type="checkbox" value="Lucknow" /> Lucknow</label>
     </div>
-    <div class="form-group">
-      <label for="feedback">Feedback</label>
-      <textarea id="feedback" rows="5"></textarea>
-    </div>
-    <button class="submit-btn">Submit</button>
+
+    <button onclick="showMap()">Show Selected Locations</button>
+
+    <div id="map"></div>
   </div>
 
   <!-- ✅ JS -->
+
+  
+
+<script>
+  document.getElementById("logoutBtn").addEventListener("click", function(e) 
+  { e.preventDefault(); // Default anchor behavior ko roke
+     // LocalStorage se login data remove karo
+    localStorage.removeItem("loggedInUser");
+    // Login page par redirect karo
+    window.location.href = "login.html"; // Apne login page ka naam yahan set karo
+     });
+</script>
   <script>
     function toggleDropdown() {
       const nav = document.getElementById('navbar');
       nav.classList.toggle('show');
     }
   </script>
+  <script>
+    const locations = {
+      "Patna": { lat: 28.6139, lng: 77.2090 },
+      "Mumbai": { lat: 19.0760, lng: 72.8777 },
+      "Punjab": { lat: 12.9716, lng: 77.5946 },
+      "Chennai": { lat: 13.0827, lng: 80.2707 },
+      "Kolkata": { lat: 22.5726, lng: 88.3639 },
+      "Lucknow": { lat: 26.8467, lng: 80.9462 }
+    };
 
+    let map;
+
+    function showMap() {
+      const selected = [];
+      document.querySelectorAll('input[type="checkbox"]:checked').forEach(cb => {
+        const loc = locations[cb.value];
+        if (loc) selected.push({ name: cb.value, ...loc });
+      });
+
+      if (selected.length === 0) {
+        alert("Please select at least one location.");
+        return;
+      }
+
+      map = new google.maps.Map(document.getElementById("map"), {
+        zoom: 5,
+        center: selected[0],
+      });
+
+      const bounds = new google.maps.LatLngBounds();
+      const pathCoords = [];
+
+      selected.forEach(loc => {
+        const marker = new google.maps.Marker({
+          position: { lat: loc.lat, lng: loc.lng },
+          map: map,
+          title: loc.name
+        });
+        bounds.extend(marker.getPosition());
+        pathCoords.push(marker.getPosition());
+      });
+
+      if (pathCoords.length > 1) {
+        const line = new google.maps.Polyline({
+          path: pathCoords,
+          geodesic: true,
+          strokeColor: "#FF0000",
+          strokeOpacity: 1.0,
+          strokeWeight: 2
+        });
+        line.setMap(map);
+      }
+
+      map.fitBounds(bounds);
+    }
+  </script>
+
+    
+  <!-- 🔑 Replace YOUR_API_KEY below with your actual API key -->
+  <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY"></script>
+  
 </body>
 </html>
