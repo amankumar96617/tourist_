@@ -171,6 +171,35 @@ height: 200px;
     background-color: #333;
 
 }
+.about{
+    text-align: center;
+    padding: 100px;
+}
+.about h3{
+    font-family: "Dongle-bold";
+    font-size: 3rem;
+}
+.about p{
+    font-family: "Dongle-regular";
+    font-size: 1.4rem;
+    line-height: 1;
+    margin-bottom: 40px;
+}
+.team-member{
+    display: flex;
+    flex-wrap: wrap;
+
+}
+.team-member{
+    width: 300px;
+    height: 300px;
+    margin: 20px;
+    object-fit: cover;
+}
+.team-member{
+    font-size: "Dongle-bold";
+    font-size: 2rem;
+}
 footer{
     background-color: #333;
     color: #fff;
@@ -251,7 +280,7 @@ footer p{
                 </div>
                 <ul>
                     <li><a href="#"  onclick="document.getElementById('Home').style.display='block'">Home</a></li>
-                    <li><a href="#"  onclick="document.getElementById('aboutsection').style.display='block'">About</a></li>
+                    <li><a href="./html/about.html"  onclick="document.getElementById('aboutsection').style.display='block'">About</a></li>
                     <li><a href="./html/contactus.html"  onclick="document.getElementById('contactsection').style.display='block'">Contact</a></li>
                     <li><a href="./html/userlogin.html"  onclick="document.getElementById('loginform').style.display='block'">User</a></li>
                     <li><a href="./html/admin.html"  onclick="document.getElementById('adminform').style.display='block'">Admin</a></li>
@@ -275,21 +304,57 @@ footer p{
                 <li><i class="fa-solid fa-phone"></i>966-176-1533</li>
             </ul>
             </div>
-            <form action="" class="form">
+            <form class="form" id="contact-form">
                 <div class="form-group">
-                    <input type="name" name="name" id="name" placeholder="Enter your name">
+                    <input type="text" name="name"  placeholder="Enter your name">
                     
                 </div>
                 <div class="form-group">
-                    <input type="email" name="email" id="email" placeholder="Enter your email">
+                    <input type="email" name="email"  placeholder="Enter your email">
                 </div>
                 <div class="form-group">
-                    <textarea name="textarea" id="textarea" rows="10" cols="30" placeholder="Message"></textarea>
+                    <textarea name="message"  rows="10" cols="30" placeholder="message"></textarea>
                     
                 </div>
                 <button type="submit">Send Message</button>
             </form>
         </section>
+        <section class="about">
+            <h3>About Us</h3>
+            <p>Our website is dedicate to providing the best travel exprrience to our customers.
+                 we specialize in creating custom <br> intineraries that cater to each
+                 individual's interessts and preferences.
+            </p>
+            <div class="team member">
+                <h3>Meet Our Team</h3>
+                <div class="team-member">
+                    <img src="./image/priyanshu.jpg" alt="leader">
+                    <h4>Aman Kumar</h4>
+                    <p>Leader/ Backend  Developer</p>
+                </div>
+                <div class="team-member">
+                    <img src="./image/priyanshu.jpg" alt="member-1">
+                    <h4>Simaran Kumari</h4>
+                    <p>Backend Developer</p>
+                </div>
+                <div class="team-member">
+                    <img src="./image/priyanshu.jpg" alt="member-2">
+                    <h4>Priyanshu Kumar</h4>
+                    <p>Frontend Developer</p>
+                </div>
+                <div class="team-member">
+                    <img src="./image/priyanshu.jpg" alt="member-3">
+                    <h4>Chandani Kumari</h4>
+                    <p>Frontend Developer</p>
+                </div>
+                <div class="team-member">
+                    <img src="./image/priyanshu.jpg" alt="member-4">
+                    <h4>Ajit Kumar </h4>
+                    <p>Tester</p>
+                </div>
+            </div>
+        </section>
+
         <footer>
             <div class="social-icon">
                <a href="https://m.facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
@@ -299,7 +364,9 @@ footer p{
             <p>&copy;Aman</p>
 
         </footer>
+
    </main>
+
 <script>
       //toogle button ke liye
       function toggleMenu() {
@@ -308,6 +375,29 @@ footer p{
     }
 
 </script>
-   
+<!-- EmailJS SDK load -->
+<script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
+</script>
+
+<script type="text/javascript">
+  // Initialize with your EmailJS Public Key
+  (function () {
+    emailjs.init("Zl4vO7YztsGjaFsYD");  // Replace this with your actual public key
+  })();
+
+  // Form Submit Event
+  document.getElementById("contact-form").addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    emailjs.sendForm("service_hb2t49s", "template_37c6fba", this)
+      .then(function () {
+        alert("Message sent successfully!");
+      }, function (error) {
+        alert("FAILED... " + JSON.stringify(error));
+        console.log("Error:", error);  // Debug in console
+      });
+  });
+</script>
 </body>
 </html>

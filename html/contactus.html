@@ -270,16 +270,16 @@ footer p{
       </div>
     </div>
   </div>
-            <form action="" class="form">
+            <form  class="form" id="contact-form">
                 <div class="form-group">
-                    <input type="name" name="name" id="name" placeholder="Enter your name">
+                    <input type="text" name="name" id="name" placeholder="Enter your name">
                     
                 </div>
                 <div class="form-group">
-                    <input type="email" name="email" id="email" placeholder="Enter your email">
+                    <input type="email" name="email"  placeholder="Enter your email">
                 </div>
                 <div class="form-group">
-                    <textarea name="textarea" id="textarea" rows="10" cols="30" placeholder="Message"></textarea>
+                    <textarea name="message"  rows="10" cols="30" placeholder="message"></textarea>
                     
                 </div>
                 <button type="submit">Send Message</button>
@@ -294,5 +294,29 @@ footer p{
             <p>&copy; Aman</p>
 
         </footer>
+        <!-- EmailJS SDK load -->
+<script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
+</script>
+
+<script type="text/javascript">
+  // Initialize with your EmailJS Public Key
+  (function () {
+    emailjs.init("Zl4vO7YztsGjaFsYD");  // Replace this with your actual public key
+  })();
+
+  // Form Submit Event
+  document.getElementById("contact-form").addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    emailjs.sendForm("service_hb2t49s", "template_37c6fba", this)
+      .then(function () {
+        alert("Message sent successfully!");
+      }, function (error) {
+        alert("FAILED... " + JSON.stringify(error));
+        console.log("Error:", error);  // Debug in console
+      });
+  });
+</script>
 </body>
 </html>
