@@ -11,7 +11,7 @@
         margin: 0%;
         padding: 0%;
     }
-@font-face {
+ @font-face {
   font-family: "Dongle-Bold";
   src: url("Dongle/dongle-Bold.ttf");
 }
@@ -246,15 +246,15 @@ footer p{
 </style>
 <body>
     
-        <header>
-            <div class="header-container">
-            <div class="logo">
-                <a href="#"> <img src="./image/logo.jpg" alt="logo"></a>
+    <header>
+        <div class="header-container">
+        <div class="logo">
+            <a href="#"> <img src="./image/logo.jpg" alt="logo"></a>
+        </div>
+        <nav class="nav-menu">
+            <div class="togglebtn">
+                <button class="menu-toggle" onclick="toggleMenu()">☰</button>
             </div>
-            <nav class="nav-menu">
-                <div class="togglebtn">
-                    <button class="menu-toggle" onclick="toggleMenu()">☰</button>
-                </div>
                 <ul>
                     <li><a href="#" onclick="document.getElementById('Home').style.display='block'">Home</a></li>
                     <li><a href="./html/about.html"  onclick="document.getElementById('aboutsection').style.display='block'">About</a></li>
@@ -263,8 +263,8 @@ footer p{
                     <li><a href="./html/admin.html"  onclick="document.getElementById('adminform').style.display='block'">Admin</a></li>
                     <li><a href="./html/register.html"  onclick="document.getElementById('Register').style.display='block'">Register</a></li>
                 </ul>
-            </nav>
-            </div>
+        </nav>
+        </div>
     </header>
     <main>
         <section class="hero">
