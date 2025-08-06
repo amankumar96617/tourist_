@@ -8,21 +8,25 @@
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background: url('https://images.unsplash.com/photo-1549921296-3a5c090c4c0e') no-repeat center center/cover;
+      background: url('https://images.unsplash.com/photo-1549921296-3a5c090c4c0e')
+     no-repeat center center/cover;
       min-height: 100vh;
+      background: #3f8efc;
     }
      /* ✅ Navbar */
     .navbar {
-      background-color: blue;
+      background-color: #fff;
       padding: 15px 20px;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      color: white;
+      color: black;
       flex-wrap: wrap;
       position: relative;
     }
-
+    .logo img{
+    max-width: 15%;
+    }
     .navbar h1 {
       margin: 0;
       font-size: 22px;
@@ -34,9 +38,13 @@
     }
 
     .nav-links a {
-      color: white;
+      color: black;
       text-decoration: none;
       font-weight: bold;
+      transition: 0.3s;
+    }
+    .nav-links a:hover{
+      color:#ff5fff;
     }
 
     .menu-toggle {
@@ -55,7 +63,9 @@
         align-items: flex-start;
         transition: 03.s;
       }
-
+      .logo img {
+        max-width: 50%;
+    }
       .nav-links {
         display: none;
         flex-direction: column;
@@ -66,7 +76,9 @@
       .nav-links.show {
         display: flex;
       }
-
+      .nav-links a:hover{
+          color: gray;
+    }
       .menu-toggle {
         display: block;
         position: static;
@@ -77,7 +89,7 @@
 
 
     .table-container {
-      background: rgba(255, 255, 255, 0.95);
+      background:#f2f2f2;
       border-radius: 10px;
       box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
       margin: 40px auto 0 auto; /* Top margin only */
@@ -118,7 +130,9 @@
 </head>
 <body>
   <div class="navbar">
-    <h1>SmartTravel</h1>
+     <div class="logo">
+        <a href="#"> <img src="../image/logo.jpg" alt="logo"></a>
+      </div>
     <div class="menu-toggle" onclick="toggleMenu()">☰</div>
     <div class="nav-links" id="navLinks">
       <a href="../index.html" onclick="document.getElementById('Home').style.display='block'">Home</a>

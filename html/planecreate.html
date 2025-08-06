@@ -14,8 +14,8 @@
 
     /* ✅ Navbar */
     nav {
-      background-color: blue;
-      color: white;
+      background-color:#fff;
+      color: gray;
       padding: 12px 24px;
       display: flex;
       justify-content: space-between;
@@ -31,6 +31,9 @@
       font-weight: bold;
       font-size: 18px;
     }
+    .logo img{
+    max-width: 15%;
+    }
 
     .menu-toggle {
       display: none;
@@ -45,23 +48,37 @@
     }
 
     ul.nav-links li a {
-      color: white;
+      color: black;
       text-decoration: none;
       padding: 8px 16px;
       border-radius: 4px;
-      transition: background 0.3s;
+      transition:  0.3s;
+      font-size: 1.2rem;
+      font-family: "Dongle-bold";
+    }
+    .nav-links li a:hover{
+      color:#ff5fff;
     }
 
     ul.nav-links li a.active {
       
-      color: white;
+      color: black;
+      font-size: 1.2rem;
+      font-family: "Dongle-bold";
     }
+    .nav-links li a.active:hover{
+      color:#ff5fff ;
+    }
+
 
     /* ✅ Responsive dropdown */
     @media (max-width: 768px) {
       .menu-toggle {
         display: block;
       }
+      .logo img {
+        max-width: 50%;
+    }
 
       ul.nav-links {
         position: absolute;
@@ -121,7 +138,7 @@
       border-radius: 8px;
       box-shadow: 0 2px 6px rgba(0,0,0,0.1);
       cursor: pointer;
-      transition: background 0.2s ease;
+      transition: 0.2s;
     }
 
     .checkboxes label:hover {
@@ -157,7 +174,9 @@
 </head>
 <body>
 <nav>
-    <div class="logo">SmartTravel</div>
+    <div class="logo">
+      <a href="#"> <img src="../image/logo.jpg" alt="logo"></a>
+    </div>
     <div class="menu-toggle" onclick="toggleDropdown()">☰</div>
     <ul class="nav-links" id="navbar">
       <li><a href="./feedback.html" onclick="document.getElementById('Home').style.display='block'">FEEDBACK</a></li>

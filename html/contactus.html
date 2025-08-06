@@ -10,7 +10,7 @@
     .body{
         margin: 0%;
         padding: 0%;
-        background: lightgray;
+        background:#2e5567;
         }
 
     .team-container {
@@ -41,6 +41,21 @@
       transform: scale(1.05);
       background: #ffa500;
     }
+     .read-btn:hover {
+      background-color:gray;
+    }
+    .read-btn{
+      margin-top: 10px;
+      padding: 6px 12px;
+     
+      border: none;
+      font-size: 22px;
+      border-radius: 6px;
+      cursor: pointer;
+      align-items: flex-start;
+      font-family: "Dongle-bold";
+    }
+
 
     .card img {
       width: 120px;
@@ -74,20 +89,20 @@
         max-width: 300px;
       }
     }
-    .body{
-        margin: 0%;
-        padding: 0%;
-    }
     .contact{
     padding: 10px 80px 80px 80px;
     margin-top: 5px;
     text-align: center;
-    background-color: white;
+    background-color:#2e5567;
 
 }
 .contact h3{
     font-family: "dongle-bold";
     font-size: 3rem;
+}
+.contact p{
+  font-size: 1.4rem;
+  font-family: "dongle-regular";
 }
 .contact-info p{
     font-size: 1.4rem;
@@ -226,77 +241,156 @@ footer p{
     
     <div class="contact">
             <h3>Contact Us</h3>
-            <div class="contact-info">
-            <p>If you have any question please fill out the form below or 
-                contact us using the information provided</p>
-            <ul>
-                <li><i class="fas fa-map-marker-alt"></i>123 Main St,Anytown Patna</li>
-                <li><i class="fa-solid fa-envelope"></i>aman123@gmail.com</li>
-                <li><i class="fa-solid fa-phone"></i>966-176-1533</li>
-            </ul>
-            </div>
+            <p>Have a question or need help with your travel plans?<br> Our friendly
+               team is here to help you. You can reach out to us anytime – we’ll get
+                back to you as soon as <br> Whether it’s about bookings, destinations,
+                 or general info, we’re happy to assist you.</p>
             <div class="team-container">
-    <!-- Team Leader Centered -->
-    <div class="row">
-      <div class="card">
-        <img src="../image/aman.jpg" alt="Leader" />
-        <h3>Aman Kumar</h3>
-        <p>Team Leader and Tester</p>
-      </div>
-    </div>
-
-    <!-- All Members in One Row -->
-    <div class="row">
-      <div class="card">
-        <img src="../image/priyanshu.jpg" alt="Member 1" />
-        <h3>Priyanshu Kumar</h3>
-        <p>Frontend Developer</p>
-      </div>
-      <div class="card">
-        <img src="../image/simaran.jpg" alt="Member 3" />
-        <h3>Simaran Kumari</h3>
-        <p>Backend Developer</p>
-      </div>
-      <div class="card">
-        <img src="../image/chandani.jpg" alt="Member 2" />
-        <h3>Chandani Kumari</h3>
-        <p>UI/UX Designer</p>
-      </div>
-      
-      <div class="card">
-        <img src="../image/ajit.jpg" alt="Member 4" />
-        <h3>Ajit Kumar</h3>
-        <p>Frontend Developer</p>
+  <!-- Team Leader Centered -->
+  <div class="row">
+    <div class="card">
+      <img src="../image/aman.jpg" alt="Leader" />
+      <h3>Aman Kumar</h3>
+      <p>Team Leader and Backend Developer</p>
+      <div class="box">
+        <p>
+          <strong>Aman</strong> is a passionate software developer
+          <span class="dots">...</span>
+          <span class="more" style="display: none;">
+            who builds clean and efficient web pages using HTML, CSS, and JavaScript. 
+            He is highly skilled in developing interactive web applications with dynamic features. 
+            His knowledge of Python has enabled him to develop robust back-end solutions. 
+            Aman also has experience with Java, which he has used to automate systems and Android app development.
+          </span>
+        </p>
+        <button class="read-btn" onclick="toggleText(this)">Read</button>
       </div>
     </div>
   </div>
-            <form  class="form" id="contact-form">
-                <div class="form-group">
-                    <input type="text" name="name" id="name" placeholder="Enter your name">
-                    
-                </div>
-                <div class="form-group">
-                    <input type="email" name="email"  placeholder="Enter your email">
-                </div>
-                <div class="form-group">
-                    <textarea name="message"  rows="10" cols="30" placeholder="message"></textarea>
-                    
-                </div>
-                <button type="submit">Send Message</button>
-            </form>
-        </div>
-        <footer>
-            <div class="social-icon">
-               <a href="https://m.facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
-               <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
-               <a href="https://twitter.com/login" target="_blank"><i class="fab fa-twitter"></i></a>
-            </div>
-            <p>&copy; Aman</p>
 
-        </footer>
-        <!-- EmailJS SDK load -->
+  <!-- All Members in One Row -->
+  <div class="row">
+
+    <div class="card">
+      <img src="../image/priyanshu.jpg" alt="Member 1" />
+      <h3>Priyanshu Kumar</h3>
+      <p>Frontend Developer</p>
+      <div class="box">
+        <p>
+          <strong>Priyanshu</strong> is a frontend expert
+          <span class="dots">...</span>
+          <span class="more" style="display: none;">
+            who specializes in building responsive layouts and interactive UIs using HTML, CSS, and JavaScript. 
+            His designs are modern and mobile-friendly, with a strong focus on usability.
+          </span>
+        </p>
+        <button class="read-btn" onclick="toggleText(this)">Read</button>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="../image/simaran.jpg" alt="Member 2" />
+      <h3>Simaran Kumari</h3>
+      <p>Backend Developer</p>
+      <div class="box">
+        <p>
+          <strong>Simaran</strong> is skilled in server-side programming
+          <span class="dots">...</span>
+          <span class="more" style="display: none;">
+            with experience in Python and Node.js. She builds secure, fast, and scalable backend systems and APIs.
+          </span>
+        </p>
+        <button class="read-btn" onclick="toggleText(this)">Read</button>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="../image/chandani.jpg" alt="Member 3" />
+      <h3>Chandani Kumari</h3>
+      <p>UI/UX Designer</p>
+      <div class="box">
+        <p>
+          <strong>Chandani</strong> brings ideas to life through beautiful design
+          <span class="dots">...</span>
+          <span class="more" style="display: none;">
+            by focusing on user experience, clean layouts, and intuitive interfaces using tools like Figma and Adobe XD.
+          </span>
+        </p>
+        <button class="read-btn" onclick="toggleText(this)">Read</button>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="../image/ajit.jpg" alt="Member 4" />
+      <h3>Ajit Kumar</h3>
+      <p>Tester</p>
+      <div class="box">
+        <p>
+          <strong>Ajit</strong> crafts pixel-perfect interfaces
+          <span class="dots">...</span>
+          <span class="more" style="display: none;">
+            Ajit ensures that the system works smoothly by performing proper testing and bug fixing.
+          </span>
+        </p>
+        <button class="read-btn" onclick="toggleText(this)">Read</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ✅ JavaScript (One Script for All Cards) -->
+<script>
+  function toggleText(button) {
+    const box = button.closest('.box');
+    const dots = box.querySelector('.dots');
+    const more = box.querySelector('.more');
+
+    if (more.style.display === "none" || more.style.display === "") {
+      more.style.display = "inline";
+      dots.style.display = "none";
+      button.innerText = "Read Less";
+    } else {
+      more.style.display = "none";
+      dots.style.display = "inline";
+      button.innerText = "Read";
+    }
+  }
+</script>
+<div class="contact-info">
+  <p>If you have any question please fill out the form below or 
+    contact us using the information provided.</p>
+  <ul>
+    <li><i class="fas fa-map-marker-alt"></i>123 Main St,Anytown Patna</li>
+    <li><i class="fa-solid fa-envelope"></i>aman123@gmail.com</li>
+    <li><i class="fa-solid fa-phone"></i>966-176-1533</li>
+  </ul>
+</div>
+
+<form  class="form" id="contact-form">
+  <div class="form-group">
+  <input type="text" name="name" id="name" placeholder="Enter your name">
+</div>
+<div class="form-group">
+  <input type="email" name="email"  placeholder="Enter your email">
+</div>
+<div class="form-group">
+  <textarea name="message"  rows="10" cols="30" placeholder="message"></textarea>
+</div>
+<button type="submit">Send Message</button>
+</form>
+</div>
+<footer>
+  <div class="social-icon">
+    <a href="https://m.facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
+    <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+    <a href="https://twitter.com/login" target="_blank"><i class="fab fa-twitter"></i></a>
+  </div>
+  <p>&copy; Aman</p>
+</footer>
+<!-- EmailJS SDK load -->
 <script type="text/javascript"
-        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
+  src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
 </script>
 
 <script type="text/javascript">
@@ -318,5 +412,7 @@ footer p{
       });
   });
 </script>
+
+
 </body>
 </html>

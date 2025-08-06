@@ -11,94 +11,98 @@
         margin: 0%;
         padding: 0%;
     }
-    .menu-toggle {
-      display: none;
-      font-size: 26px;
-      cursor: pointer;
-      position: absolute;
-      right: 10px;
-      top: 10px;
+@font-face {
+  font-family: "Dongle-Bold";
+  src: url("Dongle/dongle-Bold.ttf");
+}
 
-    }
-    .togglebtn{
-        position: relative;
-        width: 100%;
-        
-    }
-    /* Toggle Button Styling 
-    .toggle {
-  font-size: 1.8rem;
-  background: none;
-  border: none;
-  color: white;
-  cursor: pointer;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+header {
+  background-color: #fff;
+  padding: 15px 30px;
+  position: relative;
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Logo stays on the left */
+.logo img {
+  max-width: 120px;
+}
+
+/* Navigation menu goes to right in desktop */
+.nav-menu {
+  margin-left: auto;
+}
+
+.nav-menu ul {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+}
+
+.nav-menu a {
+  text-decoration: none;
+  font-family: "Dongle-Bold";
+  font-size: 1.6rem;
+  color: #333;
+  transition: 0.3s;
+}
+
+.nav-menu a:hover {
+  color: #ff7fff;
+}
+
+/* Hide toggle button in desktop */
+.menu-toggle {
   display: none;
-  transition: transform 0.3s ease;
-   }
+}
 
-  /* Toggle icon rotation (optional effect)
-  .toggle.active {
-  transform: rotate(90deg);
-   }
-*/
-  
-   @media (max-width: 768px) {
+/* ✅ Mobile view */
+@media (max-width: 768px) {
   .menu-toggle {
-        display: block;
-        position: static;
-        align-self: flex-end;
-        margin-top: 10px;
-      }
-   }
-    @font-face{
-        font-family: "Dongle-light";
-        src:url("Dongle/dongle-light.ttf");
-    }
-    @font-face{
-        font-family: "Dongle-regular";
-        src:url("Dongle/dongle-regular.ttf");
-    }
-    @font-face{
-        font-family: "Dongle-Bold";
-        src:url("Dongle/dongle-Bold.ttf");
-    }
-header{
-    display: flex;
-    padding: 20px;
+    display: block;
+    font-size: 28px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+  }
+
+  .nav-menu ul {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    right: 20px;
     background-color: #fff;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1 );
-    align-items: center;
+    padding: 15px;
+    width: auto;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    border-radius: 10px;
+    z-index: 999;
+    text-align: center;
+  }
 
-}
-.logo img{
-    max-width: 15%;
-
-}
-.nav-menu ul{
+  .nav-menu.active ul {
     display: flex;
-}
-.nav-menu li{
-    list-style: none;
-    margin-right: 20px;
-}
-.nav-menu li:last-child{
-    margin-right: 0%;
-}
-.nav-menu a{
-    text-decoration: none;
-   font-family:"Dongle-Bold";
-   font-size: 1.6rem;
-   color: #333;
-   transition: 0.3s;
-
-}
-.nav-menu a:hover{
-    color: #ff7fff ;
+  }
 }
 .contact{
     padding: 80px;
     text-align: center;
-    background-color: #f7f7f7;
+    background-color: #2e5567;
 
 }
 .contact h3{
@@ -171,35 +175,7 @@ height: 200px;
     background-color: #333;
 
 }
-.about{
-    text-align: center;
-    padding: 100px;
-}
-.about h3{
-    font-family: "Dongle-bold";
-    font-size: 3rem;
-}
-.about p{
-    font-family: "Dongle-regular";
-    font-size: 1.4rem;
-    line-height: 1;
-    margin-bottom: 40px;
-}
-.team-member{
-    display: flex;
-    flex-wrap: wrap;
 
-}
-.team-member{
-    width: 300px;
-    height: 300px;
-    margin: 20px;
-    object-fit: cover;
-}
-.team-member{
-    font-size: "Dongle-bold";
-    font-size: 2rem;
-}
 footer{
     background-color: #333;
     color: #fff;
@@ -269,17 +245,18 @@ footer p{
 
 </style>
 <body>
-    <header>
+    
         <header>
+            <div class="header-container">
             <div class="logo">
                 <a href="#"> <img src="./image/logo.jpg" alt="logo"></a>
             </div>
             <nav class="nav-menu">
                 <div class="togglebtn">
-                    <button class="menu-toggle" onclick="toggleMenu">☰</button>
+                    <button class="menu-toggle" onclick="toggleMenu()">☰</button>
                 </div>
                 <ul>
-                    <li><a href=""  onclick="document.getElementById('Home').style.display='block'">Home</a></li>
+                    <li><a href="#" onclick="document.getElementById('Home').style.display='block'">Home</a></li>
                     <li><a href="./html/about.html"  onclick="document.getElementById('aboutsection').style.display='block'">About</a></li>
                     <li><a href="./html/contactus.html"  onclick="document.getElementById('contactsection').style.display='block'">Contact</a></li>
                     <li><a href="./html/login.html"  onclick="document.getElementById('loginform').style.display='block'">User</a></li>
@@ -287,7 +264,7 @@ footer p{
                     <li><a href="./html/register.html"  onclick="document.getElementById('Register').style.display='block'">Register</a></li>
                 </ul>
             </nav>
-        </header>
+            </div>
     </header>
     <main>
         <section class="hero">
@@ -319,41 +296,7 @@ footer p{
                 <button type="submit">Send Message</button>
             </form>
         </section>
-        <section class="about">
-            <h3>About Us</h3>
-            <p>Our website is dedicate to providing the best travel exprrience to our customers.
-                 we specialize in creating custom <br> intineraries that cater to each
-                 individual's interessts and preferences.
-            </p>
-            <div class="team member">
-                <h3>Meet Our Team</h3>
-                <div class="team-member">
-                    <img src="./image/priyanshu.jpg" alt="leader">
-                    <h4>Aman Kumar</h4>
-                    <p>Leader/ Backend  Developer</p>
-                </div>
-                <div class="team-member">
-                    <img src="./image/priyanshu.jpg" alt="member-1">
-                    <h4>Simaran Kumari</h4>
-                    <p>Backend Developer</p>
-                </div>
-                <div class="team-member">
-                    <img src="./image/priyanshu.jpg" alt="member-2">
-                    <h4>Priyanshu Kumar</h4>
-                    <p>Frontend Developer</p>
-                </div>
-                <div class="team-member">
-                    <img src="./image/priyanshu.jpg" alt="member-3">
-                    <h4>Chandani Kumari</h4>
-                    <p>Frontend Developer</p>
-                </div>
-                <div class="team-member">
-                    <img src="./image/priyanshu.jpg" alt="member-4">
-                    <h4>Ajit Kumar </h4>
-                    <p>Tester</p>
-                </div>
-            </div>
-        </section>
+        
 
         <footer>
             <div class="social-icon">
@@ -364,16 +307,13 @@ footer p{
             <p>&copy;Aman</p>
 
         </footer>
-
-   </main>
+    </main>
 
 <script>
-      //toogle button ke liye
-      function toggleMenu() {
-      const navLinks = document.getElementById("navLinks");
-      navLinks.classList.toggle("show");
-    }
-
+  function toggleMenu() {
+    const nav = document.querySelector('.nav-menu');
+    nav.classList.toggle('active');
+  }
 </script>
 <!-- EmailJS SDK load -->
 <script type="text/javascript"
