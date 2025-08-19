@@ -60,13 +60,13 @@
       color:#ff5fff;
     }
 
-    ul.nav-links li a.active {
+    ul.nav-links li a{
       
       color: black;
       font-size: 1.2rem;
       font-family: "Dongle-bold";
     }
-    .nav-links li a.active:hover{
+    .nav-links li a:hover{
       color:#ff5fff ;
     }
 
@@ -179,9 +179,10 @@
     </div>
     <div class="menu-toggle" onclick="toggleDropdown()">☰</div>
     <ul class="nav-links" id="navbar">
-      <li><a href="./feedback.html" onclick="document.getElementById('Home').style.display='block'">FEEDBACK</a></li>
-      <li><a href="#" class="active">CREATE PLAN</a></li>
-      <li><a href="Logout" onclick="document.getElementById('Home').style.display='block'">LOGOUT</a></li>
+      <li><a href="../index.html" onclick="document.getElementById('Home').style.display='block'">Home</a></li>
+      <li><a href="./feedback.html" onclick="document.getElementById('feedback').style.display='block'">Feedback</a></li>
+      <li><a href="#" onclick="document.getElementById('createplan').style.display='block'">Create Plan</a></li>
+      <li><a href="Logout" onclick="document.getElementById('logout').style.display='block'">Logout</a></li>
     </ul>
   </nav>
 

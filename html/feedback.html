@@ -66,7 +66,7 @@
       color: #ff5fff;
     }
 
-    .nav-links li a.active {
+    .nav-links li a{
       
       color: #333;
       font-size: 1.4rem;
@@ -149,7 +149,7 @@
       border-radius: 4px;
       cursor: pointer;
       font-size: 16px;
-      transition: background 0.3s;
+      transition:0.3s;
     }
 
     .submit-btn:hover {
@@ -166,9 +166,10 @@
       </div>
     <div class="menu-toggle" onclick="toggleDropdown()">☰</div>
     <ul class="nav-links" id="navbar">
-      <li><a href="#" onclick="document.getElementById('Home').style.display='block'">FEEDBACK</a></li>
-      <li><a href="./planecreate.html" onclick="document.getElementById('Home').style.display='block'">CREATE PLAN</a></li>
-      <li><a href="Logout" onclick="document.getElementById('Home').style.display='block'">LOGOUT</a></li>
+      <li><a href="../index.html" onclick="document.getElementById('Home').style.display='block'">Home</a></li>
+      <li><a href="#" onclick="document.getElementById('feedback').style.display='block'">Feedback</a></li>
+      <li><a href="./planecreate.html" onclick="document.getElementById('planecreate').style.display='block'">Create Plan</a></li>
+      <li><a href="Logout" onclick="document.getElementById('logout').style.display='block'">Logout</a></li>
     </ul>
   </nav>
 

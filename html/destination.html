@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Popular Destinations</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<style>
+    * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+  background: linear-gradient(to right, #00c9ff, #92fe9d);
+  padding: 20px;
+}
+
+.destinations h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  color: #fff;
+}
+
+.destination-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.box {
+  text-decoration: none;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease;
+  background-color: white;
+}
+
+.box img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.box:hover {
+  transform: scale(1.03);
+}
+
+.box:hover img {
+  transform: scale(1.1);
+}
+
+.caption {
+  text-align: center;
+  padding: 15px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #333;
+}
+</style>
+<body>
+  <section class="destinations">
+    <h2>Popular Destinations</h2>
+    <div class="destination-grid">
+      <a href="destination.html?place=Goa" width="100px" hight="100px" class="box">
+        <img src="../image/beach3.jpg" alt="Goa" />
+        <div class="caption">Goa</div>
+      </a>
+      <a href="destination.html?place=Kerala" class="box">
+        <img src="kerala.jpg" alt="Kerala" />
+        <div class="caption">Kerala</div>
+      </a>
+      <a href="destination.html?place=Mysore" width="100px" hight="100px" class="box">
+        <img src="../image/bodhgaya.jpg" alt="Bodhgaya" />
+        <div class="caption">Bodhgaya Bihar</div>
+      </a>
+      <a href="destination.html?place=Ladakh" class="box">
+        <img src="ladakh.jpg" alt="Ladakh" />
+        <div class="caption">Ladakh</div>
+      </a>
+      <a href="destination.html?place=Agra" class="box">
+        <img src="agra.jpg" alt="Agra" />
+        <div class="caption">Agra</div>
+      </a>
+      <a href="destination.html?place=Delhi" class="box">
+        <img src="delhi.jpg" alt="Delhi" />
+        <div class="caption">Delhi</div>
+      </a>
+      <a href="destination.html?place=Konark" class="box">
+        <img src="konark.jpg" alt="Konark" />
+        <div class="caption">Konark</div>
+      </a>
+      <a href="destination.html?place=Rajasthan" class="box">
+        <img src="rajasthan.jpg" alt="Rajasthan" />
+        <div class="caption">Rajasthan</div>
+      </a>
+      <a href="destination.html?place=Shimla" class="box">
+        <img src="shimla.jpg" alt="Shimla" />
+        <div class="caption">Shimla</div>
+      </a>
+      <a href="destination.html?place=Manali" class="box">
+        <img src="manali.jpg" alt="Manali" />
+        <div class="caption">Manali</div>
+      </a>
+      <a href="destination.html?place=Varanasi" class="box">
+        <img src="varanasi.jpg" alt="Varanasi" />
+        <div class="caption">Varanasi</div>
+      </a>
+      <a href="destination.html?place=Udaipur" class="box">
+        <img src="udaipur.jpg" alt="Udaipur" />
+        <div class="caption">Udaipur</div>
+      </a>
+      <a href="destination.html?place=Kolkata" class="box">
+        <img src="kolkata.jpg" alt="Kolkata" />
+        <div class="caption">Kolkata</div>
+      </a>
+      <a href="destination.html?place=Amritsar" class="box">
+        <img src="amritsar.jpg" alt="Amritsar" />
+        <div class="caption">Amritsar</div>
+      </a>
+      <a href="destination.html?place=Rishikesh" class="box">
+        <img src="rishikesh.jpg" alt="Rishikesh" />
+        <div class="caption">Rishikesh</div>
+      </a>
+      <a href="destination.html?place=Andaman" class="box">
+        <img src="andaman.jpg" alt="Andaman" />
+        <div class="caption">Andaman</div>
+      </a>
+    </div>
+  </section>
+</body>
+</html>
