@@ -131,82 +131,7 @@ header {
     display: flex;
   }
 }
-.contact{
-    padding: 80px;
-    text-align: center;
-    background-color: #2e5567;
 
-}
-.contact h3{
-    font-family: "dongle-bold";
-    font-size: 3rem;
-}
-.contact-info p{
-    font-size: 1.4rem;
-    font-family: "dongle-regular";
-    margin-bottom: 20px;
-
-
-}
-.contact-info ul{
-    list-style: none;
-    border: none;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 40px;
-
-
-}
-.contact-info li{
-    margin: 0 20px;
-    font-family: "dongle-bold";
-    font-size: 1rem;
-    display: flex;
-    align-items: center;
-}
-.contact-info li a{
-    text-decoration: none;
-    font-family: "dongle-regular";
-    color: black;
-}
-.contact-info i{
-    font-size: 24px;
-    margin-right: 10px;
-}
-.form{
-    width: 100%;
-
-}
-input,textarea{
-    width: 70%;
-    padding: 10px 0;
-    margin: 20px 0;
-    border: none;
-    box-shadow: 0 0 5PX rgba(0,0,0,0.1);
-    border-radius: 5PX;
-    font-size: 1.1rem;
-    font-family: "dongle-regular";
-}
-textarea{
-height: 200px;
-}
-.form button{
-    display: inline-block;
-    text-decoration: none;
-    color: #fff;
-    background-color: #ff7f50;
-    padding: 12px 30px;
-    border-radius: 50px;
-    font-size: 1.6rem;
-    transition: 0.3s;
-    border: none;
-}
-.form-button:hover{
-    background-color: #333;
-
-}
 
 footer{
     background-color: #333;
@@ -248,22 +173,7 @@ footer p{
         margin: 10px 0;
     }
 
-    .contact {
-        padding: 40px 20px;
-    }
-
-    .contact-info ul {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .contact-info li {
-        margin: 10px 0;
-    }
-
-    input, textarea {
-        width: 100%;
-    }
+    
 
     footer {
         flex-direction: column;
@@ -289,51 +199,28 @@ footer p{
             </div>
                 <ul>
                     <li><a href="#" onclick="document.getElementById('Home').style.display='block'">Home</a></li>
+                    <li><a href="./html/destination.html"  onclick="document.getElementById('destination').style.display='block'">Destination</a></li>
+                    <li><a href="./html/map.html"  onclick="document.getElementById('travel').style.display='block'">Travel Info</a></li>
+                    <li><a href="./html/culture.html"  onclick="document.getElementById('').style.display='block'">Culture</a></li>
+                    <li><a href="./html/food.html"  onclick="document.getElementById('').style.display='block'">Food</a></li>
                     <li><a href="./html/about.html"  onclick="document.getElementById('about').style.display='block'">About</a></li>
                     <li><a href="./html/contactus.html"  onclick="document.getElementById('contact').style.display='block'">Contact</a></li>
-                    <li><a href="./html/destination.html"  onclick="document.getElementById('destination').style.display='block'">Destination</a></li>
-                    <li><a href="./html/login.html"  onclick="document.getElementById('loginform').style.display='block'">User</a></li>
-                    <li><a href="./html/admin.html"  onclick="document.getElementById('adminform').style.display='block'">Admin</a></li>
-                    <li><a href="./html/register.html"  onclick="document.getElementById('Register').style.display='block'">Register</a></li>
                 </ul>
         </nav>
         </div>
     </header>
     <main>
         <div class="slider">
-            <img src="./image/island.jpg" class="active">
-            <img src="./image/pinkcity.jpg">
-            <img src="./image/taj mahal.jpg">
-            <img src="./image/lotustemple.jpg">
-            <img src="./image/rainfall.jpg">
+            <img src="./image/airport.jpg" class="active">
+            <img src="./image/janakpur.jpg">
+            <img src="./image/mountain .jpg">
+            <img src="./image/chat puja.jpg">
+            <img src="./image/guru dhawra.jpg">
+            <img src="./image/musem.jpg">
+            <img src="./image/naini.jpg">
+            <img src="./image/sitamarhi.jpg">
         </div>
-           <section class="contact">
-            <h3>Contact Us</h3>
-            <div class="contact-info">
-            <p>If you have any question please fill out the form below or 
-                contact us using the information provided</p>
-            <ul>
-                <li><i class="fas fa-map-marker-alt"></i>B.K.N.S.G.P Gopalganj,Bihar</li>
-                <li><i class="fa-solid fa-envelope"></i>amank29118@gmail.com</li>
-                <li><i class="fa-solid fa-phone"></i>966-176-1533</li>
-            </ul>
-            </div>
-            <form class="form" id="contact-form">
-                <div class="form-group">
-                    <input type="text" name="name"  placeholder="Enter your name">
-                    
-                </div>
-                <div class="form-group">
-                    <input type="email" name="email"  placeholder="Enter your email">
-                </div>
-                <div class="form-group">
-                    <textarea name="message"  rows="10" cols="30" placeholder="message"></textarea>
-                    
-                </div>
-                <button type="submit">Send Message</button>
-            </form>
-        </section>
-        
+           
 
         <footer>
             <div class="social-icon">

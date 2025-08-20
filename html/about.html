@@ -2,220 +2,94 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>About Us</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Us - Bihar Tourism</title>
+  <script src="https://cdn.tailwindcss.com"></script>
   <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background-color: #2e5567;
+    /* Keyframes */
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeInLeft {
+      from { opacity: 0; transform: translateX(-30px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+    @keyframes fadeInRight {
+      from { opacity: 0; transform: translateX(30px); }
+      to { opacity: 1; transform: translateX(0); }
     }
 
-    .about {
-      text-align: center;
-      padding: 20px 20px;
-    }
-
-    .about h3 {
-      font-size: 3rem;
-      padding: 10px;
-      margin-top: 0;
-      text-align: center;
-    }
-
-    .about p {
-      font-size: 1.3rem;
-      line-height: 1.6;
-      margin-bottom: 20px;
-      max-width: 800px;
-      margin-left: auto;
-      margin-right: auto;
-      
-    }
-
-    .team-section {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 40px;
-    }
-
-    .leader-box,
-    .team-member {
-      background-color: rgb(146, 65, 65);
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-      padding: 20px;
-      width: 260px;
-      transition: background-color 0.3s ease, transform 0.2s ease;
-    }
-
-    .leader-box:hover,
-    .team-member:hover {
-      background-color: gray;
-      transform: translateY(-4px);
-    }
-
-    .leader-box img,
-    .team-member img {
-      width: 100%;
-      height: 230px;
-      object-fit: cover;
-      border-radius: 10px;
-    }
-
-    .leader-box h4,
-    .team-member h4 {
-      font-size: 1.4rem;
-      margin-top: 10px;
-    }
-
-.leader-box p,
-.team-member p {
-  font-size: 0.95rem;
-  margin: 6px 0;
-}
-
-.team-row {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 40px;
-    .form button{
-    display: inline-block;
-    text-decoration: none;
-    color: #fff;
-    background-color: #ff7f50;
-    padding: 12px 30px;
-    border-radius: 50px;
-    font-size: 1.6rem;
-    transition: 0.3s;
-    border: none;
-}
-.form-button:hover{
-    background-color: #333;
-
-}
-}
-footer {
-  background-color: #333;
-  color: #fff;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  padding: 20px ;
-}
-.social-icon {
-  display: flex;
-  gap: 20px;
-}
-
-.social-icon a {
-  color: white;
-  font-size: 24px;
-  text-decoration: none;
-  transition: 0.3s;
-}
-
-.social-icon a:hover {
-  color: #ff7f50;
-}
-
-footer p {
-  margin: 0;
-  font-size: 1.2rem;
-}
-
-@media (max-width: 768px) {
-  footer {
-    flex-direction: column;
-    text-align: center;
-    gap: 10px;
-  }
-
-  .social-icon {
-    justify-content: center;
-    margin-bottom: 10px;
-  }
-}
-
-    @media (max-width: 600px) {
-      .team-row {
-        flex-direction: column;
-        gap: 20px;
-      }
-
-      .leader-box, .team-member {
-        width: 90%;
-        max-width: 320px;
-      }
-       
-    }
+    .animate-fadeUp { animation: fadeInUp 1s ease-out forwards; }
+    .animate-fadeLeft { animation: fadeInLeft 1s ease-out forwards; }
+    .animate-fadeRight { animation: fadeInRight 1s ease-out forwards; }
   </style>
 </head>
-<body>
+<body class="bg-gray-50 text-gray-800 font-sans">
 
-  <section class="about">
-    <h3>About Us</h3>
-    <p>
-      Smart Travel is a user-friendly website designed to make travel planning easier and smarter.
-      It helps users find the best routes, manage bookings, and explore destinations efficiently.
-      Our goal is to provide a smooth, safe, and time-saving travel experience using modern technology.
-    </p>
+  <!-- Header -->
+  <header class="bg-gradient-to-r from-yellow-600 to-yellow-500 text-white py-6 shadow-lg sticky top-0 z-50">
+    <div class="max-w-6xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between">
+      <h1 class="text-3xl font-bold tracking-wide animate-fadeLeft">Bihar Tourism</h1>
+      <p class="text-lg mt-2 sm:mt-0 italic animate-fadeRight">Discover the Soul of India</p>
+    </div>
+  </header>
 
-    <div class="team-section">
-      <!-- Leader Box -->
-      <div class="leader-box">
-        <img src="../image/aman.jpg" alt="Leader">
-        <h4>Aman Kumar</h4>
-        <p><strong>Team Leader/Backend Developer</strong><br>
-          Aman is responsible for managing the entire team and ensuring smooth backend operations.</p>
+  <!-- About Us Section -->
+  <section class="max-w-6xl mx-auto px-4 py-16">
+    <div class="text-center mb-14 animate-fadeUp">
+      <h2 class="text-4xl font-extrabold text-yellow-700 mb-4 drop-shadow-lg">About Us</h2>
+      <p class="text-lg text-gray-600">Unveiling the heritage, culture, and beauty of Bihar</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+      <!-- Left Text -->
+      <div class="space-y-8 animate-fadeLeft">
+        <div>
+          <h3 class="text-2xl font-semibold mb-3 text-yellow-700">Who We Are</h3>
+          <p class="leading-relaxed text-gray-700">We are a dedicated platform created to showcase the rich heritage, vibrant culture, and natural beauty of Bihar. From the spiritual calmness of Bodh Gaya to the historical wonders of Patna, and from the artistic Madhubani paintings to the legacy of Nalanda – we bring the essence of Bihar closer to the world.</p>
+        </div>
+
+        <div>
+          <h3 class="text-2xl font-semibold mb-3 text-yellow-700">Our Mission</h3>
+          <ul class="list-disc list-inside space-y-2 text-gray-700">
+            <li>Promote Bihar as a world-class tourist destination.</li>
+            <li>Provide authentic and updated travel information.</li>
+            <li>Encourage sustainable tourism while preserving heritage.</li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="text-2xl font-semibold mb-3 text-yellow-700">Why Choose Us?</h3>
+          <ul class="list-disc list-inside space-y-2 text-gray-700">
+            <li>Verified and reliable information.</li>
+            <li>Comprehensive travel guides, tips, and itineraries.</li>
+            <li>Special focus on hidden gems and local experiences.</li>
+          </ul>
+        </div>
       </div>
 
-      <!-- Row 1: Simaran & Chandani -->
-      <div class="team-row">
-        <div class="team-member">
-          <img src="../image/simaran.jpg" alt="Simaran">
-          <h4>Simran Kumari</h4>
-          <p><strong>Backend Developer</strong><br>
-            She works with Python and database systems to build powerful server-side logic.</p>
-        </div>
-        <div class="team-member">
-          <img src="../image/chandani.jpg" alt="Chandani">
-          <h4>Chandani Kumari</h4>
-          <p><strong>UI/UX Designer</strong><br>
-            Chandani focuses on crafting intuitive and beautiful user experiences for our clients.</p>
-        </div>
-      </div>
-
-      <!-- Row 2: Priyanshu & Ajit -->
-      <div class="team-row">
-        <div class="team-member">
-          <img src="../image/priyanshu.jpg" alt="Priyanshu">
-          <h4>Priyanshu Kumar</h4>
-          <p><strong>Frontend Developer</strong><br>
-            Priyanshu designs responsive layouts using HTML, CSS, and JavaScript.</p>
-        </div>
-        <div class="team-member">
-          <img src="../image/ajit.jpg" alt="Ajit">
-          <h4>Ajit Kumar</h4>
-          <p><strong>Tester</strong><br>
-            Ajit ensures that the system works smoothly by performing proper testing and bug fixing.</p>
-        </div>
+      <!-- Right Image -->
+      <div class="relative group animate-fadeRight">
+        <img src="../image/patna digha.jpg" 
+             alt="Patna" 
+             class="rounded-2xl shadow-2xl transform group-hover:scale-105 transition duration-700 ease-in-out" />
+        <div class="absolute inset-0 bg-black bg-opacity-20 rounded-2xl group-hover:bg-opacity-5 transition"></div>
       </div>
     </div>
-    
+
+    <!-- Closing Line -->
+    <div class="mt-16 text-center animate-fadeUp">
+      <p class="text-2xl font-semibold text-gray-700 italic">“Bihar is not just a state, it is an experience. Join us in this journey! 🌿”</p>
+    </div>
   </section>
-  <footer>
-    <div class="social-icon">
-      <a href="https://m.facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
-      <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
-      <a href="https://twitter.com/login" target="_blank"><i class="fab fa-twitter"></i></a>
-    </div>
-    <p>&copy;SmartTravel</p>
-  </footer>
 
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-gray-300 py-6 mt-12">
+    <div class="max-w-6xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between">
+      <p>&copy; 2025 Bihar Tourism. All rights reserved.</p>
+      <p class="mt-2 sm:mt-0">Made with ❤ in Bihar</p>
+    </div>
+  </footer>
 </body>
 </html>

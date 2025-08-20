@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bihar Famous Foods</title>
+  <style>
+    body { margin: 0; font-family: "Segoe UI", sans-serif; background: #fffaf5; color: #333; }
+    
+    /* Header */
+    header {
+      background: linear-gradient(135deg, #7a3e2f, #b84c3c);
+      color: white;
+      text-align: center;
+      padding: 60px 20px;
+    }
+    header h1 { margin: 0; font-size: 2.8rem; }
+    header p { margin: 10px 0 0; font-size: 1.2rem; }
+
+    /* Section */
+    section { padding: 50px 20px; max-width: 1200px; margin: auto; }
+    h2 { text-align: center; margin-bottom: 30px; color: #7a3e2f; font-size: 2rem; }
+
+    /* Grid Layout */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 25px;
+    }
+
+    /* Card */
+    .card {
+      background: white;
+      border-radius: 15px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      overflow: hidden;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 8px 18px rgba(0,0,0,0.2);
+    }
+    .card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+    .card h3 {
+      margin: 15px 10px 5px;
+      color: #b84c3c;
+      font-size: 1.3rem;
+    }
+    .card p {
+      margin: 0 10px 20px;
+      font-size: 0.95rem;
+      color: #555;
+    }
+
+    /* Footer */
+    footer {
+      background: #7a3e2f;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      header h1 { font-size: 2rem; }
+      header p { font-size: 1rem; }
+      .card img { height: 180px; }
+    }
+    @media (max-width: 480px) {
+      header { padding: 40px 15px; }
+      header h1 { font-size: 1.6rem; }
+      .card img { height: 160px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <h1>Flavours of Bihar</h1>
+    <p>Explore the famous traditional foods of Bihar</p>
+  </header>
+
+  <!-- Food Grid -->
+  <section>
+    <h2>Popular Dishes</h2>
+    <div class="grid">
+      <div class="card">
+        <img src="../image/liiti chokha.jpg" alt="Litti Chokha">
+        <h3>Litti Chokha</h3>
+        <p>The signature dish of Bihar made with sattu-stuffed litti served with baingan, aloo, and tomato chokha.</p>
+      </div>
+      <div class="card">
+        <img src="../image/sattu.jpg" alt="Sattu Paratha">
+        <h3>Sattu Paratha</h3>
+        <p>Healthy and tasty paratha stuffed with roasted gram flour, enjoyed with chutney or curd.</p>
+      </div>
+      <div class="card">
+        <img src="../image/khaja.jpg" alt="Khaja">
+        <h3>Khaja</h3>
+        <p>A flaky sweet similar to baklava, popular during weddings and festivals in Bihar.</p>
+      </div>
+      <div class="card">
+        <img src="../image/thekua.jpg" alt="Thekua">
+        <h3>Thekua</h3>
+        <p>A traditional fried sweet made with wheat flour and jaggery, offered during Chhath Puja.</p>
+      </div>
+      <div class="card">
+        <img src="../image/daal patha.jpg" alt="Dal Pitha">
+        <h3>Dal Pitha</h3>
+        <p>Steamed rice flour dumplings stuffed with spiced lentils, Bihar’s version of momos.</p>
+      </div>
+      <div class="card">
+        <img src="../image/malpua.jpg" alt="Malpua">
+        <h3>Malpua</h3>
+        <p>Sweet pancakes often served with rabri, a festive delicacy especially during Holi.</p>
+      </div>
+      <div class="card">
+        <img src="../image/kardhi bari.jpg" alt="Kadhi Bari">
+        <h3>Kadhi Bari</h3>
+        <p>Besan pakoras cooked in tangy yogurt-based curry, a homely and comforting Bihari dish.</p>
+      </div>
+      <div class="card">
+        <img src="../image/chiken curry.jpg" alt="Bihari Mutton Curry">
+        <h3>Bihari Mutton Curry</h3>
+        <p>Spicy, flavorful mutton curry cooked with traditional spices, a highlight of Bihari weddings.</p>
+      </div>
+      <div class="card">
+        <img src="../image/tilkut.jpg" alt="Tilkut">
+        <h3>Tilkut</h3>
+        <p>Special winter sweet from Gaya made with sesame seeds and jaggery.</p>
+      </div>
+      <div class="card">
+        <img src="../image/khir.jpg" alt="khir">
+        <h3>Khir</h3>
+        <p>Kheer is a traditional Bihari rice pudding made by slowly cooking rice in milk with sugar,
+           flavored with cardamom, and garnished with nuts, making it rich and creamy.</p>
+      </div>
+      <div class="card">
+        <img src="../image/khichdi.jpg" alt="khichdi">
+        <h3>khichdi</h3>
+        <p>Khichdi is a simple and comforting Bihari dish made by cooking rice and lentils together, 
+          often seasoned lightly with turmeric, salt, and ghee.</p>
+      </div>
+      <div class="card">
+        <img src="../image/baalusahi.jpg" alt="ballusahi">
+        <h3>Ballisahi</h3>
+        <p>Balushahi is a flaky, deep-fried sweet made from refined flour, lightly soaked in sugar syrup,
+           offering a crisp exterior with a soft, melt-in-the-mouth center.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Bihar Food Culture. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
