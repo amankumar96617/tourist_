@@ -8,32 +8,26 @@
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background: #f9fafb;
+      background:lightgray;
       color: #333;
     }
+.welcome{
+  text-align: center;
+}
 
-    /* Header */
-    header {
-      background: #e63946;
-      color: #fff;
-      padding: 1rem;
-      text-align: center;
-    }
-    header h1 {
-      margin: 0;
-      font-size: 1.8rem;
-    }
-    nav {
-      margin-top: 0.5rem;
-    }
-    nav a {
-      color: #fff;
-      margin: 0 10px;
-      text-decoration: none;
-      font-weight: bold;
-    }
-    nav a:hover {
-      text-decoration: underline;
+    header {background:#2c3e50; color:white; padding:15px 30px; position:sticky; top:0; z-index:1000;}
+    header nav {display:flex; justify-content:space-between; align-items:center;}
+    header .logo {font-size:1.8rem; font-weight:700;}
+    header ul {list-style:none; display:flex;}
+    header ul li {margin-left:25px;}
+    header ul li a {color:white; text-decoration:none; font-weight:500; transition: color 0.3s;}
+    header ul li a:hover {color:#f39c12;}
+    header .menu-toggle {display:none; cursor:pointer; font-size:1.5rem;}
+
+    @media(max-width:768px){
+        header ul {flex-direction:column; background:#34495e; position:absolute; top:60px; right:0; width:100%; display:none;}
+        header ul.show {display:flex;}
+        header .menu-toggle {display:block;}
     }
     .container {
       max-width: 1100px;
@@ -43,7 +37,7 @@
       gap: 1.5rem;
     }
     .card {
-      background: #fff;
+      background:#FFA07A;
       padding: 1rem 1.5rem;
       border-radius: 10px;
       box-shadow: 0 3px 8px rgba(0,0,0,0.1);
@@ -75,14 +69,7 @@
       border-radius: 10px;
     }
 
-    a {
-      color: #2563eb;
-      text-decoration: none;
-    }
-    a:hover {
-      text-decoration: underline;
-    }
-
+    
     /* Footer */
     footer {
       background: #1d3557;
@@ -123,14 +110,29 @@
 
   <!-- Header -->
   <header>
-    <h1>🚌 Bihar Tourism</h1>
+
     <nav>
-      <a href="#">Home</a>
-      <a href="#">Travel Info</a>
-      <a href="#">Destinations</a>
-      <a href="#">Contact</a>
+        <div class="logo"> 🚌Bihar Tourism</div>
+        <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+        <ul id="nav-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="./html/destination.html">Destination</a></li>
+            <li><a href="./html/travel info.html">Travel Info</a></li>
+            <li><a href="./html/culture.html">Culture</a></li>
+            <li><a href="./html/food.html">Food</a></li>
+            <li><a href="./html/about.html">About</a></li>
+            
+        </ul>
     </nav>
-  </header>
+</header>
+<section class="welcome" >
+<h1 class="text-5xl font-extrabold text-yellow-600 text-center mt-12 mb-4">
+  Discover the Wonders of Bihar
+</h1>
+<p class="text-xl text-gray-700 text-center mb-12">
+  Your complete guide to explore destinations, travel tips, and hidden gems in Bihar.
+</p>
+</section>
 
   <!-- Search -->
   <div class="search-box">
@@ -202,6 +204,37 @@
       });
     }
   </script>
+<script>
+    function toggleMenu(){
+        document.getElementById('nav-links').classList.toggle('show');
+    }
 
+    const scrollElements = document.querySelectorAll(".show-on-scroll");
+    const elementInView = (el, offset = 0) => {
+        const elementTop = el.getBoundingClientRect().top;
+        return elementTop <= ((window.innerHeight || document.documentElement.clientHeight) - offset);
+    };
+    const displayScrollElement = (element) => { element.classList.add('visible'); };
+    const hideScrollElement = (element) => { element.classList.remove('visible'); };
+    const handleScrollAnimation = () => {
+        scrollElements.forEach(el => {
+            if (elementInView(el, 100)) { displayScrollElement(el); }
+        });
+    };
+    window.addEventListener('scroll', handleScrollAnimation);
+    window.addEventListener('load', handleScrollAnimation);
+</script>
+<script>
+  let slides = document.querySelectorAll('.slide');
+  let current = 0;
+
+  function nextSlide(){
+    slides[current].classList.remove('active');
+    current = (current + 1) % slides.length;
+    slides[current].classList.add('active');
+  }
+
+  setInterval(nextSlide, 10000); // Change slide every 10 seconds
+</script>
 </body>
 </html>

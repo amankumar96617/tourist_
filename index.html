@@ -1,278 +1,403 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Travel website</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-</head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bihar Tourism</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
-    *{
-        margin: 0%;
-        padding: 0%;
-    }
- @font-face {
-  font-family: "Dongle-Bold";
-  src: url("Dongle/dongle-Bold.ttf");
-}
+    * {margin:0; padding:0; box-sizing:border-box; font-family:'Poppins', sans-serif;}
+    body {line-height:1.6; color:#333; scroll-behavior: smooth;}
+    
+    header {background:#2c3e50; color:white; padding:15px 30px; position:sticky; top:0; z-index:1000;}
+    header nav {display:flex; justify-content:space-between; align-items:center;}
+    header .logo {font-size:1.8rem; font-weight:700;}
+    header ul {list-style:none; display:flex;}
+    header ul li {margin-left:25px;}
+    header ul li a {color:white; text-decoration:none; font-weight:500; transition: color 0.3s;}
+    header ul li a:hover {color:#f39c12;}
+    header .menu-toggle {display:none; cursor:pointer; font-size:1.5rem;}
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-body {
-        background: #000;
-    }
-    .slider {
-        position: relative;
-        width: 100%;
-        height: 100vh; /* desktop default full height */
-        overflow: hidden;
-    }
-    .slider img {
-        width: 100%;
-        height: 100%;
-        object-fit: fill; /* desktop me full fill */
-        position: absolute;
-        top: 0;
-        left: 0;
-        opacity: 0;
-        transition: opacity 1s ease-in-out;
-    }
-    .slider img.active {
-        opacity: 1;
+    @media(max-width:768px){
+        header ul {flex-direction:column; background:#34495e; position:absolute; top:60px; right:0; width:100%; display:none;}
+        header ul.show {display:flex;}
+        header .menu-toggle {display:block;}
     }
 
-    /* Mobile adjustment */
-    @media (max-width: 768px) {
-        .slider {
-            height: auto; /* height image ke ratio ke hisab se */
-        }
-        .slider img {
-            position: relative;
-            object-fit: contain; /* stretch na ho, crop bhi na ho */
-        }
-    }
-header {
-  background-color: #fff;
-  padding: 15px 30px;
-  position: relative;
-}
-
-.header-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-/* Logo stays on the left */
-.logo img {
-  max-width: 120px;
-}
-
-/* Navigation menu goes to right in desktop */
-.nav-menu {
-  margin-left: auto;
-}
-
-.nav-menu ul {
-  display: flex;
-  gap: 20px;
-  list-style: none;
-}
-
-.nav-menu a {
-  text-decoration: none;
-  font-family: "Dongle-Bold";
-  font-size: 1.6rem;
-  color: #333;
-  transition: 0.3s;
-}
-
-.nav-menu a:hover {
-  color: #ff7fff;
-}
-
-/* Hide toggle button in desktop */
-.menu-toggle {
-  display: none;
-}
-
-/* ✅ Mobile view */
-@media (max-width: 768px) {
-  .menu-toggle {
-    display: block;
-    font-size: 28px;
-    background: none;
-    border: none;
-    cursor: pointer;
-    position: absolute;
-    top: 20px;
-    right: 20px;
+    .hero-slider{
+    position:relative;
+    height:90vh;
+    width:100%;
+    overflow:hidden;
   }
 
-  .nav-menu ul {
-    display: none;
-    flex-direction: column;
-    position: absolute;
-    top: 60px;
-    right: 20px;
-    background-color: #fff;
-    padding: 15px;
-    width: auto;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    border-radius: 10px;
-    z-index: 999;
-    text-align: center;
+  .slides .slide{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background-size:cover;
+    background-position:center;
+    opacity:0;
+    transition:opacity 1s ease-in-out;
   }
 
-  .nav-menu.active ul {
-    display: flex;
+  .slides .slide.active{
+    opacity:1;
   }
-}
+
+  .hero-content{
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%, -50%);
+    color:white;
+    text-align:center;
+    z-index:2;
+    padding:0 20px;
+  }
+.hero-content h1{
+    font-size:3rem;
+    margin-bottom:10px;
+    text-shadow: 2px 2px 10px rgba(0,0,0,0.6);
+  }
+
+  .hero-content p{
+    font-size:1.2rem;
+    margin-bottom:20px;
+    text-shadow: 2px 2px 10px rgba(0,0,0,0.6);
+  }
+
+  .btn{
+    padding:10px 25px;
+    background:#f39c12;
+    color:white;
+    text-decoration:none;
+    font-weight:bold;
+    border-radius:5px;
+    transition:0.3s;
+  }
+
+  .btn:hover{
+    background:#e67e22;
+  }
+  /* Responsive */
+  @media(max-width:768px){
+    .hero-content h1{
+      font-size:2rem;
+    }
+    .hero-content p{
+      font-size:1rem;
+    }
+  }
+
+  @media(max-width:480px){
+    .hero-content h1{
+      font-size:1.5rem;
+    }
+    .hero-content p{
+      font-size:0.9rem;
+    }
+  }
 
 
+    @keyframes fadeInUp {
+        to {opacity:1; transform:translateY(0);}
+    }
+
+    section {padding:60px 20px; text-align:center;}
+    section h2 {font-size:2.2rem; margin-bottom:40px; color:#2c3e50; position:relative;}
+    section h2::after {content:""; width:60px; height:3px; background:#f39c12; display:block; margin:10px auto 0; border-radius:2px;}
+
+    .destinations, .culture-food {display:grid; grid-template-columns:repeat(auto-fit, minmax(250px,1fr)); gap:20px;}
+
+    .card {
+        background:white; border-radius:10px; overflow:hidden; box-shadow:0 5px 15px rgba(0,0,0,0.1); transform:translateY(50px); opacity:0; transition:0.5s; cursor:pointer;
+    }
+    .card img {width:100%; height:200px; object-fit:cover;}
+    .card-content {padding:20px;}
+    .card-content h3 {margin-bottom:10px; color:#2c3e50;}
+    .card-content p {font-size:0.95rem; color:#555;}
+    .card:hover {transform:translateY(-10px); box-shadow:0 10px 25px rgba(0,0,0,0.2);}
+
+    
+
+    /* Scroll Animation */
+    .show-on-scroll {opacity:0; transform:translateY(50px); transition:all 0.8s ease-out;}
+    .show-on-scroll.visible {opacity:1; transform:translateY(0);}
+    footer{
+    background:#2c3e50;
+    color:white;
+    padding:40px 20px 20px;
+    text-align:center;
+  }
+  .footer-container{
+    display:flex;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    max-width:1200px;
+    margin:auto;
+    padding-bottom:20px;
+  }
+  .footer-links, .footer-social, .footer-contact{
+    flex:1 1 250px;
+    margin:10px;
+  }
+  .footer-links h3, .footer-social h3, .footer-contact h3{
+    margin-bottom:15px;
+    color:#f39c12;
+  }
+  .footer-links ul, .footer-contact ul{
+    list-style:none;
+    padding:0;
+  }
+  .footer-links ul li, .footer-contact ul li{
+    margin-bottom:10px;
+  }
 footer{
-    background-color:#333;
-    color: #fff;
-    display: flex;
-    justify-content: space-between;
-    padding: 20px;
-    align-items: center;
-
-}
-.social-icon a{
-    color: white;
-    font-size: 24px;
-    margin-right: 20px;
-
-
-}
-footer p{
-    font-family: "dongle-regular";
-    font-size: 1.4rem;
-
-}
-@media (max-width: 768px) {
-    header {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .logo img {
-        max-width: 50%;
-    }
-
-    .nav-menu ul {
-        flex-direction: column;
-        width: 100%;
-    }
-
-    .nav-menu li {
-        margin: 10px 0;
-    }
-
-    
-
-    footer {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .social-icon {
-        margin-bottom: 10px;
-    }
-}
-
-</style>
-<body>
-    
-    <header>
-        <div class="header-container">
-        <div class="logo">
-            <a href="#"> <img src="./image/logo.jpg" alt="logo"></a>
-        </div>
-        <nav class="nav-menu">
-            <div class="togglebtn">
-                <button class="menu-toggle" onclick="toggleMenu()">☰</button>
-            </div>
-                <ul>
-                    <li><a href="#" onclick="document.getElementById('Home').style.display='block'">Home</a></li>
-                    <li><a href="./html/destination.html"  onclick="document.getElementById('destination').style.display='block'">Destination</a></li>
-                    <li><a href="./html/travel info.html"  onclick="document.getElementById('travel').style.display='block'">Travel Info</a></li>
-                    <li><a href="./html/culture.html"  onclick="document.getElementById('culture').style.display='block'">Culture</a></li>
-                    <li><a href="./html/food.html"  onclick="document.getElementById('food').style.display='block'">Food</a></li>
-                    <li><a href="./html/about.html"  onclick="document.getElementById('about').style.display='block'">About</a></li>
-                    <li><a href="./html/contactus.html"  onclick="document.getElementById('contact').style.display='block'">Contact</a></li>
-                </ul>
-        </nav>
-        </div>
-    </header>
-    <main>
-        <div class="slider">
-            <img src="./image/airport.jpg" class="active">
-            <img src="./image/janakpur.jpg">
-            <img src="./image/mountain.jpg">
-            <img src="./image/chat puja.jpg">
-            <img src="./image/guru dhawra.jpg">
-            <img src="./image/musem.jpg">
-            <img src="./image/naini.jpg">
-            <img src="./image/sitamarhi.jpg">
-
-        </div>
-        <footer>
-            <div class="social-icon">
-               <a href="https://m.facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
-               <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
-               <a href="https://twitter.com/login" target="_blank"><i class="fab fa-twitter"></i></a>
-            </div>
-            <p>&copy;SmartTravel</p>
-
-        </footer>
-    </main>
-
-<script>
-  function toggleMenu() {
-    const nav = document.querySelector('.nav-menu');
-    nav.classList.toggle('active');
-
+    background:#2c3e50;
+    color:white;
+    padding:40px 20px 20px;
+    text-align:center;
   }
-</script>
-<!-- EmailJS SDK load -->
-<script type="text/javascript"
-        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
-</script>
+  .footer-container{
+    display:flex;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    max-width:1200px;
+    margin:auto;
+    padding-bottom:20px;
+  }
+  .footer-links, .footer-social, .footer-contact{
+    flex:1 1 250px;
+    margin:10px;
+  }
+  .footer-links h3, .footer-social h3, .footer-contact h3{
+    margin-bottom:15px;
+    color:#f39c12;
+  }
+  .footer-links ul, .footer-contact ul{
+    list-style:none;
+    padding:0;
+  }
+  .footer-links ul li, .footer-contact ul li{
+    margin-bottom:10px;
+  }
+footer{
+    background:#2c3e50;
+    color:white;
+    padding:40px 20px 20px;
+    text-align:center;
+  }
+  .footer-container{
+    display:flex;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    max-width:1200px;
+    margin:auto;
+    padding-bottom:20px;
+  }
+  .footer-links, .footer-social, .footer-contact{
+    flex:1 1 250px;
+    margin:10px;
+  }
+  .footer-links h3, .footer-social h3, .footer-contact h3{
+    margin-bottom:15px;
+    color:#f39c12;
+  }
+  .footer-links ul, .footer-contact ul{
+    list-style:none;
+    padding:0;
+  }
+  .footer-links ul li, .footer-contact ul li{
+    margin-bottom:10px;
+  }
+    .footer-links ul li a, .footer-contact ul li a{
+    color:white;
+    text-decoration:none;
+    transition:0.3s;
+  }
+  .footer-links ul li a:hover, .footer-contact ul li a:hover{
+    color:#f39c12;
+  }
+  .social-icons a{
+    font-size:1.5rem;
+    margin-right:15px;
+    color:white;
+    transition:0.3s;
+    text-decoration:none;
+  }
+  .social-icons a:hover{
+    color:#f39c12;
+  }
+  footer p{
+    margin-top:10px;
+    font-size:0.9rem;
+    color:#ccc;
+  }
+/* Responsive */
+  @media(max-width:768px){
+    .footer-container{
+      flex-direction:column;
+      align-items:center;
+      text-align:center;
+    }
+    .social-icons a{margin:0 10px;}
+  }
+</style>
+</head>
+<body>
 
-<script type="text/javascript">
-  // Initialize with your EmailJS Public Key
-  (function () {
-    emailjs.init("Zl4vO7YztsGjaFsYD");  // Replace this with your actual public key
-  })();
+<header>
+    <nav>
+        <div class="logo">Bihar Tourism</div>
+        <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+        <ul id="nav-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="./html/destination.html"</a></li>
+               <li><a href="./html/destination.html">Destination</a></li>
+            <li><a href="./html/travel info.html">Travel Info</a></li>
+            <li><a href="./html/culture.html">Culture</a></li>
+            <li><a href="./html/food.html">Food</a></li>
+            <li><a href="./html/about.html">About</a></li>
+            
+        </ul>
+    </nav>
+</header>
 
-  // Form Submit Event
-  document.getElementById("contact-form").addEventListener("submit", function (e) {
-    e.preventDefault();
+<section class="hero-slider">
+  <div class="slides">
+    <div class="slide active" style="background-image: url('./image/airport.jpg');"></div>
+    <div class="slide" style="background-image: url('./image/chat\ puja.jpg');"></div>
+    <div class="slide" style="background-image: url('./image/janakpur.jpg');"></div>
+  </div>
+  <div class="hero-content">
+    <h1>Discover Bihar</h1>
+    <p>Explore the culture, heritage, and cuisine of Bihar</p>
+    <a href="destination.html" class="btn">Explore Now</a>
+  </div>
+</section>
 
-    emailjs.sendForm("service_hb2t49s", "template_37c6fba", this)
-      .then(function () {
-        alert("Message sent successfully!");
-      }, function (error) {
-        alert("FAILED... " + JSON.stringify(error));
-        console.log("Error:", error);  // Debug in console
-      });
-  });
+
+<section>
+    <h2>Popular Destinations</h2>
+    <div class="destinations">
+        <div class="card show-on-scroll">
+            <img src="./image/bodhgaya.jpg" alt="Bodh Gaya">
+            <div class="card-content">
+                <h3>Bodh Gaya</h3>
+                <p>The spiritual heart of Bihar where Buddha attained enlightenment.</p>
+            </div>
+        </div>
+        <div class="card show-on-scroll">
+            <img src="./image/nalandanow.jpg" alt="Nalanda">
+            <div class="card-content">
+                <h3>Nalanda</h3>
+                <p>Home to the ancient Nalanda University, a center of learning and history.</p>
+            </div>
+        </div>
+        <div class="card show-on-scroll">
+            <img src="./image/patnacity.jpg" alt="Patna">
+            <div class="card-content">
+                <h3>Patna</h3>
+                <p>The vibrant capital city with historical and cultural treasures.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section>
+    <h2>Culture & Food</h2>
+    <div class="culture-food">
+        <div class="card show-on-scroll">
+            <img src="./image/liiti chokha.jpg" alt="Cuisine">
+            <div class="card-content">
+                <h3>Bihari Cuisine</h3>
+                <p>Experience authentic Litti Chokha, Sattu, and traditional delicacies.</p>
+            </div>
+        </div>
+        <div class="card show-on-scroll">
+            <img src="./image/sonpur.jpg" alt="Festivals">
+            <div class="card-content">
+                <h3>Festivals & Culture</h3>
+                <p>Witness Chhath Puja, Sonepur Mela, and rich folk traditions.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="footer-container">
+    <div class="footer-links">
+      <h3>Quick Links</h3>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="./html/destination.html">Destinations</a></li>
+        <li><a href="./html/travel info.html">Travel Info</a></li>
+        <li><a href="./html/culture.html">Culture</a></li>
+        <li><a href="./html/food.html">Food</a></li>
+        <li><a href="./html/about.html">About</a></li>
+        
+      </ul>
+    </div>
+
+    <div class="footer-contact">
+      <h3>Contact</h3>
+      <ul>
+        <li>Your Number: <a href="tel:‪+911234567890‬">‪+91 12345 67890‬</a></li>
+        <li>Police: <a href="tel:100">100</a></li>
+        <li>Ambulance: <a href="tel:108">108</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-social">
+      <h3>Follow Us</h3>
+      <div class="social-icons">
+        <a href="https://www.instagram.com" target="_blank">📸</a>
+        <a href="https://www.facebook.com" target="_blank">👍</a>
+        <a href="https://www.twitter.com" target="_blank">🐦</a>
+        <a href="https://www.youtube.com" target="_blank">▶</a>
+      </div>
+    </div>
+  </div>
+  <p>&copy; 2025 Bihar Tourism. All rights reserved.</p>
+</footer>
+
+
+
+<script>
+    function toggleMenu(){
+        document.getElementById('nav-links').classList.toggle('show');
+    }
+
+    const scrollElements = document.querySelectorAll(".show-on-scroll");
+    const elementInView = (el, offset = 0) => {
+        const elementTop = el.getBoundingClientRect().top;
+        return elementTop <= ((window.innerHeight || document.documentElement.clientHeight) - offset);
+    };
+    const displayScrollElement = (element) => { element.classList.add('visible'); };
+    const hideScrollElement = (element) => { element.classList.remove('visible'); };
+    const handleScrollAnimation = () => {
+        scrollElements.forEach(el => {
+            if (elementInView(el, 100)) { displayScrollElement(el); }
+        });
+    };
+    window.addEventListener('scroll', handleScrollAnimation);
+    window.addEventListener('load', handleScrollAnimation);
 </script>
 <script>
-    let current = 0;
-    const images = document.querySelectorAll(".slider img");
-    const total = images.length;
+  let slides = document.querySelectorAll('.slide');
+  let current = 0;
 
-    setInterval(() => {
-        images[current].classList.remove("active");
-        current = (current + 1) % total;
-        images[current].classList.add("active");
-    }, 3000);
+  function nextSlide(){
+    slides[current].classList.remove('active');
+    current = (current + 1) % slides.length;
+    slides[current].classList.add('active');
+  }
+
+  setInterval(nextSlide, 10000); // Change slide every 10 seconds
 </script>
 </body>
 </html>

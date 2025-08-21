@@ -7,17 +7,35 @@
   <style>
     body { margin: 0; font-family: "Segoe UI", sans-serif; background: #fffaf5; color: #333; }
     
-    /* Header */
-    header {
-      background: linear-gradient(135deg, #7a3e2f, #b84c3c);
-      color: white;
-      text-align: center;
-      padding: 60px 20px;
-    }
-    header h1 { margin: 0; font-size: 2.8rem; }
-    header p { margin: 10px 0 0; font-size: 1.2rem; }
+   header {background:#2c3e50; color:white; padding:15px 30px; position:sticky; top:0; z-index:1000;}
+    header nav {display:flex; justify-content:space-between; align-items:center;}
+    header .logo {font-size:1.8rem; font-weight:700;}
+    header ul {list-style:none; display:flex;}
+    header ul li {margin-left:25px;}
+    header ul li a {color:white; text-decoration:none; font-weight:500; transition: color 0.3s;}
+    header ul li a:hover {color:#f39c12;}
+    header .menu-toggle {display:none; cursor:pointer; font-size:1.8rem;}
 
+    @media(max-width:768px){
+        header ul {flex-direction:column; background:#34495e; position:absolute; top:60px; right:0; width:100%; display:none;}
+        header ul.show {display:flex;}
+        header .menu-toggle {display:block;}
+    }
    
+    .welcome{
+      text-align: center;
+      color: #7a3e2f;
+      margin-bottom: 0%;
+    }
+    .welcome h1{
+      font-size:2rem;
+    }
+    .welcome h3{
+      font-size: 1.4rem;
+    }
+    .welcome p{
+      font-size: 1.2rem;
+    }
     section { padding: 50px 20px; max-width: 1200px; margin: auto; }
     h2 { text-align: center; margin-bottom: 30px; color: #7a3e2f; font-size: 2rem; }
 
@@ -56,15 +74,126 @@
       color: #555;
     }
 
-    /* Footer */
-    footer {
-      background: #7a3e2f;
-      color: white;
-      text-align: center;
-      padding: 20px;
-      margin-top: 40px;
+    footer{
+    background:#2c3e50;
+    color:white;
+    padding:40px 20px 20px;
+    text-align:center;
+  }
+  .footer-container{
+    display:flex;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    max-width:1200px;
+    margin:auto;
+    padding-bottom:20px;
+  }
+  .footer-links, .footer-social, .footer-contact{
+    flex:1 1 250px;
+    margin:10px;
+  }
+  .footer-links h3, .footer-social h3, .footer-contact h3{
+    margin-bottom:15px;
+    color:#f39c12;
+  }
+  .footer-links ul, .footer-contact ul{
+    list-style:none;
+    padding:0;
+  }
+  .footer-links ul li, .footer-contact ul li{
+    margin-bottom:10px;
+  }
+footer{
+    background:#2c3e50;
+    color:white;
+    padding:40px 20px 20px;
+    text-align:center;
+  }
+  .footer-container{
+    display:flex;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    max-width:1200px;
+    margin:auto;
+    padding-bottom:20px;
+  }
+  .footer-links, .footer-social, .footer-contact{
+    flex:1 1 250px;
+    margin:10px;
+  }
+  .footer-links h3, .footer-social h3, .footer-contact h3{
+    margin-bottom:15px;
+    color:#f39c12;
+  }
+  .footer-links ul, .footer-contact ul{
+    list-style:none;
+    padding:0;
+  }
+  .footer-links ul li, .footer-contact ul li{
+    margin-bottom:10px;
+  }
+footer{
+    background:#2c3e50;
+    color:white;
+    padding:40px 20px 20px;
+    text-align:center;
+  }
+  .footer-container{
+    display:flex;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    max-width:1200px;
+    margin:auto;
+    padding-bottom:20px;
+  }
+  .footer-links, .footer-social, .footer-contact{
+    flex:1 1 250px;
+    margin:10px;
+  }
+  .footer-links h3, .footer-social h3, .footer-contact h3{
+    margin-bottom:15px;
+    color:#f39c12;
+  }
+  .footer-links ul, .footer-contact ul{
+    list-style:none;
+    padding:0;
+  }
+  .footer-links ul li, .footer-contact ul li{
+    margin-bottom:10px;
+  }
+    .footer-links ul li a, .footer-contact ul li a{
+    color:white;
+    text-decoration:none;
+    transition:0.3s;
+  }
+  .footer-links ul li a:hover, .footer-contact ul li a:hover{
+    color:#f39c12;
+  }
+  .social-icons a{
+    font-size:1.5rem;
+    margin-right:15px;
+    color:white;
+    transition:0.3s;
+    text-decoration:none;
+  }
+  .social-icons a:hover{
+    color:#f39c12;
+  }
+  footer p{
+    margin-top:10px;
+    font-size:0.9rem;
+    color:#ccc;
+  }
+/* Responsive */
+  @media(max-width:768px){
+    .footer-container{
+      flex-direction:column;
+      align-items:center;
+      text-align:center;
     }
-
+    .social-icons a{margin:0 10px;}
+  }
+    
     /* Responsive */
     @media (max-width: 768px) {
       header h1 { font-size: 2rem; }
@@ -80,11 +209,28 @@
 </head>
 <body>
 
-  <!-- Header -->
   <header>
-    <h1>Flavours of Bihar</h1>
-    <p>Explore the famous traditional foods of Bihar</p>
-  </header>
+    <nav>
+        <div class="logo">Bihar Tourism</div>
+        <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+        <ul id="nav-links">
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../html/destination.html">Destination</a></li>
+            <li><a href="../html/travel info.html">Travel Info</a></li>
+            <li><a href="../html/culture.html">Culture</a></li>
+            <li><a href="../html/food.html">Food</a></li>
+            <li><a href="../html/about.html">About</a></li>
+            
+        </ul>
+    </nav>
+</header>
+<section class="welcome">
+   <h1 class="center-text">Welcome to Bihar Cuisine</h1>
+
+    <h3 class="center-text">Traditional Flavors of Bihar</h3>
+    <p class="center-text">Bihar's cuisine is rich in taste and history, offering a variety of unique dishes.</p>
+
+</section>
 
   <!-- Food Grid -->
   <section>
@@ -157,9 +303,73 @@
   </section>
 
   <!-- Footer -->
-  <footer>
-    <p>&copy; 2025 Bihar Food Culture. All rights reserved.</p>
-  </footer>
+<footer>
+  <div class="footer-container">
+    <div class="footer-links">
+      <h3>Quick Links</h3>
+      <ul>
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../html/destination.html">Destinations</a></li>
+        <li><a href="../html/travel info.html">Travel Info</a></li>
+        <li><a href="../html/culture.html">Culture</a></li>
+        <li><a href="../html/food.html">Food</a></li>
+        <li><a href="../html/about.html">About</a></li>
+        
+      </ul>
+    </div>
 
+    <div class="footer-contact">
+      <h3>Contact</h3>
+      <ul>
+        <li>Your Number: <a href="tel:‪+911234567890‬">‪+91 12345 67890‬</a></li>
+        <li>Police: <a href="tel:100">100</a></li>
+        <li>Ambulance: <a href="tel:108">108</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-social">
+      <h3>Follow Us</h3>
+      <div class="social-icons">
+        <a href="https://www.instagram.com" target="_blank">📸</a>
+        <a href="https://www.facebook.com" target="_blank">👍</a>
+        <a href="https://www.twitter.com" target="_blank">🐦</a>
+        <a href="https://www.youtube.com" target="_blank">▶</a>
+      </div>
+    </div>
+  </div>
+  <p>&copy; 2025 Bihar Tourism. All rights reserved.</p>
+</footer>
+<script>
+    function toggleMenu(){
+        document.getElementById('nav-links').classList.toggle('show');
+    }
+
+    const scrollElements = document.querySelectorAll(".show-on-scroll");
+    const elementInView = (el, offset = 0) => {
+        const elementTop = el.getBoundingClientRect().top;
+        return elementTop <= ((window.innerHeight || document.documentElement.clientHeight) - offset);
+    };
+    const displayScrollElement = (element) => { element.classList.add('visible'); };
+    const hideScrollElement = (element) => { element.classList.remove('visible'); };
+    const handleScrollAnimation = () => {
+        scrollElements.forEach(el => {
+            if (elementInView(el, 100)) { displayScrollElement(el); }
+        });
+    };
+    window.addEventListener('scroll', handleScrollAnimation);
+    window.addEventListener('load', handleScrollAnimation);
+</script>
+<script>
+  let slides = document.querySelectorAll('.slide');
+  let current = 0;
+
+  function nextSlide(){
+    slides[current].classList.remove('active');
+    current = (current + 1) % slides.length;
+    slides[current].classList.add('active');
+  }
+
+  setInterval(nextSlide, 10000); // Change slide every 10 seconds
+</script>
 </body>
 </html>
