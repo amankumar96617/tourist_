@@ -11,6 +11,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+ 
 }
 
 body {
@@ -77,116 +78,29 @@ header {background:#2c3e50; color:white; padding:15px 30px; position:sticky; top
   font-weight: bold;
   color: #333;
 }
-  footer{
-    background:#2c3e50;
-    color:white;
-    padding:40px 20px 20px;
-    text-align:center;
-  }
-  .footer-container{
-    display:flex;
-    justify-content:space-between;
-    flex-wrap:wrap;
-    max-width:1200px;
-    margin:auto;
-    padding-bottom:20px;
-  }
-  .footer-links, .footer-social, .footer-contact{
-    flex:1 1 250px;
-    margin:10px;
-  }
-  .footer-links h3, .footer-social h3, .footer-contact h3{
-    margin-bottom:15px;
-    color:#f39c12;
-  }
-  .footer-links ul, .footer-contact ul{
-    list-style:none;
-    padding:0;
-  }
-  .footer-links ul li, .footer-contact ul li{
-    margin-bottom:10px;
-  }
-footer{
-    background:#2c3e50;
-    color:white;
-    padding:40px 20px 20px;
-    text-align:center;
-  }
-  .footer-container{
-    display:flex;
-    justify-content:space-between;
-    flex-wrap:wrap;
-    max-width:1200px;
-    margin:auto;
-    padding-bottom:20px;
-  }
-  .footer-links, .footer-social, .footer-contact{
-    flex:1 1 250px;
-    margin:10px;
-  }
-  .footer-links h3, .footer-social h3, .footer-contact h3{
-    margin-bottom:15px;
-    color:#f39c12;
-  }
-  .footer-links ul, .footer-contact ul{
-    list-style:none;
-    padding:0;
-  }
-  .footer-links ul li, .footer-contact ul li{
-    margin-bottom:10px;
-  }
-footer{
-    background:#2c3e50;
-    color:white;
-    padding:40px 20px 20px;
-    text-align:center;
-  }
-  .footer-container{
-    display:flex;
-    justify-content:space-between;
-    flex-wrap:wrap;
-    max-width:1200px;
-    margin:auto;
-    padding-bottom:20px;
-  }
-  .footer-links, .footer-social, .footer-contact{
-    flex:1 1 250px;
-    margin:10px;
-  }
-  .footer-links h3, .footer-social h3, .footer-contact h3{
-    margin-bottom:15px;
-    color:#f39c12;
-  }
-  .footer-links ul, .footer-contact ul{
-    list-style:none;
-    padding:0;
-  }
-  .footer-links ul li, .footer-contact ul li{
-    margin-bottom:10px;
-  }
-    .footer-links ul li a, .footer-contact ul li a{
-    color:white;
-    text-decoration:none;
-    transition:0.3s;
-  }
-  .footer-links ul li a:hover, .footer-contact ul li a:hover{
-    color:#f39c12;
-  }
-  .social-icons a{
-    font-size:1.5rem;
-    margin-right:15px;
-    color:white;
-    transition:0.3s;
-    text-decoration:none;
-  }
-  .social-icons a:hover{
-    color:#f39c12;
-  }
-  footer p{
-    margin-top:10px;
-    font-size:0.9rem;
-    color:#ccc;
-  }
+  footer {
+      background: #2c3e50;
+      color: white;
+      padding: 20px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
+      gap: 20px;
+      text-align: center;
+    }
+    footer h4 {
+      margin-bottom: 10px;
+      color: #f9a825;
+    }
+    footer ul {
+      list-style: none;
+      padding: 0;
+    }
+    footer ul li {
+      margin: 5px 0;
+    }
+    footer ul li a {
+      color: white;
+      text-decoration: none;}
 /* Responsive */
   @media(max-width:768px){
     .footer-container{
@@ -217,136 +131,136 @@ footer{
   <section class="destinations">
     <h2>Popular Destinations</h2>
     <div class="destination-grid">
-      <a href="../image/sitamarhi.jpg" width="100px" hight="100px" class="box">
+      <a href="../html/destnation/sitamarhi.html" width="100px" hight="100px" class="box">
         <img src="../image/sitamarhi.jpg" alt="Goa" />
         <div class="caption">Sitamrhi</div>
       </a>
-      <a href="../image/sitamarhi.jpg" width="100px" hight="100px" class="box">
+      <a href="../html/destnation/airport.html" width="100px" hight="100px" class="box">
         <img src="../image/airport.jpg" alt="Goa" />
         <div class="caption">Patna Airport</div>
       </a>
-      <a href="../image/tara mandir.jpg" class="box">
+      <a href="../html/destnation/tara mandir.html" class="box">
         <img src="../image/tara mandir.jpg" alt="Kerala" />
-        <div class="caption">Rohtas Tara Mandir</div>
+        <div class="caption">Tara Mandir,Rohtas </div>
       </a>
-      <a href="../image/" width="100px" hight="100px" class="box">
+      <a href="../html/destnation/bodhgaya.html" width="100px" hight="100px" class="box">
         <img src="../image/bodhgaya.jpg" alt="Bodhgaya" />
         <div class="caption">Bodhgaya</div>
       </a>
-      <a href="../image/sitamarhi.jpg" width="100px" hight="100px" class="box">
+      <a href="../html/destnation/taj city.html" width="100px" hight="100px" class="box">
         <img src="../image/taj city.jpg" alt="Goa" />
         <div class="caption">Taj City Center</div>
       </a>
-      <a href="../image/gaya.jpg" class="box">
+      <a href="../html/destnation/gaya.html" class="box">
         <img src="../image/gaya.jpg" alt="Ladakh" />
         <div class="caption">Gaya</div>
       </a>
-      <a href="../image/" class="box">
+      <a href="../html/destnation/naini mandir.html" class="box">
         <img src="../image/naini.jpg" alt="Agra" />
-        <div class="caption">Naini Mandir, Chapra</div>
+        <div class="caption">Naini Mandir,Chapra</div>
       </a>
-      <a href="../image/musem.jpg" class="box">
+      <a href="../html/destnation/patna musem.html" class="box">
         <img src="../image/musem.jpg" alt="Delhi" />
-        <div class="caption">Patna musem</div>
+        <div class="caption">Musem,Patna</div>
       </a>
-      <a href="../image/glass bridge.jpg" class="box">
+      <a href="../html/destnation/glassbridge.html" class="box">
         <img src="../image/glass bridge.jpg" alt="Konark" />
-        <div class="caption">Rajgir Glass bridge</div>
+        <div class="caption"> Glass bridge,Rajgir</div>
       </a>
-      <a href="../image/wattwer fall2.jpg" class="box">
+      <a href="../html/destnation/kakolat.html" class="box">
         <img src="../image/wattwer fall2.jpg" alt="Rajasthan" />
-        <div class="caption">Nawada,Kakolat Waterfall</div>
+        <div class="caption">Kakolat Waterfall,Nawada</div>
       </a>
-      <a href="../image/guru dhawra.jpg" class="box">
+      <a href="../html/destnation/gurudhawara.html" class="box">
         <img src="../image/guru dhawra.jpg" alt="Shimla" />
-        <div class="caption">Patna Gurudwara </div>
+        <div class="caption"> Gurudwara,Patna</div>
       </a>
-      <a href="../image/sitamarhi.jpg" width="100px" hight="100px" class="box">
+      <a href="../html/destnation/sabhyata dhawar.html" width="100px" hight="100px" class="box">
         <img src="../image/ghanta ghar.jpg" alt="Goa" />
-        <div class="caption">Muzaffarpur Sabhyata Dwar</div>
+        <div class="caption"> Sabhyata Dwar,Muzaffarpur</div>
       </a>
-      <a href="../image/iskon temple.jpg" class="box">
+      <a href="../html/destnation/isckon temple.html" class="box">
         <img src="../image/iskon temple.jpg" alt="Manali" />
-        <div class="caption">Patna Isckon Temple</div>
+        <div class="caption"> Isckon Temple,Patna</div>
       </a>
-      <a href="destination.html?place=Varanasi" class="box">
+      <a href="../html/destnation/budha smrithi.html" class="box">
         <img src="../image/budha smriti.jpg" alt="Varanasi" />
-        <div class="caption">Patna Budha Smriti</div>
+        <div class="caption"> Budha Smriti,Patna</div>
       </a>
-      <a href="../image/sitamarhi.jpg" width="100px" hight="100px" class="box">
+      <a href="../html/destnation/pawapuri.html" width="100px" hight="100px" class="box">
         <img src="../image/Pawapuri.jpg" alt="Goa" />
-        <div class="caption">Nalanda Pawauri</div>
+        <div class="caption">Pawauri,Nalanda </div>
       </a>
-      <a href="destination.html?place=Udaipur" class="box">
+      <a href="../html/destnation/golghar.html" class="box">
         <img src="../image/golghar.jpg" alt="Udaipur" />
-        <div class="caption">Patna Golghar</div>
+        <div class="caption"> Golghar,Patna</div>
       </a>
-      <a href="../image/thawe.jpg" class="box">
+      <a href="../html/destnation/thawe.html" class="box">
         <img src="../image/thawe.jpg" alt="Kolkata" />
-        <div class="caption">Gopalganj Thawe Mandir</div>
+        <div class="caption"> Thawe Mandir,Gopalganj</div>
       </a>
-      <a href="destination.html?place=Amritsar" class="box">
+      <a href="../html/destnation/rajgir.html" class="box">
         <img src="../image/mountain .jpg" alt="Amritsar" />
         <div class="caption">Rajgir Mountain</div>
       </a>
-      <a href="destination.html?place=Rishikesh" class="box">
+      <a href="../html/destnation/lakhisarai.html" class="box">
         <img src="../image/lakhisarai.jpg" alt="Rishikesh" />
-        <div class="caption">Ashokdham temple Lakhisarai</div>
+        <div class="caption">Ashokdham temple,Lakhisarai</div>
       </a>
-      <a href="../image/sitamarhi.jpg" width="100px" hight="100px" class="box">
+      <a href="../html/destnation/nalandakhandar.html" width="100px" hight="100px" class="box">
         <img src="../image/nalanda khandhar.jpg" alt="Goa" />
-        <div class="caption">nalanda</div>
+        <div class="caption">nalanda University</div>
       </a>
-      <a href="destination.html?place=Andaman" class="box">
+      <a href="../html/destnation/janakpur.html" class="box">
         <img src="../image/janakpur.jpg" alt="Andaman" />
-        <div class="caption">Sitamarhi,Janakpur</div>
+        <div class="caption">Janakpur,Sitamarhi</div>
       </a>
-      <a href="../image/thawe.jpg" class="box">
+      <a href="../html/destnation/digha ghat.html" class="box">
         <img src="../image/patna digha.jpg" alt="Kolkata" />
-        <div class="caption">Patna, Digha Ghat</div>
+        <div class="caption"> Digha Ghat,Patna</div>
       </a>
-      <a href="../image/thawe.jpg" class="box">
-        <img src="../image/about image.jpg" alt="Kolkata" />
-        <div class="caption">Patna</div>
+      <a href="../html/destnation/patnacity.html" class="box">
+        <img src="../image/patnacity.jpg" alt="Kolkata" />
+        <div class="caption">Patna City</div>
       </a>
+      <a href="../html/destnation/vaishali.html" class="box">
+        <img src="../image/vaishali.jpg" alt="Kolkata" />
+        <div class="caption">Vaishali</div>
+      </a>
+      
     </div>
   </section>
   <!-- Footer -->
 <footer>
-  <div class="footer-container">
-    <div class="footer-links">
-      <h3>Quick Links</h3>
+    <div>
+      <h4>Quick Links</h4>
       <ul>
         <li><a href="../index.html">Home</a></li>
-       <li><a href="../html/destination.html">Destination</a></li>
+        <li><a href="../html/destination.html"></a></li>
+        <li><a href="../html/destination.html">Destination</a></li>
         <li><a href="../html/travel info.html">Travel Info</a></li>
         <li><a href="../html/culture.html">Culture</a></li>
         <li><a href="../html/food.html">Food</a></li>
         <li><a href="../html/about.html">About</a></li>
-        
-    </div>
-
-    <div class="footer-contact">
-      <h3>Contact</h3>
-      <ul>
-        <li>Your Number: <a href="tel:‪+911234567890‬">‪+91 12345 67890‬</a></li>
-        <li>Police: <a href="tel:100">100</a></li>
-        <li>Ambulance: <a href="tel:108">108</a></li>
       </ul>
     </div>
-
-    <div class="footer-social">
-      <h3>Follow Us</h3>
-      <div class="social-icons">
-        <a href="https://www.instagram.com" target="_blank">📸</a>
-        <a href="https://www.facebook.com" target="_blank">👍</a>
-        <a href="https://www.twitter.com" target="_blank">🐦</a>
-        <a href="https://www.youtube.com" target="_blank">▶</a>
-      </div>
+    <div>
+      <h4>Contact</h4>
+      <ul>
+        <li>Email: amank29118@gmail.com.com</li>
+        <li>Police Helpline: 100</li>
+        <li>Ambulance: 108</li>
+      </ul>
     </div>
-  </div>
-  <p>&copy; 2025 Bihar Tourism. All rights reserved.</p>
-</footer>
+    <div>
+      <h4>Follow Us</h4>
+      <ul>
+        <li><a href="https://www.instagram.com">Instagram</a></li>
+        <li><a href="https://www.facebook.com">Facebook</a></li>
+        <li><a href="https://www.twitter.com">Twitter</a></li>
+      </ul>
+    </div>
+  </footer>
 <script>
     function toggleMenu(){
         document.getElementById('nav-links').classList.toggle('show');

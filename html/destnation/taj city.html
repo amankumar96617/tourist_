@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bihar Tourism</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background: #fdfdfd;
+      line-height: 1.6;
+    }
+
+    /* Header */
+    header {
+      background:#5a2d0c;
+      color: white;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+     
+    }
+
+    header h1 {
+      font-size: 20px;
+    }
+
+    nav a {
+       margin-left: 15px;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+     color: #f9a825;
+    }
+
+    /* Top Images */
+    .top-section {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 15px;
+      padding: 20px;
+    }
+
+    .destination-img img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+    }
+
+    .side-images {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+
+    .side-images img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+
+    /* About Section */
+    .about {
+      padding: 20px;
+      text-align: center;
+    }
+
+    .about h2 {
+      margin-bottom: 10px;
+      font-size: 24px;
+      color:#5a2d0c ;
+    
+    }
+
+    .about p {
+      margin-bottom: 10px;
+      text-align: justify;
+      text-align: center;
+    }
+
+    /* Nearby Contacts */
+    .contacts {
+      padding: 20px;
+    }
+
+    .contacts h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #5a2d0c;
+    }
+
+    .contact-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 15px;
+    }
+
+    .card {
+      background: white;
+      padding: 15px;
+      border-radius: 10px;
+      box-shadow: 0px 2px 6px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+
+    .card h3 {
+      margin-bottom: 10px;
+      color: #5a2d0c;
+    }
+
+    .card p {
+      font-size: 14px;
+      margin-bottom: 5px;
+    }
+
+    .card a {
+      display: inline-block;
+      margin-top: 8px;
+      padding: 6px 12px;
+      background:#f9a825;
+      color: white;
+      border-radius: 5px;
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    .card a:hover {
+      background: #f9a825;
+    }
+
+    /* Local Transport & Nearest Attractions */
+.local-transport, .nearest-attractions {
+  padding: 20px;
+}
+
+.local-transport h2, .nearest-attractions h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #5a2d0c;
+}
+
+.transport-cards, .attraction-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+}
+
+.transport-cards .card, .attraction-cards .card {
+  background: white;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0px 2px 6px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.transport-cards .card h3, .attraction-cards .card h3 {
+  margin-bottom: 10px;
+  color: #5a2d0c;
+}
+
+.transport-cards .card p, .attraction-cards .card p {
+  font-size: 14px;
+}
+    /* Google Map Section */
+    .map {
+      text-align: center;
+      padding: 20px;
+    }
+
+    .map a {
+      display: inline-block;
+      padding: 10px 20px;
+      background: #f9a825;
+      color: white;
+      border-radius: 5px;
+      text-decoration: none;
+    }
+
+    .map a:hover {
+      background:#f9a825 ;
+      
+    }
+
+    /* Footer */
+    footer {
+      background: #2c3e50;
+      color: white;
+      padding: 20px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
+      gap: 20px;
+      text-align: center;
+    }
+    footer h4 {
+      margin-bottom: 10px;
+      color: #f9a825;
+    }
+    footer ul {
+      list-style: none;
+      padding: 0;
+    }
+    footer ul li {
+      margin: 5px 0;
+    }
+    footer ul li a {
+      color: white;
+      text-decoration: none;}
+
+    /* Responsive */
+    @media(max-width: 768px) {
+      .top-section {
+        grid-template-columns: 1fr;
+      }
+      .side-images {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media(max-width: 768px) {
+      nav {
+        width: 100%;
+        margin-top: 10px;
+        text-align: center;
+      }
+      .side-images {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <h1>Bihar Tourism</h1>
+    <nav>
+      <a href="../index.html">Home</a>
+      <a href="#"onclick="window.history.back();" >Back</a>
+      <a href="#"onclick="window.history.forward();" >Next</a>
+    </nav>
+  </header>
+
+  <!-- Top Images -->
+  <section class="top-section">
+    <div class="destination-img">
+      <img src=".." alt="Destination Image">
+    </div>
+    <div class="side-images">
+      <img src="../" alt="Image 1">
+      <img src="../image" alt="Image 2">
+      <img src=".." alt="Image 3">
+      <img src="../image" alt="Image 4">
+    </div>
+  </section>
+
+  <!-- About -->
+  <section class="about">
+    <h2>About Destination</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur tempor volutpat lorem, vel efficitur purus.</p>
+    
+  </section>
+
+  <!-- Nearby Contacts -->
+  <section class="contacts">
+    <h2>Nearby Contacts</h2>
+    <div class="contact-cards">
+      <div class="card">
+        <h3>Hotel Contact</h3>
+        <p>Famous Hotel XYZ</p>
+        <p>📞 +91 9876543210</p>
+        <a href="tel:+919876543210">Call Now</a>
+      </div>
+      <div class="card">
+        <h3>Restaurant Contact</h3>
+        <p>Popular Restaurant ABC</p>
+        <p>📞 +91 9123456780</p>
+        <a href="tel:+919123456780">Call Now</a>
+      </div>
+      <div class="card">
+        <h3>Mall Contact</h3>
+        <p>City Mall</p>
+        <p>📞 +91 9000000000</p>
+        <a href="tel:+919000000000">Call Now</a>
+      </div>
+      <div class="card">
+        <h3>Police Contact</h3>
+        <p>Nearest Police Station</p>
+        <p>📞 100</p>
+        <a href="tel:100">Call Now</a>
+      </div>
+      <div class="card">
+        <h3>Guide Contact</h3>
+        <p>Tour Guide Mr. Raj</p>
+        <p>📞 +91 9876501234</p>
+        <a href="tel:+919876501234">Call Now</a>
+      </div>
+      <div class="card">
+        <h3>Hospital Contact</h3>
+        <p>City Hospital</p>
+        <p>📞 +91 8888888888</p>
+        <a href="tel:+918888888888">Call Now</a>
+      </div>
+    </div>
+  </section>
+  <!-- Local Transport Section -->
+<section class="local-transport">
+  <h2>Local Transport</h2>
+  <div class="transport-cards">
+    <div class="card">
+      <h3>Bus</h3>
+      <p>State and private buses available. Approx. fare ₹30-₹100.</p>
+    </div>
+    <div class="card">
+      <h3>Train</h3>
+      <p>Nearest station: Sitamarhi Railway Station. Frequent trains to Patna & other cities.</p>
+    </div>
+    <div class="card">
+      <h3>Taxi/Auto</h3>
+      <p>Available 24/7. Fare: ₹50-₹500 depending on distance.</p>
+    </div>
+    <div class="card">
+      <h3>Motorbike Rental</h3>
+      <p>Rent a  motorbike for local sightseeing.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Nearest Attractions Section -->
+<section class="nearest-attractions">
+  <h2>Nearest Attractions</h2>
+  <div class="attraction-cards">
+    <div class="card">
+      <h3>Mahavir Mandir</h3>
+      <p>Distance: 2 km | Timings: 6 AM – 9 PM</p>
+    </div>
+    <div class="card">
+      <h3>Golghar</h3>
+      <p>Distance: 3.5 km | Timings: 9 AM – 6 PM</p>
+    </div>
+    <div class="card">
+      <h3>Pataliputra Museum</h3>
+      <p>Distance: 5 km | Timings: 10 AM – 5 PM</p>
+    </div>
+    <div class="card">
+      <h3>Vikramshila University Site</h3>
+      <p>Distance: 8 km | Timings: 8 AM – 5 PM</p>
+    </div>
+  </div>
+</section>
+
+  <!-- Google Map -->
+  <section class="map">
+    <h2>Find Destination on Google Map</h2>
+    <p>Click below to open Google Maps and search your destination:</p>
+    <a href="https://www.google.com/maps" target="_blank">Open Google Map</a>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div>
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="#" onclick="window.history.back();">Back</a></li>
+        <li><a href="#" onclick="window.history.forward();">Next</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Contact</h4>
+      <ul>
+        <li>Email: amank29118@gmail.com.com</li>
+        <li>Police Helpline: 100</li>
+        <li>Ambulance: 108</li>
+      </ul>
+    </div>
+    <div>
+      <h4>Follow Us</h4>
+      <ul>
+        <li><a href="https://www.instagram.com">Instagram</a></li>
+        <li><a href="https://www.facebook.com">Facebook</a></li>
+        <li><a href="https://www.twitter.com">Twitter</a></li>
+      </ul>
+    </div>
+  </footer>
+
+</body>
+</html>
