@@ -58,17 +58,19 @@
     }
 
     .side-images {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 10px;
-    }
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;  /* do rows ban gayi */
+  gap: 10px;
+  height: 100%; /* left wali badi image ke equal height lega */
+}
 
-    .side-images img {
-      width: 100%;
-      height: 150px;
-      object-fit: cover;
-      border-radius: 10px;
-    }
+.side-images img {
+  width: 100%;
+  height: 100%;  /* ab fix height nahi hoga */
+  object-fit: cover; /* image stretch nahi hoga, crop ho jaayega */
+  border-radius: 10px;
+}
 
     /* About Section */
     .about {
@@ -254,13 +256,13 @@
   <!-- Top Images -->
   <section class="top-section">
     <div class="destination-img">
-      <img src=".." alt="Destination Image">
+      <img src="/tourist_/image/iskon temple.jpg" alt="Destination Image">
     </div>
     <div class="side-images">
-      <img src="../" alt="Image 1">
-      <img src="../image" alt="Image 2">
-      <img src=".." alt="Image 3">
-      <img src="../image" alt="Image 4">
+      <img src="/tourist_/image/isckon1.jpg" alt="Image 1">
+      <img src="/tourist_/image/isckon2.jpg" alt="Image 2">
+      <img src="/tourist_/image/isckon4.jpg" alt="Image 3">
+      <img src="/tourist_/image/isckon3.jpg" alt="Image 4">
     </div>
   </section>
 

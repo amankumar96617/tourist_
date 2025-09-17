@@ -43,33 +43,63 @@
      color: #f9a825;
     }
 
-    /* Top Images */
-    .top-section {
-      display: grid;
-      grid-template-columns: 2fr 1fr;
-      gap: 15px;
-      padding: 20px;
-    }
+    /* ---------- Paste / Replace these rules ---------- */
 
-    .destination-img img {
-      width: 100%;
-      height: auto;
-      border-radius: 10px;
-    }
+.top-section {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 15px;
+  align-items: stretch;              /* columns same height */
+  height: min(60vh, 560px);         /* responsive max height — adjust 560px agar chaho */
+}
 
-    .side-images {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 10px;
-    }
+/* Big image column fills full column height */
+.destination-img {
+  height: 100%;
+  overflow: hidden;
+}
 
-    .side-images img {
-      width: 100%;
-      height: 150px;
-      object-fit: cover;
-      border-radius: 10px;
-    }
+.destination-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;   /* crop to fill without stretching */
+  display: block;
+  border-radius: 10px;
+}
 
+/* Side images: 2x2 grid with equal rows so combined height matches big image */
+.side-images {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  height: 100%;
+  grid-auto-rows: 1fr;   /* each of the two rows equal height */
+}
+
+.side-images img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 10px;
+}
+
+/* Mobile tweaks: stack columns and let height become auto for small screens */
+@media (max-width: 768px) {
+  .top-section {
+    grid-template-columns: 1fr;
+    height: auto;
+  }
+  .side-images {
+    grid-template-columns: 1fr 1fr; /* or 1fr if you want single column */
+    height: auto;
+    grid-auto-rows: auto;
+  }
+  .destination-img img, .side-images img {
+    height: auto;
+    object-fit: cover;
+  }
+}
     /* About Section */
     .about {
       padding: 20px;
@@ -254,13 +284,12 @@
   <!-- Top Images -->
   <section class="top-section">
     <div class="destination-img">
-      <img src=".." alt="Destination Image">
-    </div>
+      <img src="/tourist_/image/sitamarhi.jpg"alt="Destination Image"></div>
     <div class="side-images">
-      <img src="../" alt="Image 1">
-      <img src="../image" alt="Image 2">
-      <img src=".." alt="Image 3">
-      <img src="../image" alt="Image 4">
+      <img src="/tourist_/image/sitamarhiinside.jpg" alt="Image 1">
+      <img src="/tourist_/image/sitamarhiinside2.jpg" alt="Image 2">
+      <img src="/tourist_/image/sitamarhijanki.jpg" alt="Image 3">
+      <img src="/tourist_/image/jankimaidieoutside.jpg" alt="Image 4">
     </div>
   </section>
 
