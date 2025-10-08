@@ -17,6 +17,16 @@
     header ul li a {color:white; text-decoration:none; font-weight:bold; transition:0.8s;}
     header ul li a:hover {color:#f39c12;}
     header .menu-toggle {display:none; cursor:pointer; font-size:1.5rem;}
+    header .logo {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* image aur text ke beech thoda gap */
+}
+
+header .logo img {
+  height: 50px;
+  width: auto;
+}
     nav .log{
       background-color:#f39c12;
       color:white;
@@ -172,7 +182,10 @@
 
 <header>
     <nav>
-        <div class="logo">Bihar Tourism</div>
+      <div class="logo">
+        <img src="./image/bihartourism logo.jpg" alt="logo">
+        <span>Bihar Tourism</span>
+      </div>
         <div class="menu-toggle" onclick="toggleMenu()">☰</div>
         <ul id="nav-links">
             <li><a href="#">Home</a></li>
@@ -215,7 +228,7 @@
             </div>
         </div>
         <div class="card show-on-scroll">
-          <a href="./html/destnation/nalanda.html" width="100px" hight="100px" class="box">
+          <a href="./html/destnation/nalandakhandar.html" width="100px" hight="100px" class="box">
             <img src="./image/nalandanow.jpg" alt="Nalanda"></a>
             <div class="card-content">
                 <h3>Nalanda</h3>
@@ -234,26 +247,67 @@
 </section>
 
 <section>
-    <h2>Culture & Food</h2>
-    <div class="culture-food">
+    <h2>  Popular Food</h2>
+    <div class="destinations">
         <div class="card show-on-scroll">
-          <a href="./html/food.html" width="100px" hight="100px" class="box">
-            <img src="./image/liiti chokha.jpg" alt="Cuisine"></a>
+        <a href="./html/food.html" width="100px" hight="100px" class="box">
+            <img src="./image/liiti chokha.jpg" alt="Bodh Gaya"></a>
             <div class="card-content">
-                <h3>Bihari Cuisine</h3>
-                <p>Experience authentic Litti Chokha, Sattu, and traditional delicacies.</p>
+                <h3>Litti chokha</h3>
+                <p>Litti Chokha – the smoky, rustic soul food of Bihar, bursting with earthy flavors.</p>
             </div>
         </div>
         <div class="card show-on-scroll">
-          <a href="./html/destination.html" width="100px" hight="100px" class="box">
-            <img src="./image/sonpur.jpg" alt="Festivals"></a>
+          <a href="./html/food.html" width="100px" hight="100px" class="box">
+            <img src="./image/khaja.jpg" alt="Nalanda"></a>
             <div class="card-content">
-                <h3>Festivals & Culture</h3>
-                <p>Witness Chhath Puja, Sonepur Mela, and rich folk traditions.</p>
+                <h3>Khaja</h3>
+                <p>Khaja – a flaky, layered sweet that melts with every bite.</p>
+            </div>
+        </div>
+        <div class="card show-on-scroll">
+          <a href="./html/food.html" width="100px" hight="100px" class="box">
+            <img src="./image/thekua.jpg" alt="Patna"></a>
+            <div class="card-content">
+                <h3>Thekua</h3>
+                <p>Thekua – the rustic, ghee-kissed treat of Bihar’s festivals.</p>
             </div>
         </div>
     </div>
-</section>
+  </section>
+
+<section>
+    <h2>Popular Culture</h2>
+    <div class="destinations">
+        <div class="card show-on-scroll">
+        <a href="./html/culture.html" width="100px" hight="100px" class="box">
+            <img src="./image/chat puja.jpg" alt="Bodh Gaya"></a>
+            <div class="card-content">
+                <h3>Chat Puja</h3>
+                <p>🌅 Chhath Puja – Bihar’s most sacred festival, offering prayers to the rising and setting
+                   sun with devotion and purity.</p>
+            </div>
+        </div>
+        <div class="card show-on-scroll">
+          <a href="./html/culture.html" width="100px" hight="100px" class="box">
+            <img src="./image/folk dance 4.jpg" alt="Nalanda"></a>
+            <div class="card-content">
+                <h3>Folk Dance</h3>
+                <p>💃 Folk Dance – The heartbeat of Bihar, where rhythm, costume, and culture come alive in 
+                  every step.</p>
+            </div>
+        </div>
+        <div class="card show-on-scroll">
+          <a href="./html/culture.html" width="100px" hight="100px" class="box">
+            <img src="./image/sonpur.jpg" alt="Patna"></a>
+            <div class="card-content">
+                <h3>Sonpur</h3>
+                <p>🌸 Sonpur – Asia’s largest cattle fair, blending tradition, trade, and festivity 
+                      on the banks of the Ganga.</p>
+            </div>
+        </div>
+    </div>
+  </section>
 
 
   <!-- Footer -->
@@ -273,7 +327,7 @@
     <div>
       <h4>Contact</h4>
       <ul>
-        <li>Email: amank29118@gmail.com</li>
+        <li><a href="mailto:you@example.com">Email:codecrafter693@gmail.com</a></li>
         <li>Police Helpline: 100</li>
         <li>Ambulance: 108</li>
       </ul>
@@ -286,45 +340,6 @@
         <li><a href="https://www.twitter.com">Twitter</a></li>
       </ul>
     </div>
-    <!-- ==== Footer Section ==== -->
-<footer style="background:#222; color:#fff; text-align:center; padding:20px; position:relative;">
-  <p>Share your valuable feedback to help us make Bihar tourism better for you.
-  </p>
-  <button id="feedbackBtn" style="margin-top:10px; padding:10px 20px; border:none; border-radius:5px; background:#007bff; color:#fff; cursor:pointer;">
-    Give Feedback
-  </button>
-</footer>
-
-<!-- ==== Feedback Modal ==== -->
-<div id="feedbackModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.6); justify-content:center; align-items:center;">
-  <div style="background:#fff; padding:20px; border-radius:10px; width:90%; max-width:400px; position:relative;">
-    <span id="closeModal" style="position:absolute; top:10px; right:15px; font-size:20px; cursor:pointer;">&times;</span>
-    <h2 style="text-align:center; margin-bottom:15px;">Feedback Form</h2>
-    <form>
-      <label for="name">Full Name</label>
-      <input type="text" id="name" placeholder="Enter your name" required style="width:100%; padding:8px; margin-bottom:10px; border:1px solid #ccc; border-radius:5px;">
-
-      <label for="email">Email</label>
-      <input type="email" id="email" placeholder="Enter your email" required style="width:100%; padding:8px; margin-bottom:10px; border:1px solid #ccc; border-radius:5px;">
-
-      <label for="rating">Rate Your Experience</label>
-      <select id="rating" required style="width:100%; padding:8px; margin-bottom:10px; border:1px solid #ccc; border-radius:5px;">
-        <option value="">-- Select Rating --</option>
-        <option value="Excellent">Excellent</option>
-        <option value="Good">Good</option>
-        <option value="Average">Average</option>
-        <option value="Poor">Poor</option>
-      </select>
-
-      <label for="message">Feedback</label>
-      <textarea id="message" rows="4" placeholder="Write here..." required style="width:100%; padding:8px; border:1px solid #ccc; border-radius:5px;"></textarea>
-
-      <button type="submit" style="width:100%; padding:10px; margin-top:10px; background:#007bff; border:none; color:#fff; border-radius:5px; cursor:pointer;">
-        Submit
-      </button>
-    </form>
-  </div>
-</div>
 
 <!-- ==== JavaScript ==== -->
 <script>

@@ -111,6 +111,18 @@ header {background:#2c3e50; color:white; padding:15px 30px; position:sticky; top
     .social-icons a{margin:0 10px;}
   }
 
+  @media(max-width:768px){
+  .destination-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns in mobile */
+  }
+}
+
+@media(max-width:480px){
+  .destination-grid {
+    grid-template-columns: 1fr; /* very small screen (ek column) */
+  }
+}
+
 </style>
 <body>
   <header>
@@ -247,7 +259,7 @@ header {background:#2c3e50; color:white; padding:15px 30px; position:sticky; top
     <div>
       <h4>Contact</h4>
       <ul>
-        <li>Email: amank29118@gmail.com.com</li>
+        <li><a href="mailto:you@example.com">Email:codecrafter693@gmail.com</a></li>
         <li>Police Helpline: 100</li>
         <li>Ambulance: 108</li>
       </ul>
