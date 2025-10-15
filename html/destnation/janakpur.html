@@ -42,33 +42,44 @@
     nav a:hover {
      color: #f9a825;
     }
+.top-section {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 15px;
+  align-items: stretch;              /* columns same height */
+  height: min(60vh, 560px);         /* responsive max height — adjust 560px agar chaho */
+}
 
-    /* Top Images */
-    .top-section {
-      display: grid;
-      grid-template-columns: 2fr 1fr;
-      gap: 15px;
-      padding: 20px;
-    }
+/* Big image column fills full column height */
+.destination-img {
+  height: 100%;
+  overflow: hidden;
+}
 
-    .destination-img img {
-      width: 100%;
-      height: auto;
-      border-radius: 10px;
-    }
+.destination-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;   /* crop to fill without stretching */
+  display: block;
+  border-radius: 10px;
+}
 
-    .side-images {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 10px;
-    }
+/* Side images: 2x2 grid with equal rows so combined height matches big image */
+.side-images {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  height: 100%;
+  grid-auto-rows: 1fr;   /* each of the two rows equal height */
+}
 
-    .side-images img {
-      width: 100%;
-      height: 150px;
-      object-fit: cover;
-      border-radius: 10px;
-    }
+.side-images img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 10px;
+}
 
     /* About Section */
     .about {
@@ -254,20 +265,27 @@
   <!-- Top Images -->
   <section class="top-section">
     <div class="destination-img">
-      <img src=".." alt="Destination Image">
+      <img src="/tourist_/image/janakpur.jpg" alt="Destination Image">
     </div>
     <div class="side-images">
-      <img src="../" alt="Image 1">
-      <img src="../image" alt="Image 2">
-      <img src=".." alt="Image 3">
-      <img src="../image" alt="Image 4">
+      <img src="/tourist_/image/janki1.jpg" alt="Image 1">
+      <img src="/tourist_/image/janki2.jpg" alt="Image 2">
+      <img src="/tourist_/image/janki3.jpg" alt="Image 3">
+      <img src="/tourist_/image/janki4.jpg" alt="Image 4">
     </div>
   </section>
 
   <!-- About -->
   <section class="about">
     <h2>About Destination</h2>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur tempor volutpat lorem, vel efficitur purus.</p>
+    <p>Janakpur, located in the southeastern region of Nepal, is a city rich in cultural,
+       religious, and historical significance. It is best known as the birthplace of Goddess 
+       Sita, also known as Janaki, the consort of Lord Ram in the Hindu epic Ramayana. 
+       This association makes Janakpur one of the holiest pilgrimage sites for Hindus. 
+       The majestic Janaki Mandir, a grand temple built in the 19th century, stands as 
+       the city's most iconic landmark, attracting thousands of devotees and tourists 
+       each year. Janakpur is also recognized for its vibrant Mithila art, which reflects 
+       the region's deep-rooted traditions and heritage.</p>
     
   </section>
 
@@ -277,38 +295,22 @@
     <div class="contact-cards">
       <div class="card">
         <h3>Hotel Contact</h3>
-<<<<<<< HEAD
+
         <p>Hotel Mithila Rasoi and Grill House</p>
         <p>📞 +91 9876543210</p>
         <a href="tel:+919876543210">Call Now</a>
-=======
-        <p>hotel janki international </p>
-        <p>📞 +91 80733 05488 </p>
-        <a href="tel:+91 80733 05488  ">Call Now</a>
-        
->>>>>>> 0da52b221e25a055a81e146e01f70cecf9d18089
       </div>
       <div class="card">
         <h3>Restaurant Contact</h3>
         <p>Hotel Mithila Rasoi and Grill House</p>
-<<<<<<< HEAD
         <p>📞 +91 9123456780</p>
         <a href="tel:+919123456780">Call Now</a>
-=======
-        <p>📞 +91 982-3271013 </p>
-        <a href="tel:+91 982-3271013">Call Now</a>
->>>>>>> 0da52b221e25a055a81e146e01f70cecf9d18089
       </div>
       <div class="card">
         <h3>Mall Contact</h3>
         <p>Janakpur Mega Mart</p>
-<<<<<<< HEAD
         <p>📞 +91 977 980-1655556</p>
         <a href="tel:+91 977 980-1655556">Call Now</a>
-=======
-        <p>📞 +977 980-1655556 </p>
-        <a href="tel:+977 980-1655556">Call Now</a>
->>>>>>> 0da52b221e25a055a81e146e01f70cecf9d18089
       </div>
       <div class="card">
         <h3>Police Contact</h3>
@@ -325,13 +327,8 @@
       <div class="card">
         <h3>Hospital Contact</h3>
         <p>Janakpur City Hospital</p>
-<<<<<<< HEAD
         <p>📞 +91 977 41-525501</p>
         <a href="tel:+91977 41-525501">Call Now</a>
-=======
-        <p>📞 +977 41-525501 </p>
-        <a href="tel:+977 41-525501">Call Now</a>
->>>>>>> 0da52b221e25a055a81e146e01f70cecf9d18089
       </div>
     </div>
   </section>
