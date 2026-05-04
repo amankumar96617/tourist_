@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Bihar Tourism</title>
@@ -16,165 +17,144 @@
       background: #fdfdfd;
       line-height: 1.6;
     }
+/* image section*/
+  .top-section{
+  display:grid;
+  grid-template-columns:2fr 1fr;
+  gap:15px;
+  height:65vh;
+  margin-bottom:40px;   /* 🔥 main fix */
+}
 
-    /* Header */
-    header {
-      background:#5a2d0c;
-      color: white;
-      padding: 15px 20px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-     
-    }
+.nearby-section{
+  margin-top:20px;
+}
+.top-section{
+  display:grid;
+  grid-template-columns:2fr 1fr;
+  gap:15px;
+  height:70vh;
+  margin-bottom:40px;
+}
+.destination-img{
+  height:100%;
+}
+.destination-img img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  border-radius:10px;
+}
+.side-images{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:10px;
+}
 
-    header h1 {
-      font-size: 20px;
-    }
+.side-images img{
+  width:100%;
+  aspect-ratio:1/1;      /* 🔥 main fix (all equal) */
+  object-fit:cover;
+  border-radius:10px;
+}
 
-    nav a {
-       margin-left: 15px;
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
-    }
 
-    nav a:hover {
-     color: #f9a825;
-    }
+/* Big image column fills full column height */
+.destination-img {
+  overflow: hidden;
+}
 
-    /* Top Images */
-    .top-section {
-      display: grid;
-      grid-template-columns: 2fr 1fr;
-      gap: 15px;
-      padding: 20px;
-    }
+.destination-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;   /* crop to fill without stretching */
+  display: block;
+  border-radius: 10px;
+}
+.destination-img,
+.side-images{
+  height:100%;
+}
 
-    .destination-img img {
-      width: 100%;
-      height: auto;
-      border-radius: 10px;
-    }
 
-    .side-images {
+/* Side images: 2x2 grid with equal rows so combined height matches big image */
+.side-images {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr;  /* do rows ban gayi */
   gap: 10px;
-  height: 100%; /* left wali badi image ke equal height lega */
+  grid-auto-rows: 1fr;   /* each of the two rows equal height */
 }
 
 .side-images img {
   width: 100%;
-  height: 100%;  /* ab fix height nahi hoga */
-  object-fit: cover; /* image stretch nahi hoga, crop ho jaayega */
+  height: 100%;
+  object-fit: cover;
+  display: block;
   border-radius: 10px;
 }
 
-    /* About Section */
-    .about {
-      padding: 20px;
-      text-align: center;
-    }
-
-    .about h2 {
-      margin-bottom: 10px;
-      font-size: 24px;
-      color:#5a2d0c ;
-    
-    }
-
-    .about p {
-      margin-bottom: 10px;
-      text-align: justify;
-      text-align: center;
-    }
-
-    /* Nearby Contacts */
-    .contacts {
-      padding: 20px;
-    }
-
-    .contacts h2 {
-      text-align: center;
-      margin-bottom: 20px;
-      color: #5a2d0c;
-    }
-
-    .contact-cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 15px;
-    }
-
-    .card {
-      background: white;
-      padding: 15px;
-      border-radius: 10px;
-      box-shadow: 0px 2px 6px rgba(0,0,0,0.1);
-      text-align: center;
-    }
-
-    .card h3 {
-      margin-bottom: 10px;
-      color: #5a2d0c;
-    }
-
-    .card p {
-      font-size: 14px;
-      margin-bottom: 5px;
-    }
-
-    .card a {
-      display: inline-block;
-      margin-top: 8px;
-      padding: 6px 12px;
-      background:#f9a825;
-      color: white;
-      border-radius: 5px;
-      text-decoration: none;
-      font-size: 14px;
-    }
-
-    .card a:hover {
-      background: #f9a825;
-    }
-
-    /* Local Transport & Nearest Attractions */
-.local-transport, .nearest-attractions {
-  padding: 20px;
+/* Mobile tweaks: stack columns and let height become auto for small screens */
+@media (max-width: 768px) {
+  .top-section {
+    grid-template-columns: 1fr;
+    height: auto;
+  }
+  .side-images {
+    grid-template-columns: 1fr 1fr; /* or 1fr if you want single column */
+    height: auto;
+    grid-auto-rows: auto;
+  }
+  .destination-img img, .side-images img {
+    height: auto;
+    object-fit: cover;
+  }
+}
+/* about section */
+.about-hover:hover {
+  transform: translateY(-4px);
+  transition: 0.3s ease;
+}
+.about-accent {
+  border-top: 4px solid #f9a825;
+}
+/* nearby contact */
+/* ===== LEFT CARD LOCK ===== */
+.nearby-left-card {
+  height: 420px;
+  display: flex;
+  flex-direction: column;
 }
 
-.local-transport h2, .nearest-attractions h2 {
-  text-align: center;
-  margin-bottom: 20px;
-  color: #5a2d0c;
+/* ===== LIST AREA FILL ===== */
+#listWrapper {
+  flex: 1 1 auto;
+  overflow-y: auto;
+  min-height: 0;
+  padding-right: 4px;
 }
 
-.transport-cards, .attraction-cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 15px;
+/* ===== DETAIL VIEW SAME SPACE ===== */
+#detailView {
+  flex: 1 1 auto;
+  overflow-y: auto;
 }
 
-.transport-cards .card, .attraction-cards .card {
-  background: white;
-  padding: 15px;
-  border-radius: 10px;
-  box-shadow: 0px 2px 6px rgba(0,0,0,0.1);
-  text-align: center;
+/* ===== LIST ITEM LOOK IMPROVE ===== */
+#listView .list-item {
+  padding: 10px 12px;
+  border-radius: 8px;
+  background: #fff;
+  border-left: 4px solid #ffb74d;
+  margin-bottom: 8px;
+  cursor: pointer;
+  transition: 0.2s;
 }
 
-.transport-cards .card h3, .attraction-cards .card h3 {
-  margin-bottom: 10px;
-  color: #5a2d0c;
+#listView .list-item:hover {
+  background: #fff3e0;
+  transform: translateX(3px);
 }
-
-.transport-cards .card p, .attraction-cards .card p {
-  font-size: 14px;
-}
-    /* Google Map Section */
+ /* Google Map Section */
     .map {
       text-align: center;
       padding: 20px;
@@ -193,179 +173,431 @@
       background:#f9a825 ;
       
     }
+    /* Section bg */
+.varanasi-overview {
+  background: white;
+}
 
-    /* Footer */
-    footer {
-      background: #2c3e50;
-      color: white;
-      padding: 20px;
-      display: grid;
-      grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
-      gap: 20px;
-      text-align: center;
-    }
-    footer h4 {
-      margin-bottom: 10px;
-      color: #f9a825;
-    }
-    footer ul {
-      list-style: none;
-      padding: 0;
-    }
-    footer ul li {
-      margin: 5px 0;
-    }
-    footer ul li a {
-      color: white;
-      text-decoration: none;}
+/* Orange tabs bar */
+.overview-tabs {
+  background: #ff6a00;
+  border-radius: 6px 6px 0 0;
+  padding: 6px;
+}
 
-    /* Responsive */
-    @media(max-width: 768px) {
-      .top-section {
-        grid-template-columns: 1fr;
-      }
-      .side-images {
-        grid-template-columns: 1fr 1fr;
-      }
-    }
+.overview-tabs .nav-link {
+  color: white;
+  border: none;
+  font-weight: 600;
+  white-space: nowrap;
+  padding: 14px 20px;
+}
 
-    @media(max-width: 768px) {
-      nav {
-        width: 100%;
-        margin-top: 10px;
-        text-align: center;
-      }
-      .side-images {
-        grid-template-columns: 1fr;
-      }
-    }
+.overview-tabs .nav-link.active {
+  background: white;
+  color: #ff6a00;
+  border-radius: 4px;
+}
+
+/* Content box */
+.overview-content {
+  background: white;
+  border: 1px solid #eee;
+  border-top: none;
+}
+
+/* Orange text */
+.text-orange {
+  color: #ff6a00;
+}
+
+/* Image overlap */
+.main-img {
+  width: 100%;
+}
+
+.overlap-img {
+  width: 80%;
+  position: absolute;
+  bottom: -40px;
+  right: -20px;
+}
+
+/* Mobile fix */
+@media (max-width: 992px) {
+  .overview-tabs .nav {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+  }
+
+  .overlap-img {
+    position: static;
+    width: 100%;
+    margin-top: 15px;
+  }
+}
+
+
   </style>
 </head>
 <body>
+  <nav class="navbar navbar-expand-lg navbar-dark" style="background:#5a2d0c;">
+  <div class="container">
 
-  <!-- Header -->
-  <header>
-    <h1>Bihar Tourism</h1>
-    <nav>
-      <a href="../index.html">Home</a>
-      <a href="#"onclick="window.history.back();" >Back</a>
-      <a href="#"onclick="window.history.forward();" >Next</a>
-    </nav>
-  </header>
+    <a class="navbar-brand fw-bold" href="#">Bihar Tourism</a>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse justify-content-end" id="navmenu">
+      <ul class="navbar-nav gap-lg-3 text-center">
+        <li class="nav-item">
+          <a class="nav-link active" href="../index.html">Home</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="#" onclick="window.history.back()">Back</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="#" onclick="window.history.forward()">Next</a>
+        </li>
+      </ul>
+    </div>
+
+  </div>
+</nav>
 
   <!-- Top Images -->
   <section class="top-section">
     <div class="destination-img">
-      <img src="" alt="Destination Image">
-    </div>
+      <img src="/tourist_/image/kakolat1.jpg"></div>
     <div class="side-images">
-      <img src="" alt="Image 1">
-      <img src="" alt="Image 2">
-      <img src="" alt="Image 3">
-      <img src="" alt="Image 4">
+      <img src="/tourist_/image/kakolat2.jpg" alt="Image 1">
+      <img src="/tourist_/image/kakolat3.jpg" alt="Image 2">
+      <img src="/tourist_/image/kakolat1.jpg" alt="Image 3">
+      <img src="/tourist_/image/kakolat1.jpg" alt="Image 4">
     </div>
   </section>
 
-  <!-- About -->
-  <section class="about">
-    <h2>About Destination</h2>
-    <p>Kakolat is a beautiful waterfall located in the Nalanda district of Bihar, India. 
-      Nestled near the Bihar-Jharkhand border, it is one of the most popular natural 
-      tourist attractions in the region. The waterfall descends from a height of about 150
-       feet, forming a natural pool at the bottom where visitors often swim and relax. 
-       Surrounded by lush greenery and hills, Kakolat offers a refreshing escape from city 
-       life and is especially crowded during weekends and holidays.</p>
-    
-  </section>
+ <!-- About Destination -->
+<section class="py-3" style="background:white;">
+  <div class="container">
 
-  <!-- Nearby Contacts -->
-  <section class="contacts">
-    <h2>Nearby Contacts</h2>
-    <div class="contact-cards">
-      <div class="card">
-        <h3>Hotel Contact</h3>
-        <p>Hotel mystic moments</p>
-        <p>📞 +91 9876543210</p>
-        <a href="tel:+919876543210">Call Now</a>
-      </div>
-      <div class="card">
-        <h3>Restaurant Contact</h3>
-        <p>kakolat highway family restaurant and rent house</p>
-        <p>📞 +91 9123456780</p>
-        <a href="tel:+919123456780">Call Now</a>
-      </div>
-      <div class="card">
-        <h3>Mall Contact</h3>
-        <p> Yushra mall</p>
-        <p>📞 +91 09135578091 </p>
-        <a href="tel:+91  09135578091">Call Now</a>
-      </div>
-      <div class="card">
-        <h3>Police Contact</h3>
-        <p>Nearest Police Station</p>
-        <p>📞 100</p>
-        <a href="tel:100">Call Now</a>
-      </div>
-      <div class="card">
-        <h3>Guide Contact</h3>
-        <p>Tour Guide Mr. Raj</p>
-        <p>📞 +91 9876501234</p>
-        <a href="tel:+919876501234">Call Now</a>
-      </div>
-      <div class="card">
-        <h3>Hospital Contact</h3>
-        <p>Dharamseela devi multispeciality hospital </p>
-        <p>📞 +91 18005321801</p>
-        <a href="tel:+91 18005321801">Call Now</a>
+    <!-- Title -->
+    <div class="text-center mb-3">
+      <h2 class="fw-bold mb-1" style="color:#5a2d0c;">
+        About Destination
+      </h2>
+      <p class="text-muted small mb-0">
+        Know more about the beauty of Kakolat Water Fall
+      </p>
+    </div>
+
+    <!-- Compact Card -->
+    <div class="row justify-content-center">
+      <div class="col-lg-8">
+       <div class="bg-white p-3 p-md-4 rounded-4 shadow-sm text-center border-0 about-hover">
+        <div class="bg-white p-3 p-md-4 rounded-4 shadow-sm text-center border-0">
+
+          <h5 class="fw-bold mb-2" style="color:#5a2d0c;">
+            Kakolat, Nalanda
+          </h5>
+
+          <p class="text-muted mb-2 small" style="line-height:1.7;">
+          Kakolat is a beautiful waterfall located in the Nalanda district of Bihar, India. 
+          Nestled near the Bihar-Jharkhand border, it is one of the most popular natural 
+          tourist attractions in the region.
+          </p>
+
+          <p class="text-muted mb-0 small" style="line-height:1.7;">
+           The waterfall descends from a height of about 150
+           feet, forming a natural pool at the bottom where visitors often swim and relax. 
+           Surrounded by lush greenery and hills, Kakolat offers a refreshing escape from city 
+           life and is especially crowded during weekends and holidays.
+          </p>
+
+        </div>
+
       </div>
     </div>
-  </section>
-  <!-- Local Transport Section -->
-<section class="local-transport">
-  <h2>Local Transport</h2>
-  <div class="transport-cards">
-    <div class="card">
-      <h3>Bus</h3>
-      <p>State and private buses available. Approx. fare ₹30-₹100.</p>
-    </div>
-    <div class="card">
-      <h3>Train</h3>
-      <p>Nearest station: Sitamarhi Railway Station. Frequent trains to Patna & other cities.</p>
-    </div>
-    <div class="card">
-      <h3>Taxi/Auto</h3>
-      <p>Available 24/7. Fare: ₹50-₹500 depending on distance.</p>
-    </div>
-    <div class="card">
-      <h3>Motorbike Rental</h3>
-      <p>Rent a  motorbike for local sightseeing.</p>
+
+  </div>
+</section>
+<!-- Nearby Contact Section -->
+<section class="nearby-section py-4" style="background:white;">
+  <div class="container">
+
+    <!-- Section Title -->
+    <h2 class="text-center fw-bold mb-4" style="color:#5a2d0c;">
+      Nearby Contact
+    </h2>
+
+    <div class="row g-3 align-items-start">
+
+      <!-- LEFT: Dynamic Places -->
+      <div class="col-lg-3">
+        <div class="card border-0 shadow-sm p-3 nearby-left-card">
+
+          <h5 class="fw-bold text-center mb-3" style="color:#5a2d0c;">
+            Hotel, Mall, Restaurant
+          </h5>
+
+          <select class="form-select mb-2" id="categorySelect" onchange="loadList()">
+            <option value="Hotel">Hotel</option>
+            <option value="Restaurant">Restaurant</option>
+            <option value="Mall">Mall</option>
+          </select>
+
+          <input
+            type="text"
+            class="form-control mb-2"
+            placeholder="Search by name..."
+            id="searchBox"
+            onkeyup="loadList()"
+          >
+
+          <!-- LIST -->
+          <div id="listView" class="mt-3"></div>
+
+          <!-- DETAIL -->
+          <div id="detailView" class="mt-3" style="display:none;">
+            <p class="text-warning fw-semibold mb-2" onclick="goBack()" style="cursor:pointer;">
+              ← Back
+            </p>
+            <h6 id="dName"></h6>
+            <p id="dType"></p>
+            <p><strong>Contact:</strong> <span id="dPhone"></span></p>
+            <p id="dDesc"></p>
+            <a id="callBtn" class="btn btn-warning btn-sm w-100" href="#">
+              Call Now
+            </a>
+            <button 
+            class="btn btn-warning btn-sm mt-2 w-100"
+            onclick="openBooking('Hotel Paradise')">
+            Book Now
+            </button>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Police -->
+      <div class="col-lg-3 col-md-6">
+        <div class="card h-100 border-0 shadow-sm text-center p-3">
+          <h5 class="fw-bold" style="color:#5a2d0c;">Police Contact</h5>
+          <p class="mb-1">Nearest Police Station</p>
+          <p class="fw-semibold">📞 100</p>
+          <a href="tel:100" class="btn btn-warning w-100">Call Now</a>
+        </div>
+      </div>
+
+      <!-- Guide -->
+      <div class="col-lg-3 col-md-6">
+        <div class="card h-100 border-0 shadow-sm text-center p-3">
+          <h5 class="fw-bold" style="color:#5a2d0c;">Guide Contact</h5>
+          <p class="mb-1">Tour Guide Mr. Raj</p>
+          <p class="fw-semibold">📞 +91 9876501234</p>
+          <a href="tel:+919876501234" class="btn btn-warning w-100">Call Now</a>
+        </div>
+      </div>
+
+      <!-- Hospital -->
+      <div class="col-lg-3 col-md-12">
+        <div class="card h-100 border-0 shadow-sm text-center p-3">
+          <h5 class="fw-bold" style="color:#5a2d0c;">Hospital Contact</h5>
+          <p class="mb-1">Dharansila devi multispeciality Hospital</p>
+          <p class="fw-semibold">📞 +91 18005321801</p>
+          <a href="tel:+9118005321801" class="btn btn-warning w-100">Call Now</a>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
+ 
+<!-- Nearest Attractions (Bootstrap Clean) -->
+<section class="py-4" style="background:white">
+  <div class="container">
 
-<!-- Nearest Attractions Section -->
-<section class="nearest-attractions">
-  <h2>Nearest Attractions</h2>
-  <div class="attraction-cards">
-    <div class="card">
-      <h3>Kolwa Waterfall and Manbhagwa Waterfall</h3>
-      <p>Distance: 2 km | Timings: 6 AM – 9 PM</p>
+    <h2 class="text-center fw-bold mb-4" style="color:#5a2d0c;">
+      Nearest Attractions
+    </h2>
+
+    <div class="row g-3 justify-content-center">
+
+      <div class="col-lg-3 col-md-6">
+        <div class="card h-100 border-0 shadow-sm text-center p-3">
+          <h5 class="fw-bold mb-1">Kolwa and Manbhagwa waterfall</h5>
+          <p class="text-muted mb-0">Distance: ~4-5 km</p>
+        </div>
+      </div>
+
+      <div class="col-lg-3 col-md-6">
+        <div class="card h-100 border-0 shadow-sm text-center p-3">
+          <h5 class="fw-bold mb-1">The religious site of shri Gunnawanji Tirth</h5>
+          <p class="text-muted mb-0">Distance: ~4-7 km</p>
+        </div>
+      </div>
+
+      <div class="col-lg-3 col-md-6">
+        <div class="card h-100 border-0 shadow-sm text-center p-3">
+          <h5 class="fw-bold mb-1">Ajatshatru Fort</h5>
+          <p class="text-muted mb-0">Distance: ~5–6 km</p>
+        </div>
+      </div>
+
+      <div class="col-lg-3 col-md-6">
+        <div class="card h-100 border-0 shadow-sm text-center p-3">
+          <h5 class="fw-bold mb-1">Glassbridge</h5>
+          <p class="text-muted mb-0">Distance: ~7-8 km</p>
+        </div>
+      </div>
+
     </div>
-    <div class="card">
-      <h3>the religious site of Shri Gunnawan Ji Tirth</h3>
-      <p>Distance: 3.5 km | Timings: 9 AM – 6 PM</p>
+
+  </div>
+</section>
+<section class="varanasi-overview py-5">
+  <div class="container">
+
+    <!-- Title -->
+    <h2 class="text-center mb-4">
+      Overview of <strong>Kakolat,Nalanda</strong>
+    </h2>
+
+    <!-- TOP ORANGE TABS BAR -->
+    <div class="overview-tabs">
+      <ul class="nav nav-tabs border-0 justify-content-between flex-nowrap overflow-auto">
+
+        <li class="nav-item">
+          <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#tab1">
+            <i class="bi bi-geo-alt"></i> Places of Interest
+          </button>
+        </li>
+
+        <li class="nav-item">
+          <button class="nav-link" data-bs-toggle="tab" data-bs-target="#tab2">
+            <i class="bi bi-signpost"></i> How to Reach
+          </button>
+        </li>
+
+        <li class="nav-item">
+          <button class="nav-link" data-bs-toggle="tab" data-bs-target="#tab3">
+            <i class="bi bi-briefcase"></i> Travel Desk
+          </button>
+        </li>
+
+        <li class="nav-item">
+          <button class="nav-link" data-bs-toggle="tab" data-bs-target="#tab4">
+            <i class="bi bi-cup-hot"></i> Food & Cuisine
+          </button>
+        </li>
+
+        <li class="nav-item">
+          <button class="nav-link" data-bs-toggle="tab" data-bs-target="#tab5">
+            <i class="bi bi-bag"></i> Shopping
+          </button>
+        </li>
+
+        <li class="nav-item">
+          <button class="nav-link" data-bs-toggle="tab" data-bs-target="#tab6">
+            <i class="bi bi-star"></i> Fair & Festivals
+          </button>
+        </li>
+
+      </ul>
     </div>
-    <div class="card">
-      <h3>the ancient monument of Ajatshatru Fort in Rajgir</h3>
-      <p>Distance: 5 km | Timings: 10 AM – 5 PM</p>
-    </div>
-    <div class="card">
-      <h3>glass bridge</h3>
-      <p>Distance: 8 km | Timings: 8 AM – 5 PM</p>
+
+    <!-- CONTENT BOX -->
+    <div class="tab-content overview-content p-4">
+
+      <!-- TAB 1 — EXPLORE -->
+      <div class="tab-pane fade show active" id="tab1">
+        <div class="row g-4 align-items-start">
+
+          <!-- LEFT -->
+          <div class="col-lg-7">
+            <h4 class="text-orange fw-bold">Top Places to Explore</h4>
+            <hr>
+
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item"><strong>Glassbridge</strong> –  A historic water system showcasinGlassbridgeg ancient engineering for water management.</li>
+              <li class="list-group-item"><strong>Ajatshatru Fort</strong> – A peaceful Buddhist temple built in Japanese style reflecting serenity and spirituality.</li>
+              <li class="list-group-item"><strong>The religious site of shri Gunnawanji Tirth</strong> – An ancient stone wall surrounding Rajgir, believed to be one of the oldest in India.</li>
+              <li class="list-group-item"><strong>Kolwa and Manbhagwa  Waterfall</strong> – Famous for: Green park, boating & relaxing</li>
+              <li class="list-group-item"><strong>Virtual Peak</strong> – A sacred hill where Gautama Buddha delivered many important sermons.</li>
+            </ul>
+          </div>
+          <!-- RIGHT IMAGES -->
+          <div class="col-lg-5 position-relative">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/3/3f/Digha_Ghat_Patna.jpg"
+                 class="img-fluid rounded-4 shadow main-img mb-3" alt="digha ghat">
+
+            <img src="https://upload.wikimedia.org/wikipedia/commons/0/0c/J_P_Setu_Patna.jpg"
+                 class="img-fluid rounded-4 shadow overlap-img" alt="jp setu">
+          </div>
+
+        </div>
+      </div>
+
+      <!-- TAB 2 — REACH -->
+      <div class="tab-pane fade" id="tab2">
+        <h4 class="text-orange fw-bold mb-3">How to Reach Kakolat</h4>
+
+        <p><strong>✈ By Air:</strong> Jay Prakash Narayan Airport.</p>
+        <p><strong>🚆 By Rail:</strong> The nearest station is Rajgir Railway Station.</p>
+        <p><strong>🛣 By Road:</strong> Rajgir is well connected by road to cities like Patna and Gaya.</p>
+      </div>
+      
+      <!-- TAB 3 — TRAVEL DESK -->
+      <div class="tab-pane fade" id="tab3">
+        <h4 class="text-orange fw-bold mb-3">Travel Desk</h4>
+        <p class="text-muted">
+          Tourist help desks and local guides are available in Nalanda city.
+          Visitors can book taxis and local tours from major hotels and travel agencies.
+        </p>
+      </div>
+
+      <!-- TAB 4 — FOOD -->
+      <div class="tab-pane fade" id="tab4">
+        <h4 class="text-orange fw-bold mb-3">Famous Food of Nalanda</h4>
+
+        <ul class="list-group">
+          <li class="list-group-item"><strong>Litti Chokha</strong> – Famous traditional Bihari dish.</li>
+          <li class="list-group-item"><strong>Sattu Paratha</strong> – Healthy regional specialty.</li>
+          <li class="list-group-item"><strong>Khaja</strong> – Popular crispy sweet.</li>
+          <li class="list-group-item"><strong>Thekua</strong> – A crunchy homemade sweet made with wheat flour and jaggery..</li>
+          <li class="list-group-item"><strong>Malpua & Rabri</strong> – Festive dessert.</li>
+        </ul>
+      </div>
+
+      <!-- TAB 5 — SHOPPING -->
+      <div class="tab-pane fade" id="tab5">
+        <h4 class="text-orange fw-bold mb-3">Shopping in Nalanda</h4>
+        <p class="text-muted">
+          Popular shopping areas near Nalanda include Maurya Lok, Hathwa Market
+          and local street markets where traditional Bihari items are available.
+        </p>
+      </div>
+
+      <!-- TAB 6 — FESTIVALS -->
+      <div class="tab-pane fade" id="tab6">
+        <h4 class="text-orange fw-bold mb-3">Major Festivals</h4>
+
+        <ul class="list-group">
+          <li class="list-group-item"><strong>Chhath Puja</strong> – Grand celebration at Digha Ghat.</li>
+          <li class="list-group-item"><strong>Makar Sankranti</strong> – Kite flying festival.</li>
+          <li class="list-group-item"><strong>Holi</strong> – Colorful celebrations.</li>
+          <li class="list-group-item"><strong>Diwali</strong> – Festival of lights.</li>
+          <li class="list-group-item"><strong>Durga Puja</strong> – Major pandal celebrations.</li>
+        </ul>
+      </div>
+
     </div>
   </div>
 </section>
-
   <!-- Google Map -->
   <section class="map">
     <h2>Find Destination on Google Map</h2>
@@ -373,33 +605,196 @@
     <a href="https://www.google.com/maps" target="_blank">Open Google Map</a>
   </section>
 
-  <!-- Footer -->
-  <footer>
-    <div>
-      <h4>Quick Links</h4>
-      <ul>
-        <li><a href="../index.html">Home</a></li>
-        <li><a href="#" onclick="window.history.back();">Back</a></li>
-        <li><a href="#" onclick="window.history.forward();">Next</a></li>
-      </ul>
-    </div>
-    <div>
-      <h4>Contact</h4>
-      <ul>
-        <li>Email: amank29118@gmail.com.com</li>
-        <li>Police Helpline: 100</li>
-        <li>Ambulance: 108</li>
-      </ul>
-    </div>
-    <div>
-      <h4>Follow Us</h4>
-      <ul>
-        <li><a href="https://www.instagram.com">Instagram</a></li>
-        <li><a href="https://www.facebook.com">Facebook</a></li>
-        <li><a href="https://www.twitter.com">Twitter</a></li>
-      </ul>
-    </div>
-  </footer>
+<!-- Footer (Bootstrap Professional) -->
+<footer class="pt-5 pb-3" style="background:#2c3e50; color:white;">
+  <div class="container">
 
+    <div class="row text-center text-md-start g-4">
+
+      <!-- Quick Links -->
+      <div class="col-md-4">
+        <h5 class="fw-bold mb-3" style="color:#f9a825;">Quick Links</h5>
+        <ul class="list-unstyled">
+          <li class="mb-2"><a href="../index.html" class="text-white text-decoration-none">Home</a></li>
+          <li class="mb-2"><a href="#" onclick="window.history.back();" class="text-white text-decoration-none">Back</a></li>
+          <li class="mb-2"><a href="#" onclick="window.history.forward();" class="text-white text-decoration-none">Next</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact -->
+      <div class="col-md-4">
+        <h5 class="fw-bold mb-3" style="color:#f9a825;">Contact</h5>
+        <ul class="list-unstyled">
+          <li class="mb-2">Email: codecrafter693@gmail.com</li>
+          <li class="mb-2">Police Helpline: 100</li>
+          <li class="mb-2">Ambulance: 108</li>
+        </ul>
+      </div>
+
+      <!-- Follow Us -->
+      <div class="col-md-4">
+        <h5 class="fw-bold mb-3" style="color:#f9a825;">Follow Us</h5>
+        <ul class="list-unstyled">
+          <li class="mb-2"><a href="https://www.instagram.com" class="text-white text-decoration-none">Instagram</a></li>
+          <li class="mb-2"><a href="https://www.facebook.com" class="text-white text-decoration-none">Facebook</a></li>
+          <li class="mb-2"><a href="https://www.twitter.com" class="text-white text-decoration-none">Twitter</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- Bottom Line -->
+    <hr class="border-light my-4">
+
+    <p class="text-center mb-0 small">
+      © 2026 Bihar Tourism. All rights reserved.
+    </p>
+
+  </div>
+</footer>
+  <!-- Booking Modal -->
+<div class="modal fade" id="bookingModal" tabindex="-1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <h5 class="modal-title">Hotel Booking</h5>
+        <button class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+
+      <div class="modal-body">
+        <form id="bookingForm">
+
+          <input type="hidden" id="hotelName">
+
+          <div class="mb-2">
+            <label class="form-label">Your Name</label>
+            <input type="text" class="form-control" required>
+          </div>
+
+          <div class="mb-2">
+            <label class="form-label">Phone</label>
+            <input type="tel" class="form-control" required>
+          </div>
+
+          <div class="mb-2">
+            <label class="form-label">Check-in</label>
+            <input type="date" class="form-control" required>
+          </div>
+
+          <div class="mb-2">
+            <label class="form-label">Check-out</label>
+            <input type="date" class="form-control" required>
+          </div>
+
+          <div class="mb-2">
+            <label class="form-label">Guests</label>
+            <input type="number" class="form-control" min="1" required>
+          </div>
+
+          <button class="btn btn-warning w-100 mt-2">
+            Confirm Booking
+          </button>
+
+        </form>
+      </div>
+
+    </div>
+  </div>
+</div>
+<script>
+function openBooking(hotel) {
+  document.getElementById("hotelName").value = hotel;
+  const modal = new bootstrap.Modal(document.getElementById("bookingModal"));
+  modal.show();
+}
+
+document.getElementById("bookingForm").addEventListener("submit", function(e) {
+  e.preventDefault();
+
+  alert("🎉 Booking Confirmed! Our team will contact you soon.");
+
+  const modalEl = document.getElementById("bookingModal");
+  const modal = bootstrap.Modal.getInstance(modalEl);
+  modal.hide();
+
+  this.reset();
+});
+</script>
+<script>
+let data = {
+  hotel: [],
+  restaurant: [],
+  mall: []
+};
+
+function loadList() {
+  const cat = document.getElementById("categorySelect").value.toLowerCase();
+  const search = document.getElementById("searchBox").value.toLowerCase();
+  const list = document.getElementById("listView");
+
+  document.getElementById("detailView").style.display = "none";
+  list.style.display = "block";
+  list.innerHTML = "";
+
+  if (!data[cat]) return;
+
+  data[cat]
+    .filter(item => item.name.toLowerCase().includes(search))
+    .forEach(item => {
+      const div = document.createElement("div");
+      div.className = "list-item";
+      div.innerText = item.name;
+      div.onclick = () => showDetails(item, cat);
+      list.appendChild(div);
+    });
+}
+
+function showDetails(item, cat) {
+  document.getElementById("listView").style.display = "none";
+  document.getElementById("detailView").style.display = "block";
+
+  document.getElementById("dName").innerText = item.name;
+  document.getElementById("dType").innerText = "Type: " + cat;
+  document.getElementById("dPhone").innerText = item.phone;
+  document.getElementById("dDesc").innerText = item.desc;
+  document.getElementById("callBtn").href = "tel:" + item.phone;
+}
+
+function goBack() {
+  document.getElementById("detailView").style.display = "none";
+  document.getElementById("listView").style.display = "block";
+}
+
+async function fetchData() {
+  try {
+    const res = await fetch("http://localhost:5001/api/places");
+    const result = await res.json();
+
+    data.hotel = [];
+    data.restaurant = [];
+    data.mall = [];
+
+    result.forEach(item => {
+      const type = item.type.toLowerCase();
+      if (data[type]) {
+        data[type].push({
+          name: item.name,
+          phone: item.phone || "Not Available",
+          desc: item.description || "No description available"
+        });
+      }
+    });
+
+    loadList();
+
+  } catch (error) {
+    console.log("Error fetching data:", error);
+  }
+}
+fetchData();
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

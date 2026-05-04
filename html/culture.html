@@ -166,125 +166,411 @@
     </nav>
 </header>
 
-  <!-- Hero / Slider -->
   
-    <div class="slider">
-      <div class="slide active">
-        <img src="../image/chat puja.jpg" alt="Festival">
+
+  <!-- Advanced District Culture Showcase -->
+<section style="position:relative; height:100vh; overflow:hidden;">
+
+  <!-- Video Background -->
+  <video autoplay muted loop playsinline
+    style="position:absolute; top:0; left:0; width:100%; height:100%; object-fit:cover;">
+    <source src="/tourist_/image/culture video.mp4" type="video/mp4">
+  </video>
+
+  <!-- Dark Overlay -->
+  <div style="position:absolute; inset:0; background:rgba(0,0,0,0.65);"></div>
+
+  <!-- Content -->
+  <div style="
+    position:relative;
+    z-index:2;
+    height:100%;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    color:white;
+    padding:20px;
+  ">
+
+    <h2 style="font-size:3rem; margin-bottom:10px; text-align:center;">
+      Bihar Culture Showcase
+    </h2>
+
+    <p style="max-width:800px; text-align:center; font-size:1.2rem; margin-bottom:40px;">
+      A moving journey through Bihar’s districts — festivals, dances and traditions
+      celebrated across generations.
+    </p>
+
+    <!-- Slider -->
+    <div id="districtSlider" style="
+      width:90%;
+      max-width:1100px;
+      overflow:hidden;
+    ">
+      <div id="slides" style="
+        display:flex;
+        transition:transform 1s ease;
+      ">
+
+        <!-- Slide -->
+        <div style="min-width:100%; display:flex; justify-content:center;">
+          <div style="
+            position:relative;
+            width:80%;
+            height:420px;
+            border-radius:25px;
+            overflow:hidden;
+            box-shadow:0 20px 50px rgba(0,0,0,0.5);
+          ">
+            <img src="../image/chat puja.jpg"
+              style="width:100%; height:100%; object-fit:cover;">
+            <div style="
+              position:absolute; inset:0;
+              background:linear-gradient(to top,rgba(0,0,0,0.9),rgba(0,0,0,0.2));
+              padding:30px;
+              display:flex;
+              flex-direction:column;
+              justify-content:flex-end;
+            ">
+              <span style="
+                background:gold;
+                color:#000;
+                padding:6px 14px;
+                border-radius:20px;
+                width:max-content;
+                font-weight:700;
+                margin-bottom:10px;
+              ">🏆 Best Culture District</span>
+              <h3 style="font-size:2.2rem;">Patna District</h3>
+              <p>Chhath Puja • Jat-Jatin • Terracotta Art</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide -->
+        <div style="min-width:100%; display:flex; justify-content:center;">
+          <div style="
+            position:relative;
+            width:80%;
+            height:420px;
+            border-radius:25px;
+            overflow:hidden;
+            box-shadow:0 20px 50px rgba(0,0,0,0.5);
+          ">
+            <img src="../image/bodhgaya.jpg"
+              style="width:100%; height:100%; object-fit:cover;">
+            <div style="
+              position:absolute; inset:0;
+              background:linear-gradient(to top,rgba(0,0,0,0.9),rgba(0,0,0,0.2));
+              padding:30px;
+              display:flex;
+              flex-direction:column;
+              justify-content:flex-end;
+            ">
+              <h3 style="font-size:2.2rem;">Gaya District</h3>
+              <p>Buddha Jayanti • Spiritual Heritage • Pilgrimage</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide -->
+        <div style="min-width:100%; display:flex; justify-content:center;">
+          <div style="
+            position:relative;
+            width:80%;
+            height:420px;
+            border-radius:25px;
+            overflow:hidden;
+            box-shadow:0 20px 50px rgba(0,0,0,0.5);
+          ">
+            <img src="../image/madhubani.jpg"
+              style="width:100%; height:100%; object-fit:cover;">
+            <div style="
+              position:absolute; inset:0;
+              background:linear-gradient(to top,rgba(0,0,0,0.9),rgba(0,0,0,0.2));
+              padding:30px;
+              display:flex;
+              flex-direction:column;
+              justify-content:flex-end;
+            ">
+              <h3 style="font-size:2.2rem;">Madhubani District</h3>
+              <p>Madhubani Art • Chhau Dance • Mithila Culture</p>
+            </div>
+          </div>
+        </div>
+
       </div>
-      <div class="slide">
-        <img src="../image/durga puja3.jpg" alt="Dance">
+    </div>
+
+  </div>
+</section>
+<!-- Famous Bihar Cultural Festivals -->
+<section id="famousCulture" style="padding:50px 20px; background:#faf6f1; text-align:center;">
+  <h2 style="color:#7a3e2f; margin-bottom:30px;">Famous Bihar Cultural Festivals</h2>
+  
+  <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(250px,1fr)); gap:20px;">
+
+    <!-- Card 1 -->
+    <div style="background:white; border-radius:15px; overflow:hidden; box-shadow:0 5px 15px rgba(0,0,0,0.1); transition: transform 0.3s;" 
+         onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+      <img src="../image/chat puja.jpg" alt="Chhath Puja" style="width:100%; height:180px; object-fit:cover;">
+      <div style="padding:15px;">
+        <h3 style="color:#7a3e2f; margin-bottom:10px;">Chhath Puja</h3>
+        <p>Sun worship festival celebrated with devotion across Bihar.</p>
       </div>
-      <div class="slide">
-        <img src="../image/folk dancr4.jpg" alt="Handicraft">
+    </div>
+
+    <!-- Card 2 -->
+    <div style="background:white; border-radius:15px; overflow:hidden; box-shadow:0 5px 15px rgba(0,0,0,0.1); transition: transform 0.3s;" 
+         onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+      <img src="../image/budha-jayanti.jpg" alt="Buddha Jayanti" style="width:100%; height:180px; object-fit:cover;">
+      <div style="padding:15px;">
+        <h3 style="color:#7a3e2f; margin-bottom:10px;">Buddha Jayanti</h3>
+        <p>Celebration of Buddha's birth and teachings, majorly in Gaya.</p>
       </div>
     </div>
 
-
-  <!-- Introduction -->
-  <section>
-    <h2>Introduction</h2>
-    
-      <p>Bihar’s culture is a vibrant blend of traditions, festivals, art, and heritage. Festivals like Chhath Puja, Makar Sankranti,
-      and Sonepur Mela showcase deep devotion and community spirit. The state’s folk dances such as Jat-Jatin, 
-      Bidesia, and Jhijhiya bring stories of rural life alive with rhythm and energy. 
-      Bihar is also renowned for its handicrafts like Madhubani painting, Sikki grass work, and stone carvings,
-      reflecting timeless artistry. The media and theatre traditions of Bihar, 
-      from local plays to regional cinema, continue to carry forward its voice and values. Altogether, 
-      Bihar’s culture is a colorful tapestry of faith, creativity, and tradition.</p>
+    <!-- Card 3 -->
+    <div style="background:white; border-radius:15px; overflow:hidden; box-shadow:0 5px 15px rgba(0,0,0,0.1); transition: transform 0.3s;" 
+         onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+      <img src="../image/madhubani-painting.webp" alt="Madhubani Art" style="width:100%; height:180px; object-fit:cover;">
+      <div style="padding:15px;">
+        <h3 style="color:#7a3e2f; margin-bottom:10px;">Madhubani Art</h3>
+        <p>Famous painting style from Mithila region, colorful and traditional.</p>
+      </div>
     </div>
-  </section>
-
-  <!-- Folk Dance -->
-  <section>
-    <h2>Folk Dance</h2>
-    <div class="grid">
-      <div class="card"><img src="../image/folk dance 4.jpg" alt="Dance"><p>Traditional Folk Dance with vibrant costumes and rhythm.Bihar's folk dances, 
-        like Jat-Jatin, Bidesia, and Domkach, reflect the state's rich cultural heritage and are performed during festivals, 
-        weddings, and social events</p>.<p></div>
-      <div class="card"><img src="../image/folk dancr4.jpg" alt="Dance"><p>Including a variety of folk 
-        dances that reflect the region's heritage, rituals, and daily life. These dances are usually performed
-         during festivals, social gatherings, and seasonal celebrations.</p></div>
+    <!-- Card 4 -->
+    <div style="background:white; border-radius:15px; overflow:hidden; box-shadow:0 5px 15px rgba(0,0,0,0.1); transition: transform 0.3s;" 
+         onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+      <img src="../image/guru govid singh.jpg" alt="guru govind singh" style="width:100%; height:180px; object-fit:cover;">
+      <div style="padding:15px;">
+        <h3 style="color:#7a3e2f; margin-bottom:10px;">Guru Govind Singh Jayanti</h3>
+        <p>Guru Gobind Singh Jayanti is one of the most sacred festivals of the Sikh community.</p>
+      </div>
     </div>
-  </section>
-
-  <section>
-    <div class="grid">
-      <div class="card"><img src="https://cdn-images.prepp.in/public/image/fb2e608f76909eb9b19c18b11a8bd739.jpeg?tr=w-512,h-312,c-force" alt="Dance"><p>Jat Jatni dance is a traditional folk dance form popular in the Bihar region of India. It is typically performed by women, often as part of religious or cultural celebrations, and is a symbol of the region’s rich cultural heritage.</p>.<p></div>
-      <div class="card"><img src="https://www.shutterstock.com/editorial/image-editorial/McTcI73bN3T3Ub4eMDYzNTA=/artists-bihar-region-perform-traditional-'jhijhiya'-dance-1500w-12648576a.jpg" alt="Dance"><p>Jhijhiya dance is another popular and traditional folk dance form from Bihar, specifically associated with the Bihari community. It holds a special place in the cultural traditions of the region, especially during festivals and religious occasions.</p></div>
+    <!-- Card 5 -->
+    <div style="background:white; border-radius:15px; overflow:hidden; box-shadow:0 5px 15px rgba(0,0,0,0.1); transition: transform 0.3s;" 
+         onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+      <img src="../image/diwali.avif" alt="diwali" style="width:100%; height:180px; object-fit:cover;">
+      <div style="padding:15px;">
+        <h3 style="color:#7a3e2f; margin-bottom:10px;">Diwali</h3>
+        <p>Diwali is a major Indian festival that symbolizes the victory of light over darkness and good over evil.</p>
+      </div>
     </div>
-  </section>
 
-  <section>
-    <div class="grid">
-      <div class="card"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSrnRkkkDHIhha6o1NNKooG5zpxG4aTzqh8rw&s" alt="Dance"><p> Bidesia is one of the most iconic folk dances of Bihar and is deeply embedded in the cultural heritage of the region. It's not just a dance form, but a whole theatrical performance that combines music, drama, and movement, reflecting the emotional and social struggles of rural life..</p>.<p></div>
-      <div class="card"><img src="https://tribal783005478.wordpress.com/wp-content/uploads/2018/09/5e856-school-chalao-paika-dance-orissa.png" alt="Dance"><p>Paika Dance is another traditional and vibrant folk dance form from Bihar, particularly associated with the Bihari community. It is an energetic dance that holds historical significance and is deeply connected to the warrior culture of Bihar.</p></div>
+    <!-- Card 6 -->
+    <div style="background:white; border-radius:15px; overflow:hidden; box-shadow:0 5px 15px rgba(0,0,0,0.1); transition: transform 0.3s;" 
+         onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+      <img src="../image/Folk-Dance.jpg" alt="Folk Dance" style="width:100%; height:180px; object-fit:cover;">
+      <div style="padding:15px;">
+        <h3 style="color:#7a3e2f; margin-bottom:10px;">Folk Dance</h3>
+        <p>Traditional dances like Jat-Jatin, Bidesia, and Chhau performed across Bihar.</p>
+      </div>
     </div>
-  </section>
-
-  <section>
-    <div class="grid">
-      <div class="card"><img src="https://www.superprof.co.in/blog/wp-content/uploads/2023/09/chhau-dance-cover-scaled.jpg" alt="Dance"><p> </p>Chhau Dance is one of the most spectacular and culturally significant traditional dance forms of Bihar, particularly associated with the Madhubani region of the state, though it is also performed in West Bengal and Odisha. Known for its high energy, athleticism, and dramatic storytelling, Chhau combines elements of martial arts, rituals, theater, and folklore.<p></div>
-      <div class="card"><img src="https://indianetzone.wordpress.com/wp-content/uploads/2023/05/karma-naach1.jpg?w=1024" alt="Dance"><p>.</p>Karma Dance is a traditional folk dance form from Bihar, especially popular in the Madhubani and Muzaffarpur districts. It is primarily associated with the Karma Festival, which is celebrated to honor Karma, the deity of virtue and fertility in the local Bihari culture.</div>
+    <!-- Card 7 -->
+     <div style="background:white; border-radius:15px; overflow:hidden; box-shadow:0 5px 15px rgba(0,0,0,0.1); transition: transform 0.3s;" 
+         onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+      <img src="../image/Muharram-Islamic-month-moon-and-mosque.jpg" alt="Muharram Festival" style="width:100%; height:180px; object-fit:cover;">
+      <div style="padding:15px;">
+        <h3 style="color:#7a3e2f; margin-bottom:10px;">Muharram</h3>
+        <p>Observed widely in Bihar with processions and cultural rituals by the Muslim community.</p>
+      </div>
     </div>
-  </section>
-
-  <!-- Festival -->
-  <section>
-    <h2>Festivals</h2>
-    <div class="grid">
-      <div class="card"><img src="../image/chat puja.jpg" alt="Festival"><p>Chhath Puja stands as a beautiful ritual of devotion, purity, 
-        ecological mindfulness, and communal unity. The images offer a vivid look at devotees bathing at the river’s
-         edge, singing folk melodies, and offering prayers to the sun—framed by a tradition that spans centuries.</p>.</p></div>
-      <div class="card"><img src="../image/durga puja3.jpg" alt="Festival"><p>Durga Puja is not just a religious celebration—it’s also a cultural
-         festival symbolizing female power (Shakti), artistic expression, and community togetherness. It’s a time of 
-         joy, devotion, and festivity for people of all ages..</p></div>
+    <!-- Card 8 -->
+    <div style="background:white; border-radius:15px; overflow:hidden; box-shadow:0 5px 15px rgba(0,0,0,0.1); transition: transform 0.3s;" 
+         onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+      <img src="../image/eid.webp" alt="Eid Festival" style="width:100%; height:180px; object-fit:cover;">
+      <div style="padding:15px;">
+        <h3 style="color:#7a3e2f; margin-bottom:10px;">Eid</h3>
+        <p>Bihar’s Muslim community celebrates Eid with grand feasts and communal prayers.</p>
+      </div>
     </div>
-  </section>
+  </div>
+</section>
+<section id="district-culture">
+  <h2>Explore Bihar District Culture</h2>
 
-  <section>
-    <div class="grid">
-      <div class="card"><img src="https://media.istockphoto.com/id/1381030718/photo/barsana-holi-one-of-the-most-joyful-festival-of-india-this-is-birth-place-of-radha-lord.jpg?s=612x612&w=0&k=20&c=c0kcjHpSFJXg7F4D6s8Ez-7RWY3MjoIrwsiRQKScank=" alt="Festival"><p>.</p>Holi is one of the most vibrant, joyous, and widely celebrated festivals in Bihar. It marks the arrival of spring and is a celebration of the victory of good over evil, as well as the celebration of love, unity, and the abundance of nature.</p></div>
-      <div class="card"><img src="https://youthdarpan.com/wp-content/uploads/2022/02/Screenshot-2022-02-06-at-11.03.55-AM.png" alt="Festival"><p>Saraswati Puja in Bihar is a significant cultural and religious event, celebrated with great enthusiasm and devotion, especially by students, scholars, and those involved in the arts and crafts. The festival typically falls in the month of Magha (January-February) and marks the birth of Goddess Saraswati, the deity of wisdom, knowledge, music, and arts.</p></div>
-    </div>
-  </section>
+  <select id="district-select">
+    <option value="">-- Select District --</option>
+    <option value="patna">Patna</option>
+    <option value="gaya">Gaya</option>
+    <option value="nalanda">Nalanda</option>
+    <option value="bhojpur">Bhojpur</option>
+    <option value="buxar">Buxar</option>
+    <option value="rohtas">Rohtas</option>
+    <option value="aurangabad">Aurangabad</option>
+    <option value="arwal">Arwal</option>
+    <option value="jehanabad">Jehanabad</option>
+    <option value="nawada">Nawada</option>
+    <option value="jamui">Jamui</option>
+    <option value="banka">Banka</option>
+    <option value="lakhisarai">Lakhisarai</option>
+    <option value="sheikhpura">Sheikhpura</option>
+    <option value="begusarai">Begusarai</option>
+    <option value="khagaria">Khagaria</option>
+    <option value="saharsa">Saharsa</option>
+    <option value="supaul">Supaul</option>
+    <option value="madhepura">Madhepura</option>
+    <option value="purnia">Purnia</option>
+    <option value="katihar">Katihar</option>
+    <option value="kishanganj">Kishanganj</option>
+    <option value="araria">Araria</option>
+    <option value="bhagalpur">Bhagalpur</option>
+    <option value="munger">Munger</option>
+    <option value="darbhanga">Darbhanga</option>
+    <option value="madhubani">Madhubani</option>
+    <option value="samastipur">Samastipur</option>
+    <option value="sitamarhi">Sitamarhi</option>
+    <option value="sheohar">Sheohar</option>
+    <option value="muzaffarpur">Muzaffarpur</option>
+    <option value="vaishali">Vaishali</option>
+    <option value="saran">Saran</option>
+    <option value="siwan">Siwan</option>
+    <option value="gopalganj">Gopalganj</option>
+    <option value="east_champaran">East Champaran</option>
+    <option value="west_champaran">West Champaran</option>
+  </select>
 
-  <section>
-    <div class="grid">
-      <div class="card"><img src="https://www.madhepuraabtak.com/wp-content/uploads/2017/11/Sama-Chakeva-Visarjana.jpg" alt="Festival"><p>.</p>Sama Chakeva is one of the most significant and cherished folk festivals in Bihar, particularly celebrated by the Bihari women in the Madhubani region. It is a ritualistic and cultural festival that highlights the relationship between brother and sister, emphasizing themes of love, affection, and the bond of family.</p></div>
-      <div class="card"><img src="https://utsav.gov.in/public/festival_top/1659608853.jpg" alt="Festival"><p>Diwali is one of the most celebrated and grandest festivals in Bihar, marked with immense enthusiasm and joy. The festival is dedicated to the worship of Lord Rama, Lakshmi, and the victory of light over darkness. For Biharis, Diwali is not just a religious occasion but a cultural extravaganza, deeply rooted in family traditions, rituals, and community spirit.</p></div>
-    </div>
-  </section>
+  <div id="info-panel"></div>
+</section>
 
-  <section>
-    <div class="grid">
-      <div class="card"><img src="https://www.livehindustan.com/lh-img/smart/img/2025/01/12/original/MixCollage-12-Jan-2025-05-14-PM-4728_1736683354028.jpg" alt="Festival"><p>.</p>.Makar Sankranti is a solar festival, marking the moment when the sun enters the Capricorn constellation. This is a key time in the Hindu lunar calendar, as it signifies the end of the winter solstice and the beginning of longer days and shorter nights.</p></div>
-      <div class="card"><img src="https://images.cnbctv18.com/uploads/2024/04/ram-navami-2024-04-f3900b2b79110d6939b3242e0c4ae5f3.jpg" alt="Festival"><p>Ram Navami is a highly significant festival in Bihar, just as it is across India. Celebrated to mark the birth of Lord Ram, the seventh incarnation of Lord Vishnu, Ram Navami in Bihar is observed with immense devotion and cultural fervor, especially in rural and urban areas alike. It usually falls in the Chaitra month (March-April), on the ninth day of the Navaratri festival, which is dedicated to Goddess Durga.</p></div>
-    </div>
-  </section>
+<style>
+#district-culture {
+  padding: 30px;
+  background: linear-gradient(135deg,#ffecd2,#fcb69f);
+  border-radius: 20px;
+  text-align:center;
+}
+
+#district-select {
+  padding:10px;
+  margin:20px;
+  border-radius:10px;
+}
+
+#info-panel {
+  display:flex;
+  flex-wrap:wrap;
+  gap:15px;
+  justify-content:center;
+}
+
+.info-card {
+  background:white;
+  padding:15px;
+  border-radius:12px;
+  width:180px;
+  box-shadow:0 5px 15px rgba(0,0,0,0.2);
+  transition:0.3s;
+}
+
+.info-card:hover {
+  transform:scale(1.05);
+}
+
+.history {
+  width:90%;
+  background:#fff3cd;
+}
+</style>
+
+<script>
+const districts = {
+  patna:{festivals:["Chhath","Diwali","Eid"],dances:["Jat-Jatin"],handicrafts:["Terracotta"],foods:["Litti"],history:"Ancient Pataliputra"},
+  gaya:{festivals:["Buddha Jayanti"],dances:["Folk"],handicrafts:["Stone"],foods:["Tilkut"],history:"Bodh Gaya"},
+  nalanda:{festivals:["Buddha Jayanti"],dances:["Folk"],handicrafts:["Crafts"],foods:["Sweets"],history:"Nalanda University"},
+  bhojpur:{festivals:["Chhath"],dances:["Bidesia"],handicrafts:["Crafts"],foods:["Litti"],history:"Bhojpuri region"},
+  buxar:{festivals:["Ram Navami"],dances:["Folk"],handicrafts:["Crafts"],foods:["Sweets"],history:"Battle of Buxar"},
+  rohtas:{festivals:["Diwali"],dances:["Folk"],handicrafts:["Stone"],foods:["Local"],history:"Rohtas Fort"},
+  aurangabad:{festivals:["Chhath"],dances:["Folk"],handicrafts:["Crafts"],foods:["Local"],history:"Magadh region"},
+  arwal:{festivals:["Local"],dances:["Folk"],handicrafts:["Crafts"],foods:["Local"],history:"Small district"},
+  jehanabad:{festivals:["Chhath"],dances:["Folk"],handicrafts:["Crafts"],foods:["Local"],history:"Agriculture"},
+  nawada:{festivals:["Chhath"],dances:["Folk"],handicrafts:["Crafts"],foods:["Local"],history:"Historic"},
+  jamui:{festivals:["Chhath"],dances:["Folk"],handicrafts:["Crafts"],foods:["Local"],history:"Forest"},
+  banka:{festivals:["Chhath"],dances:["Folk"],handicrafts:["Crafts"],foods:["Local"],history:"Border area"},
+  lakhisarai:{festivals:["Chhath"],dances:["Folk"],handicrafts:["Crafts"],foods:["Local"],history:"Historic"},
+  sheikhpura:{festivals:["Chhath"],dances:["Folk"],handicrafts:["Crafts"],foods:["Local"],history:"Small"},
+  begusarai:{festivals:["Chhath"],dances:["Folk"],handicrafts:["Crafts"],foods:["Local"],history:"Industrial"},
+  khagaria:{festivals:["Chhath"],dances:["Folk"],handicrafts:["Crafts"],foods:["Local"],history:"River"},
+  saharsa:{festivals:["Chhath"],dances:["Folk"],handicrafts:["Crafts"],foods:["Local"],history:"Flood area"},
+  supaul:{festivals:["Chhath"],dances:["Folk"],handicrafts:["Crafts"],foods:["Local"],history:"Kosi region"},
+  madhepura:{festivals:["Chhath"],dances:["Folk"],handicrafts:["Crafts"],foods:["Local"],history:"Yadav region"},
+  purnia:{festivals:["Chhath"],dances:["Folk"],handicrafts:["Crafts"],foods:["Local"],history:"Seemanchal"},
+  katihar:{festivals:["Eid"],dances:["Folk"],handicrafts:["Crafts"],foods:["Local"],history:"Rail hub"},
+  kishanganj:{festivals:["Eid"],dances:["Folk"],handicrafts:["Crafts"],foods:["Local"],history:"Muslim area"},
+  araria:{festivals:["Eid"],dances:["Folk"],handicrafts:["Crafts"],foods:["Local"],history:"Nepal border"},
+  bhagalpur:{festivals:["Chhath"],dances:["Folk"],handicrafts:["Silk"],foods:["Tilkut"],history:"Silk city"},
+  munger:{festivals:["Chhath"],dances:["Folk"],handicrafts:["Crafts"],foods:["Local"],history:"Yoga school"},
+  darbhanga:{festivals:["Durga Puja"],dances:["Folk"],handicrafts:["Mithila"],foods:["Peda"],history:"Mithila capital"},
+  madhubani:{festivals:["Sama Chakeva"],dances:["Folk"],handicrafts:["Painting"],foods:["Curd"],history:"Mithila art"},
+  samastipur:{festivals:["Chhath"],dances:["Folk"],handicrafts:["Crafts"],foods:["Local"],history:"Rail division"},
+  sitamarhi:{festivals:["Ram Navami"],dances:["Folk"],handicrafts:["Crafts"],foods:["Local"],history:"Birthplace of Sita"},
+  sheohar:{festivals:["Chhath"],dances:["Folk"],handicrafts:["Crafts"],foods:["Local"],history:"Smallest"},
+  muzaffarpur:{festivals:["Karma"],dances:["Karma"],handicrafts:["Crafts"],foods:["Litchi"],history:"Litchi city"},
+  vaishali:{festivals:["Mahavir Jayanti"],dances:["Folk"],handicrafts:["Pottery"],foods:["Litti"],history:"First republic"},
+  saran:{festivals:["Chhath"],dances:["Folk"],handicrafts:["Clay"],foods:["Litti"],history:"Ancient"},
+  siwan:{festivals:["Eid"],dances:["Folk"],handicrafts:["Crafts"],foods:["Local"],history:"Agriculture"},
+  gopalganj:{festivals:["Holi"],dances:["Folk"],handicrafts:["Crafts"],foods:["Thekua"],history:"Fertile"},
+  east_champaran:{festivals:["Gandhi Jayanti"],dances:["Folk"],handicrafts:["Crafts"],foods:["Litti"],history:"Champaran Satyagraha"},
+  west_champaran:{festivals:["Chhath"],dances:["Folk"],handicrafts:["Crafts"],foods:["Local"],history:"Nepal border"}
+};
+
+const select = document.getElementById("district-select");
+const panel = document.getElementById("info-panel");
+
+function addCards(title, arr){
+  arr.forEach(item=>{
+    let div=document.createElement("div");
+    div.className="info-card";
+    div.innerHTML=`<h4>${title}</h4><p>${item}</p>`;
+    panel.appendChild(div);
+  });
+}
+
+select.addEventListener("change",()=>{
+  panel.innerHTML="";
+  let d=districts[select.value];
+  if(d){
+    addCards("Festival",d.festivals);
+    addCards("Dance",d.dances);
+    addCards("Art",d.handicrafts);
+    addCards("Food",d.foods);
+
+    let h=document.createElement("div");
+    h.className="info-card history";
+    h.innerHTML=`<h3>History</h3><p>${d.history}</p>`;
+    panel.appendChild(h);
+  }
+});
+</script>
 
 
-  <!-- Handicraft / Art -->
-  <section>
-    <h2>Handicraft & Art</h2>
-    <div class="grid">
-      <div class="card"><img src="../image/handicrfat 5.jpg" alt="Handicraft"><p>Madhubani Painting, also known as Mithila Art, is a 
-        traditional folk art form from the Mithila region of Bihar, India. It is known for its vibrant colors, 
-        intricate patterns, and mythological themes, often drawn with natural dyes on walls, cloth, or handmade paper.</p></div>
-      <div class="card"><img src="../image/handicraft2.jpg" alt="Handicraft"><p>it reflects cultural values, spiritual beliefs,
-         and environmental harmony, making it a unique and treasured art form of India..</p></div>
-    </div>
-  </section>
+<!-- Accordion JS -->
+<script>
+  const accordions = document.querySelectorAll(".accordion-header");
+  accordions.forEach(acc => {
+    acc.addEventListener("click", function() {
+      const body = this.nextElementSibling;
+      const isOpen = body.style.display === "block";
+      document.querySelectorAll(".accordion-body").forEach(b => b.style.display = "none");
+      body.style.display = isOpen ? "none" : "block";
+    });
+  });
+</script>
 
-  <!-- Media Section -->
-  <section>
-    <h2>Media</h2>
-    <p>Watch videos and documentaries showcasing cultural heritage.</p>
-    <div class="grid">
-      <div class="card"><iframe src="" frameborder="0" allowfullscreen></iframe></div>
-      <div class="card"><iframe src="" frameborder="0" allowfullscreen></iframe></div>
-    </div>
-  </section>
+
+
+<script>
+let index = 0;
+const slides = document.getElementById("slides");
+const total = slides.children.length;
+
+setInterval(() => {
+  index = (index + 1) % total;
+  slides.style.transform = `translateX(-${index * 100}%)`;
+}, 4000);
+</script>
 
     <!-- Footer -->
   <footer>
